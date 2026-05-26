@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Become the Generative AI Engineer Companies Fight to Hire | ExaGuru</title>
-<meta name="description" content="Live 24-week Generative AI engineering cohort. Build neural nets in NumPy. GPT from scratch in PyTorch. RAG, agents, fine-tuning, LLMOps — all open-source. 16 capstones. For engineers serious about shipping AI.">
-<meta name="keywords" content="Generative AI Course, AI Engineer Training, LLMOps, RAG, LangGraph, PyTorch, Fine-Tuning, Unsloth, Vector Search, Multi-Agent Systems, Open-Source AI">
+<title>Data Science &amp; Generative AI Program | ExaGuru</title>
+<meta name="description" content="Live 10-week Data Science &amp; Generative AI program. AI/ML/DL foundations, full ML lifecycle, RAG, LLMs, agents, and production GenAI apps. Two capstone projects. Instructor-led labs.">
+<meta name="keywords" content="Data Science Course, Generative AI Program, Machine Learning Training, RAG, LangChain, PyTorch, Fine-Tuning, LLM Applications, Scikit-learn, Open-Source AI">
 
-<meta property="og:title" content="Become the Generative AI Engineer Companies Fight to Hire">
-<meta property="og:description" content="24-week build-from-scratch GenAI cohort. Open-source first. 16 capstones. RAG, agents, LLMOps, multi-modal.">
+<meta property="og:title" content="Data Science &amp; Generative AI Program | ExaGuru">
+<meta property="og:description" content="10-week instructor-led program. ML foundations to production GenAI. RAG, LangChain, fine-tuning, two capstones.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -2804,24 +2804,56 @@
     }
 
     /* LIGHTBOX EMBED LAYOUTS */
-    .knorish-custom-page .video-modal {
-        position: fixed;
-        inset: 0;
+    .knorish-custom-page .video-modal,
+    .video-modal#videoModal {
+        position: fixed !important;
+        inset: 0 !important;
         background: rgba(15, 14, 12, 0.92);
         backdrop-filter: blur(8px);
         -webkit-backdrop-filter: blur(8px);
-        display: none;
+        display: none !important;
         align-items: center;
         justify-content: center;
-        z-index: 99999;
+        z-index: 2147483645 !important;
         padding: 20px;
+        margin: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        box-sizing: border-box;
     }
 
-    .knorish-custom-page .video-modal.active {
-        display: flex;
+    .knorish-custom-page .video-modal.active,
+    .video-modal#videoModal.active {
+        display: flex !important;
     }
 
-    .knorish-custom-page .video-modal-content {
+    /* Fixed UI must not expand page height when embedded (Knorish / iframe parents) */
+    .knorish-custom-page > #live-ping,
+    .knorish-custom-page > #exaguru-sticky-bar,
+    .knorish-custom-page > #applyPopup,
+    .knorish-custom-page > #videoModal {
+        position: fixed !important;
+        margin: 0 !important;
+    }
+
+    .knorish-custom-page > #applyPopup:not(.active):not(:target) {
+        display: none !important;
+        height: 0 !important;
+        min-height: 0 !important;
+        overflow: hidden !important;
+        pointer-events: none !important;
+    }
+
+    .knorish-custom-page > #videoModal:not(.active) {
+        display: none !important;
+        height: 0 !important;
+        min-height: 0 !important;
+        overflow: hidden !important;
+        pointer-events: none !important;
+    }
+
+    .knorish-custom-page .video-modal-content,
+    .video-modal#videoModal .video-modal-content {
         position: relative;
         width: 100%;
         max-width: 900px;
@@ -2831,7 +2863,8 @@
         box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6);
     }
 
-    .knorish-custom-page .video-modal-close {
+    .knorish-custom-page .video-modal-close,
+    .video-modal#videoModal .video-modal-close {
         position: absolute;
         top: 12px;
         right: 12px;
@@ -2851,12 +2884,14 @@
         transition: background 0.2s ease;
     }
 
-    .knorish-custom-page .video-modal-close:hover {
+    .knorish-custom-page .video-modal-close:hover,
+    .video-modal#videoModal .video-modal-close:hover {
         background: var(--red);
         border-color: var(--red);
     }
 
-    .knorish-custom-page .video-modal .video-wrapper {
+    .knorish-custom-page .video-modal .video-wrapper,
+    .video-modal#videoModal .video-wrapper {
         margin: 0;
         border-radius: 0;
         box-shadow: none;
@@ -2878,7 +2913,7 @@
         background: rgba(15, 14, 12, 0.78);
         backdrop-filter: blur(8px);
         -webkit-backdrop-filter: blur(8px);
-        display: block !important;
+        display: none !important;
         z-index: 2147483647 !important;
         opacity: 0;
         visibility: hidden;
@@ -2892,6 +2927,7 @@
 
     .apply-popup-overlay.active,
     #applyPopup:target {
+        display: block !important;
         opacity: 1 !important;
         visibility: visible !important;
         pointer-events: auto !important;
@@ -2927,7 +2963,8 @@
     }
 
     @media (min-width: 769px) {
-        .apply-popup-overlay {
+        .apply-popup-overlay.active,
+        #applyPopup:target {
             display: flex !important;
             align-items: center !important;
             justify-content: center !important;
@@ -3349,7 +3386,7 @@
 
     <div class="top-strip">
         <span class="pill">Spring 2027</span>
-        Generative AI Engineer cohort — 24 weeks · build-from-scratch · <a href="#apply" data-exaguru-apply="1">Reserve your seat →</a>
+        Data Science &amp; Generative AI — 10 weeks · instructor-led · <a href="#apply" data-exaguru-apply="1">Reserve your seat →</a>
     </div>
 
     <nav class="nav">
@@ -3376,30 +3413,30 @@
             <div class="hero-badge">Spring 2027 Cohort · 16 of 30 seats left</div>
             <div class="hero-counter">
                 <span class="num" id="hero-count">312</span>
-                <span class="lbl">Capstones shipped by alumni</span>
+                <span class="lbl">Learners trained</span>
             </div>
         </div>
 
-        <h1 style="margin-top: 24px;">Become the Generative AI Engineer<br>companies <em>fight to hire.</em></h1>
+        <h1 style="margin-top: 24px;">Data Science &amp; <em>Generative AI</em><br>from foundations to production apps.</h1>
 
-        <p class="hero-desc"><strong>Build, don't just call APIs.</strong> A 24-week live cohort built around real GenAI engineering. Neural nets in NumPy. GPT from scratch in PyTorch. RAG, agents, fine-tuning, and LLMOps on open-source. For engineers serious about shipping AI products.</p>
+        <p class="hero-desc"><strong>One complete program — not separate tracks.</strong> A 10-week instructor-led journey: AI/ML/DL fundamentals, full data science &amp; ML lifecycle, then GenAI with transformers, RAG, agents, and deployment. Two capstones. 6–8 hours per week.</p>
 
         <div class="hero-trust">
             <div>
-                <div class="v">24</div>
+                <div class="v">10</div>
                 <div class="k">Weeks Live</div>
             </div>
             <div>
-                <div class="v">5</div>
-                <div class="k">Phases Loop</div>
+                <div class="v">3</div>
+                <div class="k">Modules</div>
             </div>
             <div>
-                <div class="v">16</div>
-                <div class="k">Capstones Shipped</div>
+                <div class="v">2</div>
+                <div class="k">Capstone Projects</div>
             </div>
             <div>
-                <div class="v">100%</div>
-                <div class="k">Open-Source Stack</div>
+                <div class="v">60–80</div>
+                <div class="k">Learning Hours</div>
             </div>
         </div>
 
@@ -3427,12 +3464,8 @@
                     <input type="tel" name="SMS" placeholder="Phone Number" required style="flex: 1; margin-bottom: 0;" autocomplete="tel">
                 </div>
 
-                <select name="TRACK" required style="width: 100%; margin-bottom: 16px;" aria-label="Cohort Track Selection">
-                    <option value="" disabled selected>Choose your track</option>
-                    <option value="core">GenAI Engineer (Core Focus Focus)</option>
-                    <option value="llmops">GenAI + LLMOps Architect Track (Recommended)</option>
-                    <option value="help">Not sure yet — help me choose</option>
-                </select>
+                <input type="hidden" name="TRACK" value="Data Science &amp; Generative AI">
+                <div style="width:100%;margin-bottom:16px;padding:14px 16px;background:var(--purple-light);border:1.5px solid var(--purple-mid);border-radius:10px;font-size:15px;font-weight:700;color:var(--purple);text-align:center;">Data Science &amp; Generative AI</div>
 
                 <button class="cta-btn" type="submit">Submit Enrolment Application →</button>
                 <div class="form-tos">By enrolling you agree to be contacted about this cohort. No spam.</div>
@@ -3494,7 +3527,7 @@
             </div>
         </div>
 
-        <p class="problem-conclude">We exist because every one of those production gaps is <em>closed by building</em>, not watching. 24 weeks. 16 capstones.</p>
+        <p class="problem-conclude">We exist because every one of those production gaps is <em>closed by building</em>, not watching. 10 weeks. 3 modules. 2 capstones.</p>
     </div>
 
     <div class="section section-alt">
@@ -3617,13 +3650,9 @@
                 <p>Enterprise engineering domains are facing a massive structural talent constraint. Technical practitioners building from scratch are separating themselves completely from simple API consumers in interview loops.*</p>
 
                 <div class="hike-grid">
-                    <div class="hike-box">
-                        <div class="from-to">Core Focus</div>
-                        <div class="hike-desc">GenAI Core Engineer Track</div>
-                    </div>
-                    <div class="hike-box premium">
-                        <div class="from-to">Premium Track</div>
-                        <div class="hike-desc">GenAI + LLMOps Architect</div>
+                    <div class="hike-box premium" style="grid-column: 1 / -1;">
+                        <div class="from-to">Data Science &amp; Generative AI</div>
+                        <div class="hike-desc">One program · ML lifecycle + production GenAI · ML &amp; GenAI capstones</div>
                     </div>
                 </div>
             </div>
@@ -3675,14 +3704,14 @@
                 </ul>
             </div>
             <div class="compare-card good">
-                <h3>ExaGuru GenAI Engineering Cohort</h3>
+                <h3>ExaGuru Data Science &amp; Generative AI</h3>
                 <ul>
-                    <li>Transformers and backprop engineered from scratch</li>
-                    <li>100% open-source component stack native autonomy</li>
-                    <li>Production evaluation platforms using automated scoring runtimes</li>
-                    <li>Deep operational focus covering serving runtimes and trace trees</li>
-                    <li>16 concrete milestone projects and one flagship pipeline</li>
-                    <li>Automated validation test setups with individual architecture feedback</li>
+                    <li>AI/ML/DL/DS foundations through your first neural network</li>
+                    <li>Full ML lifecycle: EDA, supervised &amp; unsupervised learning, MLOps basics</li>
+                    <li>Transformers, prompt engineering, RAG, LangChain, and fine-tuning (LoRA)</li>
+                    <li>Agents, multimodal GenAI, evaluation &amp; observability for LLM apps</li>
+                    <li>Module 2 ML capstone + Module 3 GenAI capstone with portfolio review</li>
+                    <li>Instructor-led labs, assignments, quizzes, and peer code review</li>
                 </ul>
             </div>
         </div>
@@ -3691,87 +3720,53 @@
     <div class="section section-alt" id="curriculum">
         <div class="section-alt-inner">
             <div class="section-label">The Curriculum</div>
-            <h2 class="section-title">Five Specialized Development Phases.<br><em>Complete</em> Engineering Track.</h2>
-            <p class="section-desc">24 Weeks · 10–12 Hours/Week · 16 Milestone Projects · 1 Flagship Autonomous Assistant Production Build</p>
+            <h2 class="section-title">Three Modules.<br><em>Data Science &amp; Generative AI</em> Syllabus.</h2>
+            <p class="section-desc">10 Weeks · 6–8 Hours/Week · Instructor-Led Sessions · Hands-On Labs · ML Capstone (Module 2) · GenAI Capstone (Module 3)</p>
 
             <div class="week-grid">
                 <div class="week-card w1">
                     <div class="week-header">
-                        <div class="wk-badge">Phase 01 · Weeks 1–5</div>
-                        <h3>Foundations, Math &amp; Environment Pipeline</h3>
+                        <div class="wk-badge">Module 1 · Weeks 1–2</div>
+                        <h3>Foundations of AI, ML, DL &amp; Data Science</h3>
                     </div>
                     <div class="week-body">
                         <ul>
-                            <li>Python environmental compilation structures using uv, Conda, and container runtimes</li>
-                            <li>NumPy and Pandas deep execution vectors for array transformation workflows</li>
-                            <li>Linear algebra, multidimensional matrices, gradients, and calculation steps</li>
-                            <li>Probability fields, maximum likelihood metrics, and Bayesian assumptions</li>
-                            <li>Classical machine learning algorithms via scikit-learn to map system validation metrics</li>
-                            <li><strong>Phase Capstone:</strong> End-to-end telemetry workflow execution using modern data arrays</li>
+                            <li><strong>Week 1:</strong> AI/ML/DL/DS landscape · Math for AI (linear algebra, calculus, probability) · Python, NumPy, Pandas, Matplotlib · Data handling &amp; EDA · ML workflow overview</li>
+                            <li><strong>Week 2:</strong> Neural networks &amp; perceptrons · Forward/backprop &amp; loss functions · Training, regularization, early stopping · TensorFlow/PyTorch/Keras intro</li>
+                            <li><strong>Lab:</strong> Feed-forward NN on MNIST/Iris · Hyperparameter tuning &amp; training curves</li>
+                            <li><strong>Deliverables:</strong> AI/ML/DL quiz · First neural network notebook · Mini-project: EDA on a real-world dataset</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="week-card w2">
                     <div class="week-header">
-                        <div class="wk-badge">Phase 02 · Weeks 6–10</div>
-                        <h3>Deep Learning Nodes to Transformer Blocks</h3>
+                        <div class="wk-badge">Module 2 · Weeks 3–6</div>
+                        <h3>Data Science &amp; Machine Learning Deep Dive</h3>
                     </div>
                     <div class="week-body">
                         <ul>
-                            <li>Multilayer Perceptron networks written from basic mathematical steps inside raw NumPy</li>
-                            <li>PyTorch programmatic operations: autograd hooks, precision loops, and compute setups</li>
-                            <li>Computer Vision feature extraction layers, adaptation setups, and interface testing</li>
-                            <li>Attention mechanisms and multi-headed query block transformations</li>
-                            <li><strong>Phase Capstone:</strong> Building a line-by-line character decoder model engine</li>
+                            <li><strong>Week 3:</strong> Advanced EDA &amp; feature engineering · Statistics for ML · Data visualization · ETL, SQL, APIs &amp; data pipelines</li>
+                            <li><strong>Week 4:</strong> Regression · Classification (Logistic, KNN, Naive Bayes, Trees, SVM) · Cross-validation &amp; hyperparameter tuning</li>
+                            <li><strong>Week 5:</strong> Ensemble methods (RF, XGBoost, LightGBM) · Unsupervised learning &amp; PCA · Time series · Recommender systems</li>
+                            <li><strong>Week 6:</strong> CNNs, RNNs, LSTM, transfer learning · MLOps basics (FastAPI, Docker, MLflow) · Industry best practices</li>
+                            <li><strong>Capstone:</strong> End-to-end ML project — framing → EDA → modeling → evaluation → deployment · Peer code review</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="week-card w3">
                     <div class="week-header">
-                        <div class="wk-badge">Phase 03 · Weeks 11–14</div>
-                        <h3>Generative Architectural Patterns</h3>
+                        <div class="wk-badge">Module 3 · Weeks 7–10</div>
+                        <h3>Generative AI &amp; LLM Application Development</h3>
                     </div>
                     <div class="week-body">
                         <ul>
-                            <li>Autoencoders, representation bounds, and state reparameterization rules</li>
-                            <li>Generative Adversarial Nets: boundary checks, stabilization steps, and translation hooks</li>
-                            <li>Diffusion pipelines: mathematical parameters, guidance features, and latent states</li>
-                            <li>Autoregressive sequences, text parsing rules, and structural scaling trends</li>
-                            <li><strong>Phase Capstone:</strong> Assembling a latent generation workflow with custom input constraints</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="week-card w4">
-                    <div class="week-header">
-                        <div class="wk-badge">Phase 04 · Weeks 15–18</div>
-                        <h3>Open Models, Custom Adaptation &amp; Vector Stores</h3>
-                    </div>
-                    <div class="week-body">
-                        <ul>
-                            <li>Open parameter space structures (Llama, Mistral, Qwen) vs closed API formats</li>
-                            <li>Prompt engineering metrics, execution hooks, and evaluation frameworks</li>
-                            <li>Fine-tuning runtimes: SFT scripts, PEFT formats, and parameter alignment routines</li>
-                            <li>Embedding pipelines, high-dimensional search indices, and retrieval matching</li>
-                            <li><strong>Phase Capstone:</strong> Tuning a 7B model space and deploying a semantic search route</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="week-card w5">
-                    <div class="week-header">
-                        <div class="wk-badge">Phase 05 · Weeks 19–24</div>
-                        <h3>Advanced Retrieval, Graph Agents &amp; Scale LLMOps</h3>
-                    </div>
-                    <div class="week-body">
-                        <ul>
-                            <li>Semantic processing systems, visual search indexes, and parsing evaluation criteria</li>
-                            <li>Autonomous state charts using LangGraph routines, tool logic, and memory tables</li>
-                            <li>Runtimes optimization targets, tracking architectures, and automated regression testing</li>
-                            <li>Multi-modal interfaces, sound transcription steps, and real-time streaming routes</li>
-                            <li><strong>Flagship Capstone:</strong> Assembling a voice-driven multi-agent semantic platform instance</li>
+                            <li><strong>Week 7:</strong> Generative AI landscape · NLP foundations &amp; embeddings · Transformers &amp; attention · BERT, GPT, LLaMA, Mistral &amp; scaling laws</li>
+                            <li><strong>Week 8:</strong> LLM training, tokenization &amp; sampling · Prompt engineering (CoT, ReAct) · LLM APIs · Responsible &amp; safe AI · Chatbot lab</li>
+                            <li><strong>Week 9:</strong> RAG &amp; vector databases (ChromaDB, FAISS) · LangChain &amp; LlamaIndex · Fine-tuning (SFT, LoRA, QLoRA) · Agents &amp; tool use</li>
+                            <li><strong>Week 10:</strong> Multimodal GenAI · Streamlit/Gradio &amp; production apps · Evaluation (RAGAS) &amp; observability · Cost control &amp; drift detection</li>
+                            <li><strong>Capstone:</strong> Full-stack GenAI application (Document Q&amp;A, HR assistant, support bot, etc.) · Demo day &amp; portfolio review</li>
                         </ul>
                     </div>
                 </div>
@@ -3782,7 +3777,7 @@
     <div class="section">
         <div class="section-label">The Lab Environment</div>
         <h2 class="section-title">You Don't Read Papers. <em>You Ship Pipelines.</em></h2>
-        <p class="section-desc">Every phase completes with a concrete code lab validated via comprehensive suite tests. Build clean portfolio structures.</p>
+        <p class="section-desc">Every module includes guided hands-on labs. Build portfolio-ready notebooks and capstone projects.</p>
 
         <div class="lab-grid">
             <div class="lab-text">
@@ -3830,36 +3825,22 @@
             <div class="roadmap-step">
                 <div class="step-num">1</div>
                 <div class="step-text">
-                    <h4>Baseline Operations</h4>
-                    <p>NumPy matrix logic and telemetry pipelines completed.</p>
+                    <h4>Module 1</h4>
+                    <p>AI/ML/DL foundations · Python stack · First neural network.</p>
                 </div>
             </div>
             <div class="roadmap-step">
                 <div class="step-num">2</div>
                 <div class="step-text">
-                    <h4>Model Assembly</h4>
-                    <p>Decoder attention layers built from fundamental operations.</p>
-                </div>
-            </div>
-            <div class="roadmap-step">
-                <div class="step-num">3</div>
-                <div class="step-text">
-                    <h4>Parameter Tuning</h4>
-                    <p>SFT paths and parameter alignment arrays run manually.</p>
-                </div>
-            </div>
-            <div class="roadmap-step">
-                <div class="step-num">4</div>
-                <div class="step-text">
-                    <h4>Graph States</h4>
-                    <p>Complex conversational graphs with memory structures configured.</p>
+                    <h4>Module 2</h4>
+                    <p>Full ML lifecycle · ensembles · MLOps · ML capstone deployed.</p>
                 </div>
             </div>
             <div class="roadmap-step" style="border-color: var(--green); border-width: 2px;">
                 <div class="step-num" style="background: var(--green); color: #fff;">✓</div>
                 <div class="step-text">
-                    <h4>Scale Ops</h4>
-                    <p>Deploy tracing layers, serving instances, and validation tests.</p>
+                    <h4>Module 3</h4>
+                    <p>RAG, agents, fine-tuning · production GenAI capstone shipped.</p>
                 </div>
             </div>
         </div>
@@ -3926,7 +3907,7 @@
                             </div>
                             <div class="auth-stars">★★★★★</div>
                         </div>
-                        <p class="auth-text">"I entered as a technical manager wondering how to scale AI features reliably. Phase 5 completely demystified latency parameters, tracing logic, and edge deployments."</p>
+                        <p class="auth-text">"I entered as a technical manager wondering how to scale AI features reliably. Module 3 completely demystified RAG pipelines, evaluation metrics, and deploying GenAI apps to production."</p>
                     </div>
                     <div class="auth-jump">
                         <div class="from"><span class="lbl">Before</span><span class="v">Backend Lead · 9 yrs</span></div>
@@ -4018,7 +3999,7 @@
     <div class="section">
         <div class="section-label">What's In The Box</div>
         <h2 class="section-title">Everything <em>Included</em>, Nothing Upsold.</h2>
-        <p class="section-desc">Real enterprise-grade resources stacked into one 24-week cohort. No upsells, no surprises.</p>
+        <p class="section-desc">Real enterprise-grade resources stacked into one 10-week program. No upsells, no surprises.</p>
 
         <div class="bonus-list">
             <div class="bonus-row">
@@ -4074,7 +4055,7 @@
                 <div class="calc-grid">
                     <div class="calc-controls">
                         <h3>Estimate your jump</h3>
-                        <p>Move the sliders below to see where your GenAI specialization track could land you 12 months from now.</p>
+                        <p>Move the sliders below to see where <strong>Data Science &amp; Generative AI</strong> could land you 12 months from now — up to <strong>₹1.25 Cr</strong>.</p>
 
                         <div class="calc-control">
                             <label>Prior Technical Experience <span class="v"><span id="exp-v">3</span> yrs</span></label>
@@ -4082,33 +4063,30 @@
                         </div>
 
                         <div class="calc-control">
-                            <label>Baseline Annual Package <span class="v">₹ <span id="sal-v">12.0</span> L</span></label>
-                            <input type="range" id="sal-r" min="3" max="55" value="12" step="0.5">
+                            <label>Baseline Annual Package <span class="v">₹ <span id="sal-v">12.0</span> <span id="sal-unit">L</span></span></label>
+                            <input type="range" id="sal-r" min="3" max="125" value="12" step="0.5">
                         </div>
 
                         <div class="calc-control">
-                            <label>Architectural Specialization Track <span class="v" id="trk-v">GenAI + LLMOps</span></label>
-                            <select id="trk-r">
-                                <option value="oci">GenAI Core Focus Tiers</option>
-                                <option value="oci-exa" selected>GenAI + LLMOps Runtimes Track (Recommended)</option>
-                            </select>
+                            <label>Program <span class="v" id="trk-v">Data Science &amp; Generative AI</span></label>
+                            <div style="padding:14px 16px;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;font-size:14px;font-weight:600;color:var(--ink2);">Single cohort · ML + GenAI capstones</div>
                         </div>
                     </div>
 
                     <div class="calc-result">
                         <div class="calc-result-inner">
-                            <h4>Projected Outlook · 12 Months Post Cohort Track</h4>
-                            <div class="delta">₹ <span id="proj-low">26.5</span> L <em>—</em> <span id="proj-high">36.0</span> L</div>
+                            <h4>Projected Outlook · 12 Months Post Program</h4>
+                            <div class="delta">₹ <span id="proj-low">26.5</span> <span id="proj-low-unit">L</span> <em>—</em> <span id="proj-high">36.0</span> <span id="proj-high-unit">L</span></div>
                             <div class="calc-bars">
                                 <div class="calc-bar">
                                     <span class="lbl">Now</span>
                                     <span class="track"><span class="fill" id="bar-now" style="width:30%;"></span></span>
-                                    <span class="v">₹ <span id="bar-now-v">12.0</span>L</span>
+                                    <span class="v">₹ <span id="bar-now-v">12.0</span><span id="bar-now-unit">L</span></span>
                                 </div>
                                 <div class="calc-bar">
                                     <span class="lbl">Target</span>
                                     <span class="track"><span class="fill us" id="bar-future" style="width:62%;"></span></span>
-                                    <span class="v">₹ <span id="bar-future-v">31.0</span>L</span>
+                                    <span class="v">₹ <span id="bar-future-v">31.0</span><span id="bar-future-unit">L</span></span>
                                 </div>
                             </div>
                             <div class="calc-cta">
@@ -4132,7 +4110,7 @@
             </div>
             <div class="faq-item">
                 <div class="faq-q" data-exaguru-faq="1">Do I need a math / ML background? <span class="icon">+</span></div>
-                <div class="faq-a">You need comfort with Python and high-school math (algebra, basic calculus, probability). Phase 1 explicitly refreshes the math you actually use in deep learning — vectors, gradients, distributions. We've successfully trained software engineers, backend devs, data analysts, and CS grads with no prior ML. What we can't do is teach Python from scratch in the same 24 weeks.</div>
+                <div class="faq-a">You need comfort with Python and high-school math (algebra, basic calculus, probability). Module 1 explicitly refreshes the math you actually use in AI/ML — vectors, gradients, distributions. We've successfully trained software engineers, backend devs, data analysts, and CS grads with no prior ML. What we can't do is teach Python from scratch in the same 10 weeks.</div>
             </div>
             <div class="faq-item">
                 <div class="faq-q" data-exaguru-faq="1">Will I need expensive hardware or my own GPU? <span class="icon">+</span></div>
@@ -4140,11 +4118,11 @@
             </div>
             <div class="faq-item">
                 <div class="faq-q" data-exaguru-faq="1">How is this different from a 12-week GenAI bootcamp on Udemy? <span class="icon">+</span></div>
-                <div class="faq-a">Three differences. (1) Length — we take 24 weeks because building Transformers, diffusion, and agents from first principles can't be honestly compressed. (2) Depth — we don't skip the math or the implementation. You'll write backprop, attention, and a DDPM line-by-line, then graduate to the frameworks. (3) Production — most courses stop at the prototype. Phase 5 (serving, evals, guardrails, LLMOps) is where this program actually starts to differentiate you.</div>
+                <div class="faq-a">Three differences. (1) Breadth — one program covers data science, classical ML, deep learning, and production GenAI (not API tutorials alone). (2) Structure — 3 modules over 10 weeks with instructor-led labs, assignments, and two graded capstones. (3) Outcomes — you leave able to build &amp; evaluate ML models and design, deploy, and present an LLM-powered application end-to-end.</div>
             </div>
             <div class="faq-item">
                 <div class="faq-q" data-exaguru-faq="1">Can I do this with a full-time job? <span class="icon">+</span></div>
-                <div class="faq-a">Yes — the cohort is designed for working engineers. Two 90-minute live sessions per week (recorded), plus ~7–9 hours of lab work weekly. Most learners use weekday evenings + a Saturday morning. If you fall behind, recordings + a 1-year LMS extension keep you covered.</div>
+                <div class="faq-a">Yes — the program is designed for working professionals and students. Expect ~6–8 hours per week: concept teaching, instructor demos, hands-on labs, and assignments. The recommended pattern is 2h concepts, 1h demo, 2h lab, 2–3h practice, plus weekly review/Q&amp;A.</div>
             </div>
         </div>
     </div>
@@ -4152,7 +4130,7 @@
     <div class="final-cta-section">
         <div class="final-cta-inner final-cta-centered">
             <div>
-                <div class="section-label" style="text-align: center;">ExaGuru Generative AI Engineering Track</div>
+                <div class="section-label" style="text-align: center;">Data Science &amp; Generative AI Program</div>
                 <h2 style="text-align: center;">Stop Calling APIs.<br><em>Start Shipping AI Frameworks.</em></h2>
                 <p style="text-align: center; max-width: 600px; margin: 0 auto 28px;"><strong>16 of 30 seats remain.</strong> Cohort track launches March 2027. Registration portals freeze automatically when seat limits register filled.</p>
 
@@ -4206,81 +4184,77 @@
         </div>
         <div class="footer-bottom">
             <span>© 2026 ExaGuru. All rights reserved.</span>
-            <span>Generative AI Engineering Live Cohort Runtimes Channel</span>
+            <span>Data Science &amp; Generative AI Program</span>
         </div>
     </footer>
 
-    <div class="exaguru-live-ping live-ping" id="live-ping" role="status" aria-live="polite" aria-atomic="true">
-        <div class="av" id="ping-av">A</div>
-        <div>
-            <div class="ac" id="ping-msg"><strong>Aditya N.</strong> from <span>Bengaluru</span> registered 2 mins ago</div>
-            <div class="time" id="ping-time">Just now</div>
-        </div>
-    </div>
+</div>
 
-    <div class="exaguru-sticky-bar sticky-bar" id="exaguru-sticky-bar">
-        <span class="sl">Spring 2027 batch · <strong>16 seats left</strong></span>
-        <div class="exaguru-sticky-countdown sticky-countdown" aria-label="Cohort timeline tracker">
-            <span class="exaguru-sticky-cd-unit sticky-cd-unit"><span class="num js-cd" id="sticky-d" data-u="0">02</span><small>days</small></span>
-            <span class="exaguru-sticky-cd-sep sticky-cd-sep">:</span>
-            <span class="exaguru-sticky-cd-unit sticky-cd-unit"><span class="num js-cd" id="sticky-h" data-u="1">22</span><small>hrs</small></span>
-            <span class="exaguru-sticky-cd-sep sticky-cd-sep">:</span>
-            <span class="exaguru-sticky-cd-unit sticky-cd-unit"><span class="num js-cd" id="sticky-m" data-u="2">48</span><small>min</small></span>
-            <span class="exaguru-sticky-cd-sep sticky-cd-sep">:</span>
-            <span class="exaguru-sticky-cd-unit sticky-cd-unit"><span class="num js-cd" id="sticky-s" data-u="3">55</span><small>sec</small></span>
-        </div>
-        <a href="#applyPopup" id="exaguru-sticky-apply-btn" class="exaguru-sticky-btn sticky-btn" data-exaguru-apply="1" onclick="if(window.openApplyPopup){window.openApplyPopup();return false;}return true;">Enroll Now →</a>
+<div class="exaguru-live-ping live-ping" id="live-ping" role="status" aria-live="polite" aria-atomic="true">
+    <div class="av" id="ping-av">A</div>
+    <div>
+        <div class="ac" id="ping-msg"><strong>Aditya N.</strong> from <span>Bengaluru</span> registered 2 mins ago</div>
+        <div class="time" id="ping-time">Just now</div>
     </div>
+</div>
 
-    <div class="apply-popup-overlay" id="applyPopup">
-        <div class="apply-popup-box" role="dialog" aria-modal="true" aria-labelledby="apply-popup-title">
-            <div class="apply-popup-header">
-                <span class="apply-popup-drag" aria-hidden="true"></span>
-                <a href="#" class="apply-popup-close" data-exaguru-close-popup="1" aria-label="Close application panel" onclick="if(window.closeApplyPopup){window.closeApplyPopup();} return true;">×</a>
-                <span class="apply-popup-label">Generative AI Engineer · 24-Week Batch</span>
-                <h3 id="apply-popup-title">Submit Cohort Enrolment</h3>
-                <p class="form-sub">2 Minutes Setup · Allocation Status Transmitted Within 24 Hours</p>
-                <span class="apply-popup-seats">⚡ 16 of 30 allocations left</span>
-            </div>
-            <div class="apply-popup-body">
-                <form id="sib-form-popup" class="exaguru-popup-form" method="POST" action="https://4feac7ff.sibforms.com/serve/MUIFAIBxCOSoLw4jno6uP5f4YeuhDUqmKDyFVsDBi1RRtfOOLtOigIINLA_Z8OecFC8kRGp9vAH4HQJk9KaswHdeeoF3DyuLn46Ttr_HNvo12vcpaHunaIeVjkZLpYEtcoEQf4sphY3iAnaOVHWDmtlQraD6xqLQ1hJLQn7qKnMIyOlmE3DYtclZ3pGvXvMgv6pV72bjlu67LtZnGQ==" target="hidden_iframe">
-                    <input type="text" name="email_address_check" value="" style="display:none;">
-                    <input type="hidden" name="locale" value="en">
-                    <input type="hidden" name="html_type" value="simple">
-                    <input type="text" name="FIRSTNAME" placeholder="Full Name" required autocomplete="name">
-                    <input type="email" name="EMAIL" placeholder="Email Address" required autocomplete="email">
-                    <div class="form-phone-row">
-                        <select name="SMS__COUNTRY_CODE" required aria-label="Country select code">
-                            <option value="+91" selected>+91 IN</option>
-                            <option value="+1">+1 US</option>
-                            <option value="+44">+44 GB</option>
-                            <option value="+971">+971 AE</option>
-                            <option value="+65">+65 SG</option>
-                        </select>
-                        <input type="tel" name="SMS" placeholder="Phone Number" required autocomplete="tel">
-                    </div>
-                    <select name="TRACK" required aria-label="Popup Select Track Dropdown">
-                        <option value="" disabled selected>Choose your track</option>
-                        <option value="core">GenAI Engineer (Core Focus Focus)</option>
-                        <option value="llmops">GenAI + LLMOps Architect Track</option>
-                        <option value="help">Unsure · Request Architecture Profile Fit Call</option>
+<div class="exaguru-sticky-bar sticky-bar" id="exaguru-sticky-bar">
+    <span class="sl">Spring 2027 batch · <strong>16 seats left</strong></span>
+    <div class="exaguru-sticky-countdown sticky-countdown" aria-label="Cohort timeline tracker">
+        <span class="exaguru-sticky-cd-unit sticky-cd-unit"><span class="num js-cd" id="sticky-d" data-u="0">02</span><small>days</small></span>
+        <span class="exaguru-sticky-cd-sep sticky-cd-sep">:</span>
+        <span class="exaguru-sticky-cd-unit sticky-cd-unit"><span class="num js-cd" id="sticky-h" data-u="1">22</span><small>hrs</small></span>
+        <span class="exaguru-sticky-cd-sep sticky-cd-sep">:</span>
+        <span class="exaguru-sticky-cd-unit sticky-cd-unit"><span class="num js-cd" id="sticky-m" data-u="2">48</span><small>min</small></span>
+        <span class="exaguru-sticky-cd-sep sticky-cd-sep">:</span>
+        <span class="exaguru-sticky-cd-unit sticky-cd-unit"><span class="num js-cd" id="sticky-s" data-u="3">55</span><small>sec</small></span>
+    </div>
+    <a href="#applyPopup" id="exaguru-sticky-apply-btn" class="exaguru-sticky-btn sticky-btn" data-exaguru-apply="1" onclick="if(window.openApplyPopup){window.openApplyPopup();return false;}return true;">Enroll Now →</a>
+</div>
+
+<div class="apply-popup-overlay" id="applyPopup">
+    <div class="apply-popup-box" role="dialog" aria-modal="true" aria-labelledby="apply-popup-title">
+        <div class="apply-popup-header">
+            <span class="apply-popup-drag" aria-hidden="true"></span>
+            <a href="#" class="apply-popup-close" data-exaguru-close-popup="1" aria-label="Close application panel" onclick="if(window.closeApplyPopup){window.closeApplyPopup();} return true;">×</a>
+            <span class="apply-popup-label">Data Science &amp; Generative AI · 10-Week Program</span>
+            <h3 id="apply-popup-title">Submit Cohort Enrolment</h3>
+            <p class="form-sub">2 Minutes Setup · Allocation Status Transmitted Within 24 Hours</p>
+            <span class="apply-popup-seats">⚡ 16 of 30 allocations left</span>
+        </div>
+        <div class="apply-popup-body">
+            <form id="sib-form-popup" class="exaguru-popup-form" method="POST" action="https://4feac7ff.sibforms.com/serve/MUIFAIBxCOSoLw4jno6uP5f4YeuhDUqmKDyFVsDBi1RRtfOOLtOigIINLA_Z8OecFC8kRGp9vAH4HQJk9KaswHdeeoF3DyuLn46Ttr_HNvo12vcpaHunaIeVjkZLpYEtcoEQf4sphY3iAnaOVHWDmtlQraD6xqLQ1hJLQn7qKnMIyOlmE3DYtclZ3pGvXvMgv6pV72bjlu67LtZnGQ==" target="hidden_iframe">
+                <input type="text" name="email_address_check" value="" style="display:none;">
+                <input type="hidden" name="locale" value="en">
+                <input type="hidden" name="html_type" value="simple">
+                <input type="text" name="FIRSTNAME" placeholder="Full Name" required autocomplete="name">
+                <input type="email" name="EMAIL" placeholder="Email Address" required autocomplete="email">
+                <div class="form-phone-row">
+                    <select name="SMS__COUNTRY_CODE" required aria-label="Country select code">
+                        <option value="+91" selected>+91 IN</option>
+                        <option value="+1">+1 US</option>
+                        <option value="+44">+44 GB</option>
+                        <option value="+971">+971 AE</option>
+                        <option value="+65">+65 SG</option>
                     </select>
-                    <button class="cta-btn" type="submit">Complete Enrolment Application →</button>
-                    <div class="form-tos">Secure validation checks processed directly by ExaGuru core registries.</div>
-                </form>
-            </div>
+                    <input type="tel" name="SMS" placeholder="Phone Number" required autocomplete="tel">
+                </div>
+                <input type="hidden" name="TRACK" value="Data Science &amp; Generative AI">
+                <div style="width:100%;margin-bottom:14px;padding:14px 16px;background:var(--purple-light);border:1.5px solid var(--purple-mid);border-radius:10px;font-size:15px;font-weight:700;color:var(--purple);text-align:center;">Data Science &amp; Generative AI</div>
+                <button class="cta-btn" type="submit">Complete Enrolment Application →</button>
+                <div class="form-tos">Secure validation checks processed directly by ExaGuru core registries.</div>
+            </form>
         </div>
     </div>
+</div>
 
-    <div class="video-modal" id="videoModal" data-exaguru-close-video="1">
-        <div class="video-modal-content">
-            <button type="button" class="video-modal-close" data-exaguru-close-video="1" aria-label="Close video display modal">×</button>
-            <div class="video-wrapper">
-                <iframe id="youtubeFrame" src="" title="Generative AI Engineering Pipeline Overview Walkthrough" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
+<div class="video-modal" id="videoModal" data-exaguru-close-video="1">
+    <div class="video-modal-content">
+        <button type="button" class="video-modal-close" data-exaguru-close-video="1" aria-label="Close video display modal">×</button>
+        <div class="video-wrapper">
+            <iframe id="youtubeFrame" src="" title="Generative AI Engineering Pipeline Overview Walkthrough" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
-
 </div>
 
 <script>
@@ -4375,10 +4349,12 @@
             if (hero) hero.scrollIntoView({ behavior: 'smooth', block: 'start' });
             return;
         }
+        relocateFixedUI();
         initApplyPopupForm();
         applyMobilePopupLayout();
         try { window.location.hash = 'applyPopup'; } catch (err) {}
         overlay.classList.add('active');
+        overlay.style.display = '';
         setExaguruPopupOpenClass(true);
         exaguruScrollBodyLock(true);
     }
@@ -4387,6 +4363,7 @@
         var overlay = document.getElementById('applyPopup');
         if (!overlay) return;
         overlay.classList.remove('active');
+        overlay.style.display = 'none';
         setExaguruPopupOpenClass(false);
         try {
             if (window.location.hash === '#applyPopup') {
@@ -4498,7 +4475,7 @@
 
         var pool = [
             { n: 'Aditya N.', c: 'Bengaluru', i: 'A', action: 'enrolled in Spring cohort', time: '2 mins ago' },
-            { n: 'Priya R.', c: 'Pune', i: 'P', action: 'reserved a custom LLMOps seat', time: 'Just now' },
+            { n: 'Priya R.', c: 'Pune', i: 'P', action: 'enrolled in Data Science & GenAI', time: 'Just now' },
             { n: 'Karan M.', c: 'Hyderabad', i: 'K', action: 'submitted profile registration', time: '4 mins ago' },
             { n: 'Sneha V.', c: 'Delhi NCR', i: 'S', action: 'locked allocation track', time: '1 min ago' },
             { n: 'Liam C.', c: 'London', i: 'L', action: 'enrolled on global track', time: '5 mins ago' }
@@ -4548,40 +4525,57 @@
     function initCalc() {
         var expR = document.getElementById('exp-r'), expV = document.getElementById('exp-v');
         var salR = document.getElementById('sal-r'), salV = document.getElementById('sal-v');
-        var trkR = document.getElementById('trk-r'), trkV = document.getElementById('trk-v');
+        var salUnit = document.getElementById('sal-unit');
         var lo = document.getElementById('proj-low'), hi = document.getElementById('proj-high');
+        var loUnit = document.getElementById('proj-low-unit'), hiUnit = document.getElementById('proj-high-unit');
         var nowV = document.getElementById('bar-now-v'), futV = document.getElementById('bar-future-v');
+        var nowUnit = document.getElementById('bar-now-unit'), futUnit = document.getElementById('bar-future-unit');
         var nowB = document.getElementById('bar-now'), futB = document.getElementById('bar-future');
+        var maxCapL = 125;
 
         if (!expR) return;
 
+        function formatPackage(lakhs) {
+            if (lakhs >= 100) {
+                return { amount: (lakhs / 100).toFixed(2), unit: 'Cr' };
+            }
+            return { amount: lakhs.toFixed(1), unit: 'L' };
+        }
+
+        function setPackage(el, unitEl, lakhs) {
+            var f = formatPackage(lakhs);
+            if (el) el.textContent = f.amount;
+            if (unitEl) unitEl.textContent = f.unit;
+        }
+
         function recalc() {
-            var exp = parseFloat(expR.value), sal = parseFloat(salR.value), trk = trkR.value;
-            var mult = trk === 'oci-exa' ? 2.35 : 1.85;
-            var base = Math.max(sal * mult, 14);
-            var low = base + exp * 0.85, high = base + exp * 1.5 + 3.5;
+            var exp = parseFloat(expR.value), sal = parseFloat(salR.value);
+            var low = sal * (1.55 + exp * 0.04) + exp * 0.6;
+            var high = Math.min(sal * (2.05 + exp * 0.06) + exp * 1.1 + 2, maxCapL);
 
             expV.textContent = exp;
-            salV.textContent = sal.toFixed(1);
-            trkV.textContent = trk === 'oci-exa' ? 'GenAI + LLMOps' : 'GenAI Core Focus';
-            lo.textContent = low.toFixed(1);
-            hi.textContent = high.toFixed(1);
-            nowV.textContent = sal.toFixed(1);
+            setPackage(salV, salUnit, sal);
+            setPackage(lo, loUnit, low);
+            setPackage(hi, hiUnit, high);
+            setPackage(nowV, nowUnit, sal);
             var avg = (low + high) / 2;
-            futV.textContent = avg.toFixed(1);
-            var maxRange = 60;
-            if(nowB) nowB.style.width = Math.min(sal / maxRange * 100, 100) + '%';
-            if(futB) futB.style.width = Math.min(avg / maxRange * 100, 100) + '%';
+            setPackage(futV, futUnit, avg);
+            var maxRange = maxCapL;
+            if (nowB) nowB.style.width = Math.min(sal / maxRange * 100, 100) + '%';
+            if (futB) futB.style.width = Math.min(avg / maxRange * 100, 100) + '%';
         }
 
         expR.addEventListener('input', recalc);
         salR.addEventListener('input', recalc);
-        trkR.addEventListener('change', recalc);
         recalc();
     }
 
     function bootExaguruUI() {
         relocateFixedUI();
+        var pop = document.getElementById('applyPopup');
+        if (pop && !pop.classList.contains('active') && window.location.hash !== '#applyPopup') {
+            pop.style.display = 'none';
+        }
         initExaguruClickHandlers();
         initApplyPopupForm();
         bindStickyApplyButton();
