@@ -523,6 +523,194 @@
         letter-spacing: 0.4px;
     }
 
+    /* CUSTOM BREVO LEAD FORM (ExaGuru — no default Sib UI) */
+    .knorish-custom-page .exaguru-lead-form,
+    .exaguru-lead-form {
+        margin: 0;
+        text-align: left;
+    }
+
+    .exaguru-lead-form .exaguru-field {
+        margin-bottom: 16px;
+    }
+
+    .exaguru-lead-form .exaguru-field label {
+        display: block;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--ink2);
+        margin-bottom: 8px;
+        line-height: 1.35;
+    }
+
+    .exaguru-lead-form .exaguru-field label .req {
+        color: var(--red);
+        margin-left: 2px;
+    }
+
+    .exaguru-lead-form .exaguru-field input,
+    .exaguru-lead-form .exaguru-field select {
+        width: 100%;
+        background: var(--bg);
+        border: 1.5px solid var(--border);
+        border-radius: 10px;
+        padding: 14px 16px;
+        color: var(--ink);
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 16px;
+        margin-bottom: 0;
+        outline: none;
+        box-sizing: border-box;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+        -webkit-appearance: none;
+        appearance: none;
+    }
+
+    .exaguru-lead-form .exaguru-field input::placeholder {
+        color: var(--ink3);
+        opacity: 1;
+    }
+
+    .exaguru-lead-form .exaguru-field input:focus,
+    .exaguru-lead-form .exaguru-field select:focus {
+        border-color: var(--purple);
+        background: var(--white);
+        box-shadow: 0 0 0 3px rgba(91, 58, 247, 0.12);
+    }
+
+    .exaguru-lead-form .exaguru-field.is-invalid input,
+    .exaguru-lead-form .exaguru-field.is-invalid select {
+        border-color: var(--red);
+        box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+    }
+
+    .exaguru-lead-form .exaguru-field-error {
+        display: none;
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--red);
+        margin-top: 6px;
+        line-height: 1.4;
+    }
+
+    .exaguru-lead-form .exaguru-field.is-invalid .exaguru-field-error {
+        display: block;
+    }
+
+    .exaguru-lead-form .exaguru-phone-row {
+        display: flex;
+        gap: 10px;
+        align-items: stretch;
+    }
+
+    .exaguru-lead-form .exaguru-phone-row select {
+        width: 118px;
+        flex-shrink: 0;
+        padding-right: 8px;
+        font-size: 14px;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b6860' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        background-size: 14px;
+    }
+
+    .exaguru-lead-form .exaguru-phone-row input {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .exaguru-lead-form .exaguru-course-pill {
+        width: 100%;
+        margin-bottom: 16px;
+        padding: 12px 16px;
+        background: var(--purple-light);
+        border: 1.5px solid var(--purple-mid);
+        border-radius: 10px;
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--purple);
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .exaguru-lead-form .exaguru-form-alert {
+        display: none;
+        padding: 12px 14px;
+        border-radius: 10px;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 1.45;
+        margin-bottom: 14px;
+    }
+
+    .exaguru-lead-form .exaguru-form-alert.is-error {
+        display: block;
+        background: #fef2f2;
+        border: 1px solid #fecaca;
+        color: #991b1b;
+    }
+
+    .exaguru-lead-form .exaguru-form-alert.is-success {
+        display: block;
+        background: #ecfdf5;
+        border: 1px solid #a7f3d0;
+        color: #065f46;
+    }
+
+    .exaguru-lead-form .cta-btn {
+        margin-top: 4px;
+    }
+
+    .exaguru-lead-form .cta-btn:disabled {
+        opacity: 0.72;
+        cursor: not-allowed;
+        transform: none !important;
+    }
+
+    .exaguru-lead-form .cta-btn.is-loading {
+        position: relative;
+        color: transparent !important;
+        pointer-events: none;
+    }
+
+    .exaguru-lead-form .cta-btn.is-loading::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        width: 22px;
+        height: 22px;
+        border: 2px solid rgba(255, 255, 255, 0.35);
+        border-top-color: #fff;
+        border-radius: 50%;
+        animation: exaguruSpin 0.65s linear infinite;
+    }
+
+    @keyframes exaguruSpin {
+        to { transform: rotate(360deg); }
+    }
+
+    .exaguru-honeypot {
+        position: absolute !important;
+        left: -9999px !important;
+        width: 1px !important;
+        height: 1px !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+        overflow: hidden !important;
+    }
+
+    @media (max-width: 540px) {
+        .exaguru-lead-form .exaguru-phone-row {
+            flex-direction: column;
+        }
+
+        .exaguru-lead-form .exaguru-phone-row select {
+            width: 100%;
+        }
+    }
+
     /* SCALED COUNTDOWN TRACKS */
     .knorish-custom-page .countdown-section {
         background: linear-gradient(135deg, #1a0a4a 0%, #2d1278 50%, #1a0a4a 100%);
@@ -3380,7 +3568,7 @@
 </head>
 <body>
 
-<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(formSubmitted) { window.location = 'https://www.exaguru.com/page/exadata-thank-you-page'; }"></iframe>
+<iframe name="hidden_iframe" id="hidden_iframe" title="Form submission" style="display:none;width:0;height:0;border:0;" tabindex="-1" aria-hidden="true"></iframe>
 
 <div class="knorish-custom-page">
 
@@ -3443,32 +3631,48 @@
         <div class="form-card">
             <h3>Enroll in Spring Cohort</h3>
             <p class="form-sub">Takes only 2 minutes · Confirmed within 24 hours</p>
-            <form id="sib-form" method="POST" action="https://4feac7ff.sibforms.com/serve/MUIFAIBxCOSoLw4jno6uP5f4YeuhDUqmKDyFVsDBi1RRtfOOLtOigIINLA_Z8OecFC8kRGp9vAH4HQJk9KaswHdeeoF3DyuLn46Ttr_HNvo12vcpaHunaIeVjkZLpYEtcoEQf4sphY3iAnaOVHWDmtlQraD6xqLQ1hJLQn7qKnMIyOlmE3DYtclZ3pGvXvMgv6pV72bjlu67LtZnGQ==" target="hidden_iframe" onsubmit="formSubmitted=true; this.querySelector('button').innerText='Processing Allocation...';">
-
-                <input type="text" name="email_address_check" value="" style="display:none;">
+            <form id="sib-form" class="exaguru-lead-form" data-exaguru-lead-form novalidate>
+                <div class="exaguru-honeypot" aria-hidden="true">
+                    <label for="hero-hp">Leave blank</label>
+                    <input type="text" id="hero-hp" name="email_address_check" value="" tabindex="-1" autocomplete="off">
+                </div>
                 <input type="hidden" name="locale" value="en">
                 <input type="hidden" name="html_type" value="simple">
 
-                <input type="text" name="FIRSTNAME" placeholder="Full Name" required autocomplete="name">
-                <input type="email" name="EMAIL" placeholder="Email Address" required autocomplete="email">
+                <div class="exaguru-form-alert" data-form-alert role="alert"></div>
 
-                <div class="form-phone-row" style="display: flex; gap: 10px; margin-bottom: 16px;">
-                    <select name="SMS__COUNTRY_CODE" required aria-label="Country Code Select">
-                        <option value="+91" selected>+91 IN</option>
-                        <option value="+1">+1 US</option>
-                        <option value="+44">+44 GB</option>
-                        <option value="+971">+971 AE</option>
-                        <option value="+65">+65 SG</option>
-                        <option value="+61">+61 AU</option>
-                    </select>
-                    <input type="tel" name="SMS" placeholder="Phone Number" required style="flex: 1; margin-bottom: 0;" autocomplete="tel">
+                <div class="exaguru-field" data-field="FIRSTNAME">
+                    <label for="hero-firstname">Full Name <span class="req" aria-hidden="true">*</span></label>
+                    <input type="text" id="hero-firstname" name="FIRSTNAME" maxlength="200" placeholder="Your full name" autocomplete="name" required>
+                    <span class="exaguru-field-error" data-field-error></span>
                 </div>
 
-                <input type="hidden" name="TRACK" value="Data Science &amp; Generative AI">
-                <div style="width:100%;margin-bottom:16px;padding:14px 16px;background:var(--purple-light);border:1.5px solid var(--purple-mid);border-radius:10px;font-size:15px;font-weight:700;color:var(--purple);text-align:center;">Data Science &amp; Generative AI</div>
+                <div class="exaguru-field" data-field="EMAIL">
+                    <label for="hero-email">Email <span class="req" aria-hidden="true">*</span></label>
+                    <input type="email" id="hero-email" name="EMAIL" placeholder="you@company.com" autocomplete="email" required>
+                    <span class="exaguru-field-error" data-field-error></span>
+                </div>
 
-                <button class="cta-btn" type="submit">Submit Enrolment Application →</button>
-                <div class="form-tos">By enrolling you agree to be contacted about this cohort. No spam.</div>
+                <div class="exaguru-field" data-field="SMS">
+                    <label for="hero-phone">Phone Number <span class="req" aria-hidden="true">*</span></label>
+                    <div class="exaguru-phone-row">
+                        <select id="hero-country" name="SMS__COUNTRY_CODE" required aria-label="Country code">
+                            <option value="+91" selected>+91 IN</option>
+                            <option value="+1">+1 US</option>
+                            <option value="+44">+44 GB</option>
+                            <option value="+971">+971 AE</option>
+                            <option value="+65">+65 SG</option>
+                            <option value="+61">+61 AU</option>
+                        </select>
+                        <input type="tel" id="hero-phone" name="SMS" inputmode="tel" placeholder="Phone number" autocomplete="tel" required>
+                    </div>
+                    <span class="exaguru-field-error" data-field-error></span>
+                </div>
+
+                <div class="exaguru-course-pill" aria-hidden="true">Data Science &amp; Generative AI</div>
+
+                <button class="cta-btn" type="submit">Enroll Now</button>
+                <div class="form-tos">By enrolling you agree to be contacted about this program. No spam.</div>
             </form>
         </div>
     </div>
@@ -4223,26 +4427,47 @@
             <span class="apply-popup-seats">⚡ 16 of 30 allocations left</span>
         </div>
         <div class="apply-popup-body">
-            <form id="sib-form-popup" class="exaguru-popup-form" method="POST" action="https://4feac7ff.sibforms.com/serve/MUIFAIBxCOSoLw4jno6uP5f4YeuhDUqmKDyFVsDBi1RRtfOOLtOigIINLA_Z8OecFC8kRGp9vAH4HQJk9KaswHdeeoF3DyuLn46Ttr_HNvo12vcpaHunaIeVjkZLpYEtcoEQf4sphY3iAnaOVHWDmtlQraD6xqLQ1hJLQn7qKnMIyOlmE3DYtclZ3pGvXvMgv6pV72bjlu67LtZnGQ==" target="hidden_iframe">
-                <input type="text" name="email_address_check" value="" style="display:none;">
+            <form id="sib-form-popup" class="exaguru-lead-form exaguru-popup-form" data-exaguru-lead-form novalidate>
+                <div class="exaguru-honeypot" aria-hidden="true">
+                    <label for="popup-hp">Leave blank</label>
+                    <input type="text" id="popup-hp" name="email_address_check" value="" tabindex="-1" autocomplete="off">
+                </div>
                 <input type="hidden" name="locale" value="en">
                 <input type="hidden" name="html_type" value="simple">
-                <input type="text" name="FIRSTNAME" placeholder="Full Name" required autocomplete="name">
-                <input type="email" name="EMAIL" placeholder="Email Address" required autocomplete="email">
-                <div class="form-phone-row">
-                    <select name="SMS__COUNTRY_CODE" required aria-label="Country select code">
-                        <option value="+91" selected>+91 IN</option>
-                        <option value="+1">+1 US</option>
-                        <option value="+44">+44 GB</option>
-                        <option value="+971">+971 AE</option>
-                        <option value="+65">+65 SG</option>
-                    </select>
-                    <input type="tel" name="SMS" placeholder="Phone Number" required autocomplete="tel">
+
+                <div class="exaguru-form-alert" data-form-alert role="alert"></div>
+
+                <div class="exaguru-field" data-field="FIRSTNAME">
+                    <label for="popup-firstname">Full Name <span class="req" aria-hidden="true">*</span></label>
+                    <input type="text" id="popup-firstname" name="FIRSTNAME" maxlength="200" placeholder="Your full name" autocomplete="name" required>
+                    <span class="exaguru-field-error" data-field-error></span>
                 </div>
-                <input type="hidden" name="TRACK" value="Data Science &amp; Generative AI">
-                <div style="width:100%;margin-bottom:14px;padding:14px 16px;background:var(--purple-light);border:1.5px solid var(--purple-mid);border-radius:10px;font-size:15px;font-weight:700;color:var(--purple);text-align:center;">Data Science &amp; Generative AI</div>
-                <button class="cta-btn" type="submit">Complete Enrolment Application →</button>
-                <div class="form-tos">Secure validation checks processed directly by ExaGuru core registries.</div>
+
+                <div class="exaguru-field" data-field="EMAIL">
+                    <label for="popup-email">Email <span class="req" aria-hidden="true">*</span></label>
+                    <input type="email" id="popup-email" name="EMAIL" placeholder="you@company.com" autocomplete="email" required>
+                    <span class="exaguru-field-error" data-field-error></span>
+                </div>
+
+                <div class="exaguru-field" data-field="SMS">
+                    <label for="popup-phone">Phone Number <span class="req" aria-hidden="true">*</span></label>
+                    <div class="exaguru-phone-row">
+                        <select id="popup-country" name="SMS__COUNTRY_CODE" required aria-label="Country code">
+                            <option value="+91" selected>+91 IN</option>
+                            <option value="+1">+1 US</option>
+                            <option value="+44">+44 GB</option>
+                            <option value="+971">+971 AE</option>
+                            <option value="+65">+65 SG</option>
+                        </select>
+                        <input type="tel" id="popup-phone" name="SMS" inputmode="tel" placeholder="Phone number" autocomplete="tel" required>
+                    </div>
+                    <span class="exaguru-field-error" data-field-error></span>
+                </div>
+
+                <div class="exaguru-course-pill" aria-hidden="true">Data Science &amp; Generative AI</div>
+
+                <button class="cta-btn" type="submit">Enroll Now</button>
+                <div class="form-tos">Secure enrollment · We respond within 24 hours.</div>
             </form>
         </div>
     </div>
@@ -4258,8 +4483,10 @@
 </div>
 
 <script>
-    var formSubmitted = false;
-    var EXAGURU_FORM_ACTION = 'https://4feac7ff.sibforms.com/serve/MUIFAIBxCOSoLw4jno6uP5f4YeuhDUqmKDyFVsDBi1RRtfOOLtOigIINLA_Z8OecFC8kRGp9vAH4HQJk9KaswHdeeoF3DyuLn46Ttr_HNvo12vcpaHunaIeVjkZLpYEtcoEQf4sphY3iAnaOVHWDmtlQraD6xqLQ1hJLQn7qKnMIyOlmE3DYtclZ3pGvXvMgv6pV72bjlu67LtZnGQ==';
+    var EXAGURU_BREVO_ACTION = 'https://4feac7ff.sibforms.com/serve/MUIFAKt_Q_hvoUqZ89HU3rkkS5-cuNnqgsbKQ4EKPfLXhekTxUkLcIXHCjnPeMFZ1-6cvgSi65gcWlirwXgFTlM1FG0ezgh-h7uJPNz13Vw8uPMzqRyAvS3jyIZkumUpMppLdWOqehK6tIeV--IVhjTyZEhEwgmFbRGxnzZNpmvtZfbgMyJUfluNiklVqVCaHXWUNMsYAnLLkVX-zw==';
+    var EXAGURU_THANK_YOU_URL = 'https://www.exaguru.com/page/genai-thank-you-page';
+    var EXAGURU_FORM_MIN_MS = 2500;
+    var exaguruLeadFormMountedAt = Date.now();
 
     /* CROSS-ORIGIN SANDBOX INFRASTRUCTURE DELEGATE */
     function exaguruScrollBodyLock(lock) {
@@ -4284,15 +4511,192 @@
         if (a) a.classList.toggle('open');
     }
 
-    function initApplyPopupForm() {
-        var popupForm = document.getElementById('sib-form-popup');
-        if (!popupForm || popupForm.getAttribute('data-ready') === '1') return;
-        popupForm.addEventListener('submit', function () {
-            formSubmitted = true;
-            var b = popupForm.querySelector('button[type="submit"]');
-            if (b) { b.innerText = 'Processing Allocation...'; b.disabled = true; }
+    function exaguruRedirectThankYou() {
+        window.location.href = EXAGURU_THANK_YOU_URL;
+    }
+
+    function exaguruDigitsOnly(str) {
+        return (str || '').replace(/\D/g, '');
+    }
+
+    function exaguruValidateLeadForm(form) {
+        var ok = true;
+        var nameEl = form.querySelector('[name="FIRSTNAME"]');
+        var emailEl = form.querySelector('[name="EMAIL"]');
+        var phoneEl = form.querySelector('[name="SMS"]');
+        var countryEl = form.querySelector('[name="SMS__COUNTRY_CODE"]');
+        var hp = form.querySelector('[name="email_address_check"]');
+
+        function setErr(fieldKey, message) {
+            var wrap = form.querySelector('[data-field="' + fieldKey + '"]');
+            if (!wrap) return;
+            var err = wrap.querySelector('[data-field-error]');
+            wrap.classList.toggle('is-invalid', !!message);
+            if (err) err.textContent = message || '';
+            if (message) ok = false;
+        }
+
+        setErr('FIRSTNAME', '');
+        setErr('EMAIL', '');
+        setErr('SMS', '');
+
+        if (hp && hp.value.trim() !== '') {
+            return false;
+        }
+
+        var name = (nameEl && nameEl.value || '').trim();
+        if (name.length < 2) {
+            setErr('FIRSTNAME', 'Please enter your full name (at least 2 characters).');
+        } else if (/[<>@]/.test(name) || /^\d+$/.test(name)) {
+            setErr('FIRSTNAME', 'Please enter a valid name.');
+        }
+
+        var email = (emailEl && emailEl.value || '').trim();
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(email)) {
+            setErr('EMAIL', 'Please enter a valid email address.');
+        }
+
+        var phone = exaguruDigitsOnly(phoneEl && phoneEl.value);
+        var cc = countryEl ? countryEl.value : '+91';
+        if (phone.length < 6 || phone.length > 15) {
+            setErr('SMS', 'Enter a valid phone number (6–15 digits).');
+        } else if (cc === '+91' && phone.length !== 10) {
+            setErr('SMS', 'Indian numbers must be 10 digits (without country code).');
+        }
+
+        return ok;
+    }
+
+    function exaguruSetFormAlert(form, type, message) {
+        var alert = form.querySelector('[data-form-alert]');
+        if (!alert) return;
+        alert.className = 'exaguru-form-alert' + (type ? ' is-' + type : '');
+        alert.textContent = message || '';
+        if (!message) alert.style.display = 'none';
+        else alert.style.display = 'block';
+    }
+
+    function exaguruSetSubmitLoading(form, loading) {
+        var btn = form.querySelector('button[type="submit"]');
+        if (!btn) return;
+        btn.disabled = !!loading;
+        btn.classList.toggle('is-loading', !!loading);
+        if (!loading) btn.textContent = 'Enroll Now';
+    }
+
+    function exaguruBuildBrevoFormData(form) {
+        var fd = new FormData();
+        fd.append('email_address_check', '');
+        fd.append('locale', 'en');
+        fd.append('html_type', 'simple');
+        fd.append('FIRSTNAME', form.querySelector('[name="FIRSTNAME"]').value.trim());
+        fd.append('EMAIL', form.querySelector('[name="EMAIL"]').value.trim());
+        fd.append('SMS__COUNTRY_CODE', form.querySelector('[name="SMS__COUNTRY_CODE"]').value);
+        fd.append('SMS', exaguruDigitsOnly(form.querySelector('[name="SMS"]').value));
+        return fd;
+    }
+
+    function exaguruSubmitViaIframe(formData, onDone) {
+        var iframe = document.getElementById('hidden_iframe');
+        if (!iframe) {
+            onDone(false);
+            return;
+        }
+        var done = false;
+        function finish(success) {
+            if (done) return;
+            done = true;
+            iframe.removeEventListener('load', onLoad);
+            onDone(success);
+        }
+        function onLoad() {
+            finish(true);
+        }
+        iframe.addEventListener('load', onLoad);
+        var temp = document.createElement('form');
+        temp.method = 'POST';
+        temp.action = EXAGURU_BREVO_ACTION;
+        temp.target = 'hidden_iframe';
+        temp.style.display = 'none';
+        formData.forEach(function (value, key) {
+            var input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = key;
+            input.value = value;
+            temp.appendChild(input);
         });
-        popupForm.setAttribute('data-ready', '1');
+        document.body.appendChild(temp);
+        temp.submit();
+        setTimeout(function () {
+            temp.remove();
+            finish(true);
+        }, 3500);
+    }
+
+    function exaguruSubmitLeadForm(form) {
+        if (!exaguruValidateLeadForm(form)) {
+            exaguruSetFormAlert(form, 'error', 'Please fix the highlighted fields and try again.');
+            var firstInvalid = form.querySelector('.exaguru-field.is-invalid input, .exaguru-field.is-invalid select');
+            if (firstInvalid) firstInvalid.focus();
+            return;
+        }
+
+        if (Date.now() - exaguruLeadFormMountedAt < EXAGURU_FORM_MIN_MS) {
+            exaguruSetFormAlert(form, 'error', 'Please wait a moment before submitting.');
+            return;
+        }
+
+        exaguruSetFormAlert(form, '', '');
+        exaguruSetSubmitLoading(form, true);
+
+        var formData = exaguruBuildBrevoFormData(form);
+
+        fetch(EXAGURU_BREVO_ACTION, {
+            method: 'POST',
+            body: formData,
+            mode: 'no-cors',
+            credentials: 'omit'
+        }).then(function () {
+            exaguruRedirectThankYou();
+        }).catch(function () {
+            exaguruSubmitViaIframe(formData, function (ok) {
+                if (ok) exaguruRedirectThankYou();
+                else {
+                    exaguruSetSubmitLoading(form, false);
+                    exaguruSetFormAlert(form, 'error', 'Something went wrong. Please try again or email support@exaguru.com.');
+                }
+            });
+        });
+    }
+
+    function initExaguruLeadForms() {
+        var forms = document.querySelectorAll('[data-exaguru-lead-form]');
+        forms.forEach(function (form) {
+            if (form.getAttribute('data-lead-ready') === '1') return;
+            form.setAttribute('data-lead-ready', '1');
+            form.setAttribute('action', EXAGURU_BREVO_ACTION);
+            form.setAttribute('method', 'POST');
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                exaguruSubmitLeadForm(form);
+            });
+
+            form.querySelectorAll('input, select').forEach(function (el) {
+                el.addEventListener('input', function () {
+                    var wrap = el.closest('.exaguru-field');
+                    if (wrap) wrap.classList.remove('is-invalid');
+                    exaguruSetFormAlert(form, '', '');
+                });
+                el.addEventListener('blur', function () {
+                    exaguruValidateLeadForm(form);
+                });
+            });
+        });
+    }
+
+    function initApplyPopupForm() {
+        initExaguruLeadForms();
     }
 
     function bindStickyApplyButton() {
@@ -4577,7 +4981,7 @@
             pop.style.display = 'none';
         }
         initExaguruClickHandlers();
-        initApplyPopupForm();
+        initExaguruLeadForms();
         bindStickyApplyButton();
         initCountdown();
         initLivePing();
