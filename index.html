@@ -660,6 +660,9 @@
 
     .exaguru-lead-form .cta-btn {
         margin-top: 4px;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+        cursor: pointer;
     }
 
     .exaguru-lead-form .cta-btn:disabled {
@@ -4485,8 +4488,9 @@
 <script>
     var EXAGURU_BREVO_ACTION = 'https://4feac7ff.sibforms.com/serve/MUIFAKt_Q_hvoUqZ89HU3rkkS5-cuNnqgsbKQ4EKPfLXhekTxUkLcIXHCjnPeMFZ1-6cvgSi65gcWlirwXgFTlM1FG0ezgh-h7uJPNz13Vw8uPMzqRyAvS3jyIZkumUpMppLdWOqehK6tIeV--IVhjTyZEhEwgmFbRGxnzZNpmvtZfbgMyJUfluNiklVqVCaHXWUNMsYAnLLkVX-zw==';
     var EXAGURU_THANK_YOU_URL = 'https://www.exaguru.com/page/genai-thank-you-page';
-    var EXAGURU_FORM_MIN_MS = 2500;
+    var EXAGURU_FORM_MIN_MS = 800;
     var exaguruLeadFormMountedAt = Date.now();
+    var exaguruSubmitInFlight = false;
 
     /* CROSS-ORIGIN SANDBOX INFRASTRUCTURE DELEGATE */
     function exaguruScrollBodyLock(lock) {
@@ -4512,7 +4516,30 @@
     }
 
     function exaguruRedirectThankYou() {
+        try {
+            if (window.top && window.top !== window) {
+                window.top.location.href = EXAGURU_THANK_YOU_URL;
+                return;
+            }
+        } catch (err) {}
         window.location.href = EXAGURU_THANK_YOU_URL;
+    }
+
+    function exaguruEnsureSubmitIframe() {
+        var iframe = document.getElementById('hidden_iframe');
+        if (!iframe) {
+            iframe = document.createElement('iframe');
+            iframe.id = 'hidden_iframe';
+            iframe.name = 'hidden_iframe';
+            iframe.title = 'Form submission';
+            iframe.setAttribute('aria-hidden', 'true');
+            iframe.tabIndex = -1;
+            iframe.style.cssText = 'display:none;width:0;height:0;border:0;visibility:hidden;';
+            (document.body || document.documentElement).appendChild(iframe);
+        } else if (iframe.name !== 'hidden_iframe') {
+            iframe.name = 'hidden_iframe';
+        }
+        return iframe;
     }
 
     function exaguruDigitsOnly(str) {
@@ -4584,56 +4611,9 @@
         if (!loading) btn.textContent = 'Enroll Now';
     }
 
-    function exaguruBuildBrevoFormData(form) {
-        var fd = new FormData();
-        fd.append('email_address_check', '');
-        fd.append('locale', 'en');
-        fd.append('html_type', 'simple');
-        fd.append('FIRSTNAME', form.querySelector('[name="FIRSTNAME"]').value.trim());
-        fd.append('EMAIL', form.querySelector('[name="EMAIL"]').value.trim());
-        fd.append('SMS__COUNTRY_CODE', form.querySelector('[name="SMS__COUNTRY_CODE"]').value);
-        fd.append('SMS', exaguruDigitsOnly(form.querySelector('[name="SMS"]').value));
-        return fd;
-    }
-
-    function exaguruSubmitViaIframe(formData, onDone) {
-        var iframe = document.getElementById('hidden_iframe');
-        if (!iframe) {
-            onDone(false);
-            return;
-        }
-        var done = false;
-        function finish(success) {
-            if (done) return;
-            done = true;
-            iframe.removeEventListener('load', onLoad);
-            onDone(success);
-        }
-        function onLoad() {
-            finish(true);
-        }
-        iframe.addEventListener('load', onLoad);
-        var temp = document.createElement('form');
-        temp.method = 'POST';
-        temp.action = EXAGURU_BREVO_ACTION;
-        temp.target = 'hidden_iframe';
-        temp.style.display = 'none';
-        formData.forEach(function (value, key) {
-            var input = document.createElement('input');
-            input.type = 'hidden';
-            input.name = key;
-            input.value = value;
-            temp.appendChild(input);
-        });
-        document.body.appendChild(temp);
-        temp.submit();
-        setTimeout(function () {
-            temp.remove();
-            finish(true);
-        }, 3500);
-    }
-
     function exaguruSubmitLeadForm(form) {
+        if (exaguruSubmitInFlight || form.getAttribute('data-submitting') === '1') return;
+
         if (!exaguruValidateLeadForm(form)) {
             exaguruSetFormAlert(form, 'error', 'Please fix the highlighted fields and try again.');
             var firstInvalid = form.querySelector('.exaguru-field.is-invalid input, .exaguru-field.is-invalid select');
@@ -4646,27 +4626,51 @@
             return;
         }
 
+        exaguruSubmitInFlight = true;
+        form.setAttribute('data-submitting', '1');
         exaguruSetFormAlert(form, '', '');
         exaguruSetSubmitLoading(form, true);
 
-        var formData = exaguruBuildBrevoFormData(form);
+        var phoneEl = form.querySelector('[name="SMS"]');
+        if (phoneEl) phoneEl.value = exaguruDigitsOnly(phoneEl.value);
 
-        fetch(EXAGURU_BREVO_ACTION, {
-            method: 'POST',
-            body: formData,
-            mode: 'no-cors',
-            credentials: 'omit'
-        }).then(function () {
+        var hp = form.querySelector('[name="email_address_check"]');
+        if (hp) hp.value = '';
+
+        var iframe = exaguruEnsureSubmitIframe();
+        var redirected = false;
+
+        function redirect() {
+            if (redirected) return;
+            redirected = true;
+            iframe.removeEventListener('load', onIframeLoad);
+            form.removeAttribute('data-submitting');
             exaguruRedirectThankYou();
-        }).catch(function () {
-            exaguruSubmitViaIframe(formData, function (ok) {
-                if (ok) exaguruRedirectThankYou();
-                else {
-                    exaguruSetSubmitLoading(form, false);
-                    exaguruSetFormAlert(form, 'error', 'Something went wrong. Please try again or email support@exaguru.com.');
-                }
-            });
-        });
+        }
+
+        function onIframeLoad() {
+            setTimeout(redirect, 350);
+        }
+
+        iframe.addEventListener('load', onIframeLoad);
+        window.setTimeout(redirect, 2800);
+
+        form.setAttribute('action', EXAGURU_BREVO_ACTION);
+        form.setAttribute('method', 'POST');
+        form.setAttribute('target', 'hidden_iframe');
+
+        try {
+            if (typeof HTMLFormElement !== 'undefined' && HTMLFormElement.prototype.submit) {
+                HTMLFormElement.prototype.submit.call(form);
+            } else {
+                form.submit();
+            }
+        } catch (err) {
+            exaguruSubmitInFlight = false;
+            form.removeAttribute('data-submitting');
+            exaguruSetSubmitLoading(form, false);
+            exaguruSetFormAlert(form, 'error', 'Could not submit. Please try again or email support@exaguru.com.');
+        }
     }
 
     function initExaguruLeadForms() {
@@ -4679,8 +4683,18 @@
 
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
+                e.stopPropagation();
                 exaguruSubmitLeadForm(form);
             });
+
+            var submitBtn = form.querySelector('button[type="submit"]');
+            if (submitBtn) {
+                submitBtn.addEventListener('touchend', function (e) {
+                    if (form.getAttribute('data-submitting') === '1') return;
+                    e.preventDefault();
+                    exaguruSubmitLeadForm(form);
+                }, { passive: false });
+            }
 
             form.querySelectorAll('input, select').forEach(function (el) {
                 el.addEventListener('input', function () {
@@ -4916,7 +4930,8 @@
     function relocateFixedUI() {
         var root = getExaguruMountRoot();
         if (!root) return;
-        ['applyPopup', 'videoModal', 'hidden_iframe', 'live-ping', 'exaguru-sticky-bar'].forEach(function (id) {
+        /* hidden_iframe must stay in the same document as the form (target= name lookup) */
+        ['applyPopup', 'videoModal', 'live-ping', 'exaguru-sticky-bar'].forEach(function (id) {
             var el = document.getElementById(id);
             if (el && el.parentNode !== root) root.appendChild(el);
         });
@@ -4975,6 +4990,7 @@
     }
 
     function bootExaguruUI() {
+        exaguruEnsureSubmitIframe();
         relocateFixedUI();
         var pop = document.getElementById('applyPopup');
         if (pop && !pop.classList.contains('active') && window.location.hash !== '#applyPopup') {
