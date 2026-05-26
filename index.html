@@ -1,0 +1,4627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Become the Generative AI Engineer Companies Fight to Hire | ExaGuru</title>
+<meta name="description" content="Live 24-week Generative AI engineering cohort. Build neural nets in NumPy. GPT from scratch in PyTorch. RAG, agents, fine-tuning, LLMOps — all open-source. 16 capstones. For engineers serious about shipping AI.">
+<meta name="keywords" content="Generative AI Course, AI Engineer Training, LLMOps, RAG, LangGraph, PyTorch, Fine-Tuning, Unsloth, Vector Search, Multi-Agent Systems, Open-Source AI">
+
+<meta property="og:title" content="Become the Generative AI Engineer Companies Fight to Hire">
+<meta property="og:description" content="24-week build-from-scratch GenAI cohort. Open-source first. 16 capstones. RAG, agents, LLMOps, multi-modal.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,300&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+    /* GLOBAL RESET & PARAMETERS (OLD PAGE DESIGN SYSTEM RE-AUDITED) */
+    :root {
+        --white: #ffffff;
+        --bg: #f8f7f4;
+        --bg2: #f2f0ec;
+        --ink: #0f0e0c;
+        --ink2: #3a3835;
+        --ink3: #6b6860;
+        --purple: #5b3af7;
+        --purple-light: #ede9ff;
+        --purple-mid: #c4b5fd;
+        --purple-dark: #2d1278;
+        --yellow: #f5c842;
+        --yellow-light: #fffbeb;
+        --yellow-dark: #b45309;
+        --green: #059669;
+        --red: #dc2626;
+        --border: #e5e3de;
+        --border2: #d4d1ca;
+        --shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05);
+        --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1), 0 1px 4px rgba(0, 0, 0, 0.06);
+        --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
+        --radius: 12px;
+        --radius-lg: 20px;
+    }
+
+    html {
+        overflow-x: clip;
+        -webkit-text-size-adjust: 100%;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        max-width: 100%;
+        background-color: var(--bg);
+        overflow-x: clip;
+        scroll-behavior: smooth;
+        box-sizing: border-box;
+    }
+
+    *, *::before, *::after {
+        box-sizing: inherit;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* KNORISH ENCAPSULATION WRAPPER - Prevents parent template rule bleed */
+    .knorish-custom-page {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        display: block;
+        overflow: visible;
+        padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+        font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.65;
+        position: relative;
+    }
+
+    .knorish-custom-page h1,
+    .knorish-custom-page h2,
+    .knorish-custom-page h3 {
+        font-family: 'Fraunces', Georgia, serif;
+        line-height: 1.15;
+        margin-top: 0;
+        text-wrap: balance;
+    }
+
+    .knorish-custom-page a {
+        text-decoration: none;
+        color: inherit;
+        touch-action: manipulation;
+    }
+
+    .knorish-custom-page img,
+    .knorish-custom-page iframe {
+        max-width: 100%;
+        border: none;
+        display: block;
+    }
+
+    /* NAVIGATION SCHEMAS */
+    .knorish-custom-page .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .knorish-custom-page .nav-links a {
+        color: var(--ink2);
+        transition: color 0.2s ease;
+    }
+
+    .knorish-custom-page .nav-links a:hover {
+        color: var(--purple);
+    }
+
+    @media(max-width: 880px) {
+        .knorish-custom-page .nav-links {
+            display: none;
+        }
+    }
+
+    /* INLINE METRIC BADGES */
+    .knorish-custom-page .hero-counter {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 8px 16px;
+        border: 1px solid var(--border);
+        border-radius: 100px;
+        background: var(--white);
+        box-shadow: var(--shadow);
+        margin-left: 12px;
+        vertical-align: middle;
+    }
+
+    .knorish-custom-page .hero-counter .num {
+        font-family: 'Fraunces', serif;
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--ink);
+        line-height: 1;
+    }
+
+    .knorish-custom-page .hero-counter .lbl {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 9px;
+        letter-spacing: 1px;
+        color: var(--ink3);
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    @media(max-width: 480px) {
+        .knorish-custom-page .hero-counter {
+            display: none;
+        }
+    }
+
+    /* INTERACTIVE CONTROL ACCESSORIES */
+    .knorish-custom-page .hero-secondary {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: transparent;
+        color: var(--ink);
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 12px 22px;
+        border: 1.5px solid var(--border2);
+        border-radius: 100px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        margin-top: 12px;
+        margin-bottom: 24px;
+        touch-action: manipulation;
+    }
+
+    .knorish-custom-page .hero-secondary:hover {
+        background: var(--ink);
+        color: #fff;
+        border-color: var(--ink);
+    }
+
+    .knorish-custom-page .hero-secondary .play-ico {
+        width: 28px;
+        height: 28px;
+        background: var(--purple-light);
+        color: var(--purple);
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 11px;
+        padding-left: 2px;
+        transition: all 0.2s ease;
+    }
+
+    .knorish-custom-page .hero-secondary:hover .play-ico {
+        background: var(--purple);
+        color: #fff;
+    }
+
+    /* SYSTEM HEADER STRIPS */
+    .knorish-custom-page .top-strip {
+        background: var(--purple);
+        text-align: center;
+        padding: 10px 16px;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        color: #fff;
+        width: 100%;
+    }
+
+    .knorish-custom-page .top-strip span.pill {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 4px;
+        padding: 2px 8px;
+        margin-right: 8px;
+        font-size: 11px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        display: inline-block;
+    }
+
+    .knorish-custom-page .top-strip a {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+    }
+
+    .knorish-custom-page .nav {
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        padding: 14px 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        width: 100%;
+    }
+
+    .knorish-custom-page .nav-logo {
+        display: inline-flex;
+        align-items: center;
+        line-height: 1;
+        flex-shrink: 0;
+    }
+
+    .knorish-custom-page .nav-logo img {
+        height: auto;
+        max-height: 56px;
+        width: auto;
+        max-width: 160px;
+        object-fit: contain;
+        display: block;
+    }
+
+    @media(max-width: 600px) {
+        .knorish-custom-page .nav-logo img {
+            max-height: 44px;
+            max-width: 130px;
+        }
+    }
+
+    .knorish-custom-page .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .knorish-custom-page .nav-seats {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 12px;
+        color: var(--ink3);
+        white-space: nowrap;
+    }
+
+    .knorish-custom-page .nav-seats strong {
+        color: var(--red);
+        font-weight: 700;
+    }
+
+    .knorish-custom-page .nav-cta {
+        background: var(--purple);
+        color: #fff;
+        font-size: 13px;
+        font-weight: 700;
+        padding: 9px 20px;
+        border-radius: 8px;
+        cursor: pointer;
+        border: none;
+        letter-spacing: 0.3px;
+        transition: background 0.2s ease;
+        touch-action: manipulation;
+    }
+
+    .knorish-custom-page .nav-cta:hover {
+        background: #4a2ee6;
+    }
+
+    @media(max-width: 600px) {
+        .knorish-custom-page .nav-seats {
+            display: none;
+        }
+    }
+
+    /* HERO ARCHITECTURE */
+    .knorish-custom-page .hero {
+        background: var(--white);
+        padding: clamp(40px, 8vw, 72px) 20px clamp(40px, 8vw, 64px);
+        text-align: center;
+        position: relative;
+        width: 100%;
+    }
+
+    .knorish-custom-page .hero::before {
+        content: '';
+        position: absolute;
+        top: -120px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 800px;
+        height: 400px;
+        background: radial-gradient(ellipse, rgba(91, 58, 247, 0.06) 0%, transparent 70%);
+        pointer-events: none;
+    }
+
+    .knorish-custom-page .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--purple-light);
+        border: 1px solid var(--purple-mid);
+        border-radius: 100px;
+        padding: 6px 16px;
+        font-size: 12px;
+        font-weight: 800;
+        color: var(--purple);
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+        text-align: left;
+    }
+
+    .knorish-custom-page .hero-badge::before {
+        content: '';
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--red);
+        box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+        animation: liveBlink 1.6s ease-in-out infinite;
+    }
+
+    @keyframes liveBlink {
+        0%, 100% { opacity: 1; }
+        50% { opacity: .35; }
+    }
+
+    .knorish-custom-page .hero h1 {
+        font-size: clamp(30px, 6vw, 56px);
+        font-weight: 800;
+        color: var(--ink);
+        letter-spacing: -1px;
+        max-width: 900px;
+        margin: 0 auto 20px;
+        line-height: 1.2;
+    }
+
+    .knorish-custom-page .hero h1 em {
+        font-style: italic;
+        color: var(--purple);
+    }
+
+    .knorish-custom-page .hero-desc {
+        font-size: clamp(15px, 3vw, 17px);
+        color: var(--ink3);
+        max-width: 700px;
+        margin: 0 auto 36px;
+        line-height: 1.7;
+        padding: 0 10px;
+        text-wrap: pretty;
+    }
+
+    /* INTUITIVE PROOF METRIC GRIDS */
+    .knorish-custom-page .hero-trust {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+        max-width: 760px;
+        margin: 0 auto 40px;
+        padding: 0 8px;
+    }
+
+    .knorish-custom-page .hero-trust > div {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 16px 8px;
+        text-align: center;
+        box-shadow: var(--shadow);
+    }
+
+    .knorish-custom-page .hero-trust .v {
+        font-family: 'Fraunces', serif;
+        font-size: clamp(22px, 4.5vw, 36px);
+        font-weight: 700;
+        color: var(--ink);
+        line-height: 1;
+    }
+
+    .knorish-custom-page .hero-trust .k {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.8px;
+        color: var(--ink3);
+        text-transform: uppercase;
+        margin-top: 8px;
+        font-weight: 600;
+    }
+
+    @media(max-width: 600px) {
+        .knorish-custom-page .hero-trust {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+    }
+
+    /* LEAD CONVERSION FORMS */
+    .knorish-custom-page .form-card {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-lg);
+        padding: clamp(32px, 5vw, 40px) clamp(24px, 5vw, 32px);
+        max-width: 480px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: left;
+        position: relative;
+        z-index: 2;
+    }
+
+    .knorish-custom-page .form-card h3 {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 20px;
+        font-weight: 800;
+        color: var(--ink);
+        margin-bottom: 6px;
+    }
+
+    .knorish-custom-page .form-card .form-sub {
+        font-size: 13px;
+        color: var(--ink3);
+        margin-bottom: 24px;
+    }
+
+    .knorish-custom-page .form-card input,
+    .knorish-custom-page .form-card select {
+        width: 100%;
+        background: var(--bg);
+        border: 1.5px solid var(--border);
+        border-radius: 10px;
+        padding: 16px;
+        color: var(--ink);
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 16px;
+        margin-bottom: 16px;
+        outline: none;
+        transition: border 0.2s ease, box-shadow 0.2s ease;
+        -webkit-appearance: none;
+        appearance: none;
+    }
+
+    .knorish-custom-page .form-card input:focus,
+    .knorish-custom-page .form-card select:focus {
+        border-color: var(--purple);
+        box-shadow: 0 0 0 3px rgba(91, 58, 247, 0.1);
+    }
+
+    .knorish-custom-page .cta-btn {
+        width: 100%;
+        background: var(--purple);
+        color: #fff;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        padding: 16px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        letter-spacing: 0.3px;
+        box-shadow: 0 4px 14px rgba(91, 58, 247, 0.35);
+        text-align: center;
+        transition: all 0.2s ease;
+        margin-top: 8px;
+        touch-action: manipulation;
+    }
+
+    .knorish-custom-page .cta-btn:hover {
+        background: #4a2ee6;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(91, 58, 247, 0.4);
+    }
+
+    .knorish-custom-page .form-tos {
+        font-size: 11px;
+        color: var(--ink3);
+        text-align: center;
+        margin-top: 16px;
+        letter-spacing: 0.4px;
+    }
+
+    /* SCALED COUNTDOWN TRACKS */
+    .knorish-custom-page .countdown-section {
+        background: linear-gradient(135deg, #1a0a4a 0%, #2d1278 50%, #1a0a4a 100%);
+        padding: clamp(32px, 6vw, 48px) 20px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .knorish-custom-page .countdown-label {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.6);
+        margin-bottom: 20px;
+    }
+
+    .knorish-custom-page .countdown-digits {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: clamp(6px, 2vw, 16px);
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        padding: clamp(16px, 4vw, 24px);
+        width: 100%;
+        max-width: 480px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    .knorish-custom-page .digit-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: clamp(45px, 12vw, 70px);
+    }
+
+    .knorish-custom-page .digit-block .num {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: clamp(24px, 7vw, 40px);
+        font-weight: 600;
+        color: #fff;
+        line-height: 1;
+    }
+
+    .knorish-custom-page .digit-block .lbl {
+        font-size: clamp(9px, 2.5vw, 11px);
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.45);
+        margin-top: 6px;
+    }
+
+    .knorish-custom-page .digit-sep {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: clamp(20px, 5vw, 32px);
+        color: rgba(255, 255, 255, 0.3);
+        padding-bottom: clamp(12px, 3vw, 16px);
+    }
+
+    .knorish-custom-page .urgency {
+        background: var(--yellow-light);
+        border-top: 2px solid var(--yellow);
+        border-bottom: 2px solid var(--yellow);
+        padding: 16px 20px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .knorish-custom-page .urgency p {
+        font-size: clamp(14px, 3.5vw, 17px);
+        font-weight: 700;
+        color: var(--yellow-dark);
+        margin: 0;
+    }
+
+    /* SECTIONING SYSTEM */
+    .knorish-custom-page .section {
+        padding: clamp(48px, 8vw, 72px) 20px;
+        max-width: 1040px;
+        margin: 0 auto;
+        text-align: center;
+        width: 100%;
+    }
+
+    .knorish-custom-page .section-alt {
+        background: var(--bg2);
+        max-width: 100%;
+        padding: clamp(48px, 8vw, 72px) 20px;
+    }
+
+    .knorish-custom-page .section-alt-inner {
+        max-width: 1040px;
+        margin: 0 auto;
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: clamp(16px, 4vw, 20px);
+        padding-right: clamp(16px, 4vw, 20px);
+    }
+
+    .knorish-custom-page .section-left {
+        text-align: left;
+    }
+
+    .knorish-custom-page .section-label {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--purple);
+        margin-bottom: 12px;
+        display: block;
+        text-align: center;
+    }
+
+    .knorish-custom-page .section-title {
+        font-size: clamp(26px, 5vw, 40px);
+        letter-spacing: -1px;
+        margin-bottom: 16px;
+        color: var(--ink);
+        text-align: center;
+    }
+
+    .knorish-custom-page .section-title em {
+        font-style: italic;
+        color: var(--purple);
+    }
+
+    .knorish-custom-page .section-desc {
+        font-size: clamp(15px, 3vw, 16px);
+        color: var(--ink2);
+        max-width: 680px;
+        margin: 0 auto 40px;
+        line-height: 1.7;
+        text-align: center;
+        text-wrap: pretty;
+    }
+
+    /* PROBLEM COMPONENT INTERFACES */
+    .knorish-custom-page .problem-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+        margin-top: 32px;
+        margin-bottom: 32px;
+    }
+
+    .knorish-custom-page .problem-card {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: clamp(24px, 4vw, 32px);
+        box-shadow: var(--shadow);
+        text-align: center;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .knorish-custom-page .problem-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-md);
+    }
+
+    .knorish-custom-page .problem-stat {
+        font-family: 'Fraunces', serif;
+        font-size: clamp(48px, 9vw, 72px);
+        font-weight: 700;
+        line-height: 1;
+        background: linear-gradient(135deg, var(--purple) 0%, #9333ea 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 16px;
+    }
+
+    .knorish-custom-page .problem-card p {
+        font-size: 14px;
+        color: var(--ink2);
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    .knorish-custom-page .problem-card p strong {
+        color: var(--ink);
+        font-weight: 700;
+    }
+
+    .knorish-custom-page .problem-conclude {
+        max-width: 700px;
+        margin: 24px auto 0;
+        font-family: 'Fraunces', serif;
+        font-size: clamp(20px, 4vw, 28px);
+        font-weight: 600;
+        line-height: 1.4;
+        color: var(--ink);
+        text-align: center;
+    }
+
+    .knorish-custom-page .problem-conclude em {
+        font-style: italic;
+        color: var(--purple);
+    }
+
+    /* VIDEO PREVIEW CONTAINERS */
+    .knorish-custom-page .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-lg);
+        border: 1px solid var(--border);
+        background: #000;
+        margin: 0 auto;
+        max-width: 800px;
+        width: 100%;
+    }
+
+    .knorish-custom-page .video-wrapper iframe,
+    .knorish-custom-page .video-wrapper .video-placeholder {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .knorish-custom-page .video-placeholder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
+        text-align: center;
+        padding: 20px;
+        cursor: pointer;
+    }
+
+    .knorish-custom-page .play-btn {
+        width: 72px;
+        height: 72px;
+        background: var(--purple);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 24px;
+        margin-bottom: 16px;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+        box-shadow: 0 4px 20px rgba(91, 58, 247, 0.5);
+        padding-left: 6px;
+    }
+
+    .knorish-custom-page .play-btn:hover {
+        transform: scale(1.1);
+    }
+
+    /* FRAMEWORK GRIDS */
+    .knorish-custom-page .cards-3 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+        gap: 20px;
+        margin-top: 32px;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .knorish-custom-page .cards-2 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+        gap: 24px;
+        margin-top: 32px;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .knorish-custom-page .card {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: clamp(20px, 4vw, 24px);
+        box-shadow: var(--shadow);
+        text-align: left;
+        transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        height: 100%;
+        cursor: pointer;
+    }
+
+    .knorish-custom-page .card:hover,
+    .knorish-custom-page .card:focus-visible,
+    .knorish-custom-page .card.is-active {
+        background: var(--purple);
+        border-color: var(--purple);
+        box-shadow: 0 12px 32px rgba(91, 58, 247, 0.35);
+        transform: translateY(-4px);
+    }
+
+    .knorish-custom-page .card-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        background: var(--purple-light);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        margin-bottom: 20px;
+        transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .knorish-custom-page .card:hover .card-icon,
+    .knorish-custom-page .card:focus-visible .card-icon,
+    .knorish-custom-page .card.is-active .card-icon {
+        background: rgba(255, 255, 255, 0.18);
+    }
+
+    .knorish-custom-page .card h3 {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--ink);
+        margin-bottom: 10px;
+        transition: color 0.3s ease;
+    }
+
+    .knorish-custom-page .card p {
+        font-size: 15px;
+        color: var(--ink3);
+        line-height: 1.65;
+        margin-bottom: 0;
+        transition: color 0.3s ease;
+    }
+
+    .knorish-custom-page .card .card-label {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        color: var(--ink3);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 12px;
+        display: block;
+        transition: color 0.3s ease;
+    }
+
+    .knorish-custom-page .card:hover h3,
+    .knorish-custom-page .card:focus-visible h3,
+    .knorish-custom-page .card.is-active h3 {
+        color: #fff;
+    }
+
+    .knorish-custom-page .card:hover p,
+    .knorish-custom-page .card:focus-visible p,
+    .knorish-custom-page .card.is-active p,
+    .knorish-custom-page .card:hover .card-label,
+    .knorish-custom-page .card:focus-visible .card-label,
+    .knorish-custom-page .card.is-active .card-label {
+        color: rgba(255, 255, 255, 0.85);
+    }
+
+    .knorish-custom-page .card[style*="border-top"]:hover,
+    .knorish-custom-page .card[style*="border-top"]:focus-visible,
+    .knorish-custom-page .card[style*="border-top"].is-active {
+        border-top-width: 3px !important;
+    }
+
+    /* SALARY METRIC PLATES */
+    .knorish-custom-page .salary-banner {
+        background: linear-gradient(135deg, var(--purple-dark) 0%, var(--purple) 100%);
+        border-radius: var(--radius-lg);
+        padding: clamp(28px, 6vw, 56px) clamp(16px, 4vw, 40px);
+        margin: 40px auto 64px;
+        max-width: 100%;
+        text-align: center;
+        color: #fff;
+        box-shadow: var(--shadow-lg);
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .knorish-custom-page .salary-banner::before {
+        content: '💰';
+        position: absolute;
+        top: -30px;
+        left: -20px;
+        font-size: clamp(60px, 18vw, 120px);
+        opacity: 0.1;
+        transform: rotate(-15deg);
+        pointer-events: none;
+    }
+
+    .knorish-custom-page .salary-banner::after {
+        content: '🚀';
+        position: absolute;
+        bottom: -20px;
+        right: -10px;
+        font-size: clamp(50px, 15vw, 100px);
+        opacity: 0.1;
+        transform: rotate(15deg);
+        pointer-events: none;
+    }
+
+    .knorish-custom-page .salary-banner .salary-highlight {
+        font-family: 'Fraunces', serif;
+        font-size: clamp(32px, 8vw, 52px);
+        font-weight: 700;
+        color: var(--yellow);
+        line-height: 1.1;
+        margin: 8px 0 16px;
+        letter-spacing: -0.5px;
+    }
+
+    .knorish-custom-page .salary-banner .salary-subline {
+        font-size: clamp(13px, 3.2vw, 16px);
+        color: rgba(255, 255, 255, 0.75);
+        max-width: 520px;
+        margin: 0 auto 24px;
+        line-height: 1.5;
+    }
+
+    .knorish-custom-page .salary-banner .badge {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 6px 16px;
+        border-radius: 100px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        backdrop-filter: blur(4px);
+    }
+
+    .knorish-custom-page .salary-banner h2 {
+        font-size: clamp(26px, 5vw, 44px);
+        margin-bottom: 16px;
+        letter-spacing: -1px;
+        color: #fff;
+        text-align: center;
+        line-height: 1.2;
+    }
+
+    .knorish-custom-page .salary-banner p {
+        font-size: clamp(15px, 3vw, 18px);
+        color: rgba(255, 255, 255, 0.85);
+        max-width: 600px;
+        margin: 0 auto 32px;
+        text-align: center;
+        line-height: 1.6;
+    }
+
+    .knorish-custom-page .hike-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+        gap: 16px;
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .knorish-custom-page .hike-box {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 16px;
+        padding: clamp(20px, 4vw, 32px) clamp(16px, 3vw, 24px);
+        backdrop-filter: blur(10px);
+        transition: transform 0.3s ease;
+        text-align: center;
+    }
+
+    .knorish-custom-page .hike-box.premium {
+        background: linear-gradient(135deg, var(--yellow) 0%, #f59e0b 100%);
+        border: none;
+        color: var(--ink);
+        box-shadow: 0 8px 32px rgba(245, 200, 66, 0.3);
+    }
+
+    .knorish-custom-page .hike-box .from-to {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: clamp(22px, 5vw, 32px);
+        font-weight: 800;
+        margin-bottom: 8px;
+        line-height: 1.2;
+    }
+
+    .knorish-custom-page .hike-box.premium .from-to {
+        color: var(--ink);
+    }
+
+    .knorish-custom-page .hike-box .hike-desc {
+        font-size: 14px;
+        font-weight: 600;
+        opacity: 0.9;
+    }
+
+    /* ROLE PLATES */
+    .knorish-custom-page .roles-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 24px;
+        margin-top: 40px;
+        margin-bottom: 32px;
+        text-align: left;
+    }
+
+    .knorish-custom-page .role-card {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: clamp(24px, 5vw, 32px) clamp(20px, 4vw, 24px);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        height: 100%;
+    }
+
+    .knorish-custom-page .role-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--purple-mid);
+    }
+
+    .knorish-custom-page .role-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: var(--purple);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .knorish-custom-page .role-card:hover::before {
+        opacity: 1;
+    }
+
+    .knorish-custom-page .role-icon-wrapper {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 20px;
+        background: var(--purple-light);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        color: var(--purple);
+    }
+
+    .knorish-custom-page .role-card h3 {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--ink);
+        margin-bottom: 12px;
+        line-height: 1.3;
+    }
+
+    .knorish-custom-page .role-card p {
+        font-size: 14px;
+        color: var(--ink3);
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    /* CONVERSION HOOK INTERFACES */
+    .knorish-custom-page .feature-row {
+        display: flex;
+        gap: 16px;
+        padding: 20px 0;
+        border-bottom: 1px solid var(--border);
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    .knorish-custom-page .feature-row:last-child {
+        border-bottom: none;
+    }
+
+    .knorish-custom-page .feature-num {
+        font-family: 'Fraunces', serif;
+        font-size: 32px;
+        font-weight: 700;
+        color: var(--purple-mid);
+        line-height: 1;
+        min-width: 40px;
+    }
+
+    .knorish-custom-page .feature-content h3 {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--ink);
+        margin-bottom: 6px;
+    }
+
+    .knorish-custom-page .feature-content p {
+        font-size: 14px;
+        color: var(--ink3);
+        line-height: 1.65;
+        margin-bottom: 0;
+    }
+
+    /* CORE RE-AUDITED SYLLABUS GRID (FIXED INHERITANCE OVERLAPS) */
+    .knorish-custom-page .week-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+        gap: 20px;
+        margin-top: 40px;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .knorish-custom-page .week-card {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        text-align: left;
+        height: 100%;
+    }
+
+    .knorish-custom-page .week-header {
+        padding: 18px 20px 14px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .knorish-custom-page .week-header .wk-badge {
+        display: inline-block;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        padding: 3px 10px;
+        border-radius: 100px;
+        margin-bottom: 8px;
+    }
+
+    .knorish-custom-page .week-header h3 {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--ink);
+        margin: 0;
+        line-height: 1.4;
+    }
+
+    .knorish-custom-page .week-body {
+        padding: 16px 20px;
+    }
+
+    .knorish-custom-page .week-body ul {
+        padding-left: 0;
+        margin: 0;
+    }
+
+    .knorish-custom-page .week-body li {
+        list-style: none;
+        padding: 4px 0 4px 18px;
+        position: relative;
+        font-size: 13px;
+        color: var(--ink2);
+        margin-bottom: 4px;
+        line-height: 1.5;
+    }
+
+    .knorish-custom-page .week-body li::before {
+        content: '→';
+        position: absolute;
+        left: 0;
+        color: var(--ink3);
+        font-size: 11px;
+        top: 5px;
+    }
+
+    /* Core Syllabus Accent Threshold Lines */
+    .knorish-custom-page .w1 .week-header { border-top: 3px solid #5b3af7; }
+    .knorish-custom-page .w1 .wk-badge { background: #ede9ff; color: #5b3af7; }
+    .knorish-custom-page .w2 .week-header { border-top: 3px solid #0891b2; }
+    .knorish-custom-page .w2 .wk-badge { background: #e0f2fe; color: #0891b2; }
+    .knorish-custom-page .w3 .week-header { border-top: 3px solid #059669; }
+    .knorish-custom-page .w3 .wk-badge { background: #ecfdf5; color: #059669; }
+    .knorish-custom-page .w4 .week-header { border-top: 3px solid #d97706; }
+    .knorish-custom-page .w4 .wk-badge { background: #fffbeb; color: #d97706; }
+    .knorish-custom-page .w5 .week-header { border-top: 3px solid #dc2626; }
+    .knorish-custom-page .w5 .wk-badge { background: #fef2f2; color: #dc2626; }
+
+    /* RUNTIME TERMINAL SIMULATION MOCKUPS */
+    .knorish-custom-page .lab-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 36px;
+        align-items: center;
+        margin-top: 32px;
+        text-align: left;
+    }
+
+    @media(min-width: 900px) {
+        .knorish-custom-page .lab-grid {
+            grid-template-columns: 1fr 1.15fr;
+            gap: 48px;
+        }
+    }
+
+    .knorish-custom-page .lab-text h3 {
+        font-family: 'Fraunces', serif;
+        font-size: clamp(22px, 4vw, 28px);
+        font-weight: 700;
+        color: var(--ink);
+        margin-bottom: 14px;
+        line-height: 1.25;
+    }
+
+    .knorish-custom-page .lab-text > p {
+        font-size: 15px;
+        color: var(--ink2);
+        line-height: 1.65;
+        margin-bottom: 24px;
+    }
+
+    .knorish-custom-page .lab-features {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .knorish-custom-page .lab-features li {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 12px 0;
+        border-top: 1px solid var(--border);
+        font-size: 14px;
+        color: var(--ink2);
+        line-height: 1.5;
+    }
+
+    .knorish-custom-page .lab-features li:last-child {
+        border-bottom: 1px solid var(--border);
+    }
+
+    .knorish-custom-page .lab-features li::before {
+        content: '';
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--purple);
+        margin-top: 8px;
+        flex-shrink: 0;
+    }
+
+    .knorish-custom-page .lab-mock {
+        background: #0f0e0c;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: 0 16px 48px rgba(15, 14, 12, 0.25);
+        border: 1px solid #1f1e1a;
+    }
+
+    .knorish-custom-page .lab-mock-bar {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 16px;
+        background: #1a1916;
+        border-bottom: 1px solid #2a2925;
+    }
+
+    .knorish-custom-page .lab-mock-bar .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #3a3835;
+    }
+
+    .knorish-custom-page .lab-mock-bar .dot.r { background: #FF5F56; }
+    .knorish-custom-page .lab-mock-bar .dot.y { background: #FFBD2E; }
+    .knorish-custom-page .lab-mock-bar .dot.g { background: #27C93F; }
+
+    .knorish-custom-page .lab-mock-bar .url {
+        flex: 1;
+        text-align: center;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        color: rgba(255,255,255,0.5);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        padding: 0 8px;
+    }
+
+    .knorish-custom-page .lab-mock-body {
+        padding: 24px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 13px;
+        color: rgba(255,255,255,0.85);
+    }
+
+    .knorish-custom-page .lab-mock-title {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .knorish-custom-page .lab-mock-title .badge {
+        display: inline-block;
+        padding: 4px 10px;
+        background: var(--purple);
+        color: #fff;
+        border-radius: 4px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .knorish-custom-page .lab-form-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 10px 0;
+        border-bottom: 1px dashed rgba(255,255,255,0.08);
+        flex-wrap: wrap;
+    }
+
+    .knorish-custom-page .lab-form-row .k {
+        color: rgba(255,255,255,0.45);
+        min-width: 90px;
+        font-size: 12px;
+    }
+
+    .knorish-custom-page .lab-form-row .val {
+        color: rgba(255,255,255,0.9);
+        flex: 1;
+        word-break: break-word;
+        min-width: 0;
+        font-size: 12px;
+    }
+
+    .knorish-custom-page .lab-form-row.highlight {
+        background: rgba(91, 58, 247, 0.12);
+        margin: 4px -12px;
+        padding: 10px 12px;
+        border-radius: 6px;
+        border-bottom: none;
+    }
+
+    .knorish-custom-page .lab-form-row .val .cursor {
+        display: inline-block;
+        width: 7px;
+        height: 14px;
+        background: var(--purple);
+        vertical-align: -2px;
+        margin-left: 3px;
+        animation: cursorBlink 1s step-end infinite;
+    }
+
+    @keyframes cursorBlink {
+        50% { opacity: 0; }
+    }
+
+    .knorish-custom-page .lab-form-action {
+        margin-top: 20px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .knorish-custom-page .lab-form-action button {
+        background: var(--purple);
+        color: #fff;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        padding: 10px 18px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .knorish-custom-page .lab-form-action button:hover {
+        background: #4a2ee6;
+        transform: translateY(-1px);
+    }
+
+    .knorish-custom-page .lab-mock-status {
+        margin-top: 14px;
+        font-size: 11px;
+        color: #6ee7b7;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-family: 'JetBrains Mono', monospace;
+    }
+
+    .knorish-custom-page .lab-mock-status::before {
+        content: '';
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #6ee7b7;
+        flex-shrink: 0;
+        animation: statusPulse 1.8s ease-in-out infinite;
+    }
+
+    @keyframes statusPulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.4; }
+    }
+
+    @media(max-width: 540px) {
+        .knorish-custom-page .lab-form-row {
+            flex-direction: column;
+            gap: 4px;
+        }
+        .knorish-custom-page .lab-form-row .k {
+            min-width: auto;
+            opacity: 0.8;
+        }
+    }
+
+    /* MILESTONE MAP INTERFACES */
+    .knorish-custom-page .roadmap-container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        position: relative;
+        margin-top: 40px;
+    }
+
+    .knorish-custom-page .roadmap-step {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        background: var(--white);
+        padding: 20px 24px;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+        position: relative;
+        z-index: 2;
+        text-align: left;
+    }
+
+    .knorish-custom-page .step-num {
+        background: var(--purple-light);
+        color: var(--purple);
+        font-weight: 800;
+        font-size: 18px;
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .knorish-custom-page .step-text h4 {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 16px;
+        margin: 0 0 4px 0;
+    }
+
+    .knorish-custom-page .step-text p {
+        font-size: 14px;
+        margin: 0;
+        color: var(--ink3);
+        line-height: 1.4;
+    }
+
+    @media(min-width: 900px) {
+        .knorish-custom-page .roadmap-container {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .knorish-custom-page .roadmap-step {
+            flex-direction: column;
+            text-align: center;
+            flex: 1;
+            padding: 32px 16px;
+            align-items: center;
+            transition: transform 0.2s ease;
+        }
+
+        .knorish-custom-page .roadmap-step:hover {
+            transform: translateY(-5px);
+            border-color: var(--purple-mid);
+        }
+
+        .knorish-custom-page .roadmap-container::after {
+            content: '';
+            position: absolute;
+            top: 55px;
+            left: 50px;
+            right: 50px;
+            height: 2px;
+            background: var(--purple-light);
+            z-index: 1;
+            border-top: 2px dashed var(--purple-mid);
+        }
+    }
+
+    /* SYSTEM MATRIX SPLITS */
+    .knorish-custom-page .compare-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+        text-align: left;
+        margin-top: 40px;
+    }
+
+    @media(min-width: 768px) {
+        .knorish-custom-page .compare-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    .knorish-custom-page .compare-card {
+        border-radius: var(--radius-lg);
+        padding: clamp(24px, 5vw, 32px);
+        background: var(--white);
+    }
+
+    .knorish-custom-page .compare-card.bad {
+        border: 1px solid #fecaca;
+    }
+
+    .knorish-custom-page .compare-card.good {
+        background: var(--purple-light);
+        border: 1px solid var(--purple-mid);
+        box-shadow: 0 8px 24px rgba(91, 58, 247, 0.1);
+    }
+
+    .knorish-custom-page .compare-card h3 {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 18px;
+        font-weight: 800;
+        margin-bottom: 20px;
+        line-height: 1.3;
+    }
+
+    .knorish-custom-page .compare-card.bad h3 { color: var(--red); }
+    .knorish-custom-page .compare-card.good h3 { color: var(--purple); }
+
+    .knorish-custom-page .compare-card ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    .knorish-custom-page .compare-card li {
+        list-style: none;
+        padding: 8px 0 8px 28px;
+        position: relative;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.5;
+    }
+
+    .knorish-custom-page .compare-card.bad li { color: #7f1d1d; }
+    .knorish-custom-page .compare-card.good li { color: #2e1065; }
+
+    .knorish-custom-page .compare-card.bad li::before {
+        content: '✗';
+        position: absolute;
+        left: 0;
+        font-size: 14px;
+        color: #dc2626;
+        top: 9px;
+    }
+
+    .knorish-custom-page .compare-card.good li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        font-size: 14px;
+        color: var(--purple);
+        top: 9px;
+    }
+
+    /* ALUMNI INTERFACES */
+    .knorish-custom-page .testi-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        margin-top: 40px;
+    }
+
+    .knorish-custom-page .auth-testi {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: clamp(24px, 5vw, 28px);
+        text-align: left;
+        box-shadow: var(--shadow);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    .knorish-custom-page .auth-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 16px;
+        gap: 12px;
+    }
+
+    .knorish-custom-page .auth-user {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .knorish-custom-page .auth-avatar {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: var(--purple);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: 700;
+        color: #fff;
+        flex-shrink: 0;
+    }
+
+    .knorish-custom-page .auth-info h4 {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        margin: 0 0 2px 0;
+        color: var(--ink);
+        line-height: 1.2;
+    }
+
+    .knorish-custom-page .auth-info p {
+        font-size: 12px;
+        color: var(--ink3);
+        margin: 0;
+        line-height: 1.2;
+    }
+
+    .knorish-custom-page .auth-stars {
+        color: #f5c842;
+        font-size: 14px;
+        letter-spacing: 1px;
+        line-height: 1;
+        white-space: nowrap;
+    }
+
+    .knorish-custom-page .auth-jump {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px;
+        background: var(--bg);
+        border-radius: 10px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        margin-bottom: 14px;
+    }
+
+    .knorish-custom-page .auth-jump .lbl {
+        display: block;
+        font-size: 9px;
+        color: var(--ink3);
+        text-transform: uppercase;
+        margin-bottom: 4px;
+        font-weight: 600;
+        letter-spacing: 0.6px;
+    }
+
+    .knorish-custom-page .auth-jump .v {
+        color: var(--ink);
+        font-weight: 600;
+        font-size: 12px;
+    }
+
+    .knorish-custom-page .auth-jump .from,
+    .knorish-custom-page .auth-jump .to {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .knorish-custom-page .auth-jump .arrow {
+        color: var(--purple);
+        font-weight: 800;
+        font-size: 16px;
+    }
+
+    .knorish-custom-page .auth-text {
+        font-size: 14px;
+        color: var(--ink2);
+        line-height: 1.6;
+        margin: 0 0 14px 0;
+        text-wrap: pretty;
+    }
+
+    /* CONVERSION WALL FEEDBACK BLOCKS */
+    .knorish-custom-page .review-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 16px;
+        margin-top: 32px;
+    }
+
+    .knorish-custom-page .review-item {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 20px;
+        text-align: left;
+        box-shadow: var(--shadow);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .knorish-custom-page .review-item:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-md);
+    }
+
+    .knorish-custom-page .review-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+    }
+
+    .knorish-custom-page .review-user {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .knorish-custom-page .review-avatar {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        font-weight: 700;
+        flex-shrink: 0;
+    }
+
+    .knorish-custom-page .review-meta .name {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--ink);
+        line-height: 1.2;
+    }
+
+    .knorish-custom-page .review-meta .loc {
+        font-size: 11px;
+        color: var(--ink3);
+    }
+
+    .knorish-custom-page .review-stars {
+        color: #00b67a;
+        font-size: 13px;
+        letter-spacing: 1px;
+    }
+
+    .knorish-custom-page .review-title {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--ink);
+        margin-bottom: 6px;
+        line-height: 1.35;
+    }
+
+    .knorish-custom-page .review-text {
+        font-size: 13px;
+        color: var(--ink2);
+        line-height: 1.55;
+    }
+
+    /* TRAINER BRAND BLOCK OVERLAPS */
+    .knorish-custom-page .trainer-box {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: clamp(24px, 5vw, 40px);
+        box-shadow: var(--shadow-md);
+        display: flex;
+        gap: 32px;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .knorish-custom-page .trainer-avatar-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+    }
+
+    @media(min-width: 768px) {
+        .knorish-custom-page .trainer-avatar-col {
+            width: auto;
+        }
+    }
+
+    .knorish-custom-page .trainer-img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--purple), #9333ea);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 38px;
+        font-weight: 700;
+        color: #fff;
+        box-shadow: 0 8px 24px rgba(91, 58, 247, 0.2);
+        flex-shrink: 0;
+        font-family: 'Fraunces', serif;
+    }
+
+    .knorish-custom-page .trainer-stats {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .knorish-custom-page .trainer-stat {
+        background: var(--bg);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 12px 16px;
+        text-align: center;
+        min-width: 90px;
+    }
+
+    .knorish-custom-page .trainer-stat .val {
+        font-family: 'Fraunces', serif;
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--purple);
+    }
+
+    .knorish-custom-page .trainer-stat .key {
+        font-size: 10px;
+        color: var(--ink3);
+        font-weight: 600;
+        margin-top: 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .knorish-custom-page .trainer-info {
+        flex: 1;
+        min-width: 260px;
+    }
+
+    .knorish-custom-page .trainer-info h3 {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 24px;
+        font-weight: 800;
+        color: var(--ink);
+        margin-bottom: 6px;
+    }
+
+    .knorish-custom-page .trainer-info .role {
+        font-size: 14px;
+        color: var(--purple);
+        font-weight: 700;
+        margin-bottom: 16px;
+    }
+
+    .knorish-custom-page .trainer-info p {
+        font-size: 14px;
+        color: var(--ink2);
+        line-height: 1.7;
+        margin-bottom: 12px;
+    }
+
+    /* BRAND LOGO STRIPS */
+    .knorish-custom-page .logo-strip-section {
+        padding: 40px 20px;
+        border-bottom: 1px solid var(--border);
+        background: var(--white);
+        text-align: center;
+    }
+
+    .knorish-custom-page .logo-strip-section p {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--ink3);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 24px;
+    }
+
+    .knorish-custom-page .trust-logos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: clamp(20px, 4vw, 40px);
+        opacity: 0.6;
+        filter: grayscale(100%);
+    }
+
+    .knorish-custom-page .trust-logo {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: clamp(18px, 4vw, 22px);
+        font-weight: 800;
+        letter-spacing: -0.5px;
+        color: var(--ink);
+    }
+
+    /* CONVERSION CALCULATOR HOOKS */
+    .knorish-custom-page .calc-card {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: clamp(28px, 5vw, 48px);
+        box-shadow: var(--shadow-md);
+        margin-top: 32px;
+        text-align: left;
+    }
+
+    .knorish-custom-page .calc-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 32px;
+        align-items: center;
+    }
+
+    @media(min-width: 880px) {
+        .knorish-custom-page .calc-grid {
+            grid-template-columns: 1fr 1.1fr;
+            gap: 40px;
+        }
+    }
+
+    .knorish-custom-page .calc-controls h3 {
+        font-family: 'Fraunces', serif;
+        font-size: clamp(22px, 4vw, 28px);
+        font-weight: 700;
+        color: var(--ink);
+        margin-bottom: 8px;
+        line-height: 1.25;
+    }
+
+    .knorish-custom-page .calc-controls > p {
+        font-size: 14px;
+        color: var(--ink3);
+        margin-bottom: 28px;
+        line-height: 1.55;
+    }
+
+    .knorish-custom-page .calc-control {
+        margin-bottom: 22px;
+    }
+
+    .knorish-custom-page .calc-control label {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 10px;
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--ink2);
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .knorish-custom-page .calc-control label .v {
+        font-family: 'JetBrains Mono', monospace;
+        color: var(--purple);
+        font-weight: 700;
+        font-size: 13px;
+    }
+
+    .knorish-custom-page .calc-control input[type=range] {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        height: 6px;
+        background: var(--border);
+        border-radius: 3px;
+        outline: none;
+        margin: 0;
+    }
+
+    .knorish-custom-page .calc-control input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background: var(--purple);
+        cursor: grab;
+        border: 4px solid #fff;
+        box-shadow: 0 2px 8px rgba(91, 58, 247, 0.4);
+        transition: transform 0.2s ease;
+    }
+
+    .knorish-custom-page .calc-control input[type=range]::-moz-range-thumb {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--purple);
+        cursor: grab;
+        border: 4px solid #fff;
+        box-shadow: 0 2px 8px rgba(91, 58, 247, 0.4);
+    }
+
+    .knorish-custom-page .calc-control input[type=range]::-webkit-slider-thumb:hover {
+        transform: scale(1.12);
+    }
+
+    .knorish-custom-page .calc-control select {
+        width: 100%;
+        background: var(--bg);
+        border: 1.5px solid var(--border);
+        border-radius: 10px;
+        padding: 14px 16px;
+        color: var(--ink);
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 15px;
+        outline: none;
+        -webkit-appearance: none;
+        appearance: none;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236b6860' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 16px center;
+        background-size: 16px;
+        padding-right: 40px;
+    }
+
+    .knorish-custom-page .calc-control select:focus {
+        border-color: var(--purple);
+        box-shadow: 0 0 0 3px rgba(91, 58, 247, 0.1);
+    }
+
+    .knorish-custom-page .calc-result {
+        background: linear-gradient(135deg, #1a0a4a 0%, #2d1278 50%, var(--purple) 100%);
+        color: #fff;
+        border-radius: var(--radius-lg);
+        padding: clamp(24px, 5vw, 32px);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .knorish-custom-page .calc-result::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 70% 20%, rgba(245, 200, 66, 0.18), transparent 60%);
+        pointer-events: none;
+    }
+
+    .knorish-custom-page .calc-result-inner {
+        position: relative;
+        z-index: 1;
+    }
+
+    .knorish-custom-page .calc-result h4 {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        color: rgba(255,255,255,0.65);
+        text-transform: uppercase;
+        margin-bottom: 14px;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    .knorish-custom-page .calc-result .delta {
+        font-family: 'Fraunces', serif;
+        font-size: clamp(28px, 6vw, 48px);
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.1;
+        margin-bottom: 4px;
+    }
+
+    .knorish-custom-page .calc-result .delta em {
+        font-style: italic;
+        color: var(--yellow);
+    }
+
+    .knorish-custom-page .calc-bars {
+        margin-top: 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .knorish-custom-page .calc-bar {
+        display: grid;
+        grid-template-columns: 56px 1fr auto;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .knorish-custom-page .calc-bar .lbl {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10px;
+        color: rgba(255,255,255,0.6);
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    .knorish-custom-page .calc-bar .track {
+        height: 10px;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 5px;
+        overflow: hidden;
+        min-width: 0;
+    }
+
+    .knorish-custom-page .calc-bar .fill {
+        height: 100%;
+        background: linear-gradient(90deg, rgba(255,255,255,0.4), rgba(255,255,255,0.85));
+        border-radius: 5px;
+        transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .knorish-custom-page .calc-bar .fill.us {
+        background: linear-gradient(90deg, var(--yellow), #f59e0b);
+    }
+
+    .knorish-custom-page .calc-bar .v {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 13px;
+        color: #fff;
+        font-weight: 600;
+        white-space: nowrap;
+        min-width: 60px;
+        text-align: right;
+    }
+
+    .knorish-custom-page .calc-cta {
+        margin-top: 28px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .knorish-custom-page .calc-cta .cta-btn {
+        background: var(--yellow);
+        color: var(--ink);
+        margin-top: 0;
+        width: auto;
+        padding: 14px 24px;
+        font-size: 14px;
+        box-shadow: 0 4px 14px rgba(245, 200, 66, 0.4);
+    }
+
+    .knorish-custom-page .calc-cta .cta-btn:hover {
+        background: #f59e0b;
+        box-shadow: 0 6px 20px rgba(245, 200, 66, 0.5);
+    }
+
+    @media(max-width: 540px) {
+        .knorish-custom-page .calc-cta .cta-btn {
+            width: 100%;
+        }
+        .knorish-custom-page .calc-bar {
+            grid-template-columns: 44px 1fr auto;
+            gap: 8px;
+        }
+    }
+
+    /* ENVIRONMENTAL INCLUSIONS PLATES */
+    .knorish-custom-page .bonus-list {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        margin-top: 32px;
+        text-align: left;
+        box-shadow: var(--shadow);
+    }
+
+    .knorish-custom-page .bonus-row {
+        display: grid;
+        grid-template-columns: 80px 1fr auto;
+        gap: 16px;
+        align-items: center;
+        padding: 20px 24px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .knorish-custom-page .bonus-row:last-child {
+        border-bottom: none;
+    }
+
+    .knorish-custom-page .bonus-pill {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10px;
+        font-weight: 700;
+        background: var(--yellow);
+        color: var(--ink);
+        padding: 6px 10px;
+        border-radius: 4px;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+
+    .knorish-custom-page .bonus-row .name {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--ink);
+        margin-bottom: 4px;
+    }
+
+    .knorish-custom-page .bonus-row .desc {
+        font-size: 13px;
+        color: var(--ink3);
+        line-height: 1.5;
+    }
+
+    .knorish-custom-page .bonus-row .val {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 14px;
+        color: var(--green);
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+    .knorish-custom-page .bonus-total-box {
+        background: linear-gradient(135deg, var(--purple-dark) 0%, var(--purple) 100%);
+        color: #fff;
+        border-radius: var(--radius);
+        padding: 20px 24px;
+        margin-top: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .knorish-custom-page .bonus-total-box .lbl {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: rgba(255,255,255,0.7);
+    }
+
+    .knorish-custom-page .bonus-total-box .v {
+        font-family: 'Fraunces', serif;
+        font-size: clamp(28px, 5vw, 36px);
+        font-weight: 700;
+        color: #fff;
+    }
+
+    .knorish-custom-page .bonus-total-box .stamp {
+        background: var(--yellow);
+        color: var(--ink);
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+
+    @media(max-width: 600px) {
+        .knorish-custom-page .bonus-row {
+            grid-template-columns: 1fr;
+            gap: 8px;
+        }
+        .knorish-custom-page .bonus-row .val {
+            margin-top: 4px;
+        }
+    }
+
+    /* FAQ LAYOUT SYSTEM */
+    .knorish-custom-page .faq-item {
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        margin-bottom: 12px;
+        overflow: hidden;
+        text-align: left;
+        background: var(--white);
+    }
+
+    .knorish-custom-page .faq-q {
+        padding: 18px 20px;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--ink);
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        user-select: none;
+    }
+
+    .knorish-custom-page .faq-q .icon {
+        font-size: 18px;
+        color: var(--purple);
+        transition: transform 0.2s ease;
+        font-weight: 400;
+        flex-shrink: 0;
+        margin-left: 12px;
+    }
+
+    .knorish-custom-page .faq-q.open .icon {
+        transform: rotate(45deg);
+    }
+
+    .knorish-custom-page .faq-a {
+        display: none;
+        padding: 0 20px 18px;
+        font-size: 14px;
+        color: var(--ink2);
+        line-height: 1.6;
+        text-wrap: pretty;
+    }
+
+    .knorish-custom-page .faq-a.open {
+        display: block;
+    }
+
+    /* CONVERSION CLOSING SECTIONS */
+    .knorish-custom-page .mini-countdown {
+        display: flex;
+        gap: 10px;
+        margin: 24px 0 28px;
+        flex-wrap: wrap;
+    }
+
+    .knorish-custom-page .mini-cd-block {
+        flex: 1;
+        min-width: 64px;
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 12px;
+        padding: 14px 8px;
+        text-align: center;
+    }
+
+    .knorish-custom-page .mini-cd-num {
+        font-family: 'Fraunces', serif;
+        font-size: clamp(24px, 5vw, 38px);
+        font-weight: 700;
+        color: #fff;
+        line-height: 1;
+    }
+
+    .knorish-custom-page .mini-cd-lbl {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10px;
+        color: rgba(255,255,255,0.55);
+        text-transform: uppercase;
+        margin-top: 8px;
+        letter-spacing: 1px;
+        font-weight: 600;
+    }
+
+    /* GLOBAL REGISTRY INJECTIONS (FIXED MODAL MATRIX BRACKETS) */
+    .exaguru-live-ping,
+    .knorish-custom-page .live-ping {
+        position: fixed !important;
+        bottom: calc(72px + env(safe-area-inset-bottom, 0px)) !important;
+        right: max(12px, env(safe-area-inset-right, 0px)) !important;
+        left: auto !important;
+        z-index: 2147483641 !important;
+        background: linear-gradient(135deg, #1a0a4a 0%, #2d1278 55%, #3d1fa8 100%);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 14px;
+        padding: 12px 14px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        box-shadow: 0 12px 40px rgba(26, 10, 74, 0.45);
+        font-size: 13px;
+        max-width: min(300px, calc(100vw - 24px));
+        width: max-content;
+        transform: translateX(calc(100% + 24px));
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.35s ease, visibility 0.35s;
+    }
+
+    .exaguru-live-ping.show,
+    .knorish-custom-page .live-ping.show {
+        transform: translateX(0) !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+    }
+
+    .exaguru-live-ping.is-leaving,
+    .knorish-custom-page .live-ping.is-leaving {
+        transform: translateX(calc(100% + 24px));
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .exaguru-live-ping .av,
+    .knorish-custom-page .live-ping .av {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 13px;
+        flex-shrink: 0;
+    }
+
+    .exaguru-live-ping .ac,
+    .knorish-custom-page .live-ping .ac {
+        color: rgba(255, 255, 255, 0.78);
+        font-weight: 400;
+        line-height: 1.4;
+        font-size: 12px;
+    }
+
+    .exaguru-live-ping .ac strong,
+    .knorish-custom-page .live-ping .ac strong {
+        color: #fff;
+        font-weight: 600;
+    }
+
+    .exaguru-live-ping .time,
+    .knorish-custom-page .live-ping .time {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10px;
+        color: rgba(255, 255, 255, 0.5);
+        margin-top: 4px;
+        font-weight: 500;
+    }
+
+    @media(max-width: 380px) {
+        .exaguru-live-ping,
+        .knorish-custom-page .live-ping {
+            right: 8px;
+            max-width: calc(100vw - 16px);
+            padding: 10px 12px;
+        }
+    }
+
+    /* FINAL INCENTIVE CHANNELS */
+    .knorish-custom-page .final-cta-section {
+        background: linear-gradient(135deg, #1a0a4a 0%, #2d1278 100%);
+        padding: clamp(56px, 10vw, 96px) 20px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .knorish-custom-page .final-cta-inner {
+        max-width: 720px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+    }
+
+    .knorish-custom-page .final-cta-inner.final-cta-centered {
+        text-align: center;
+    }
+
+    .knorish-custom-page .final-cta-actions {
+        text-align: center;
+        margin-top: 16px;
+    }
+
+    .knorish-custom-page .final-big-btn {
+        width: auto;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 18px 40px;
+        font-size: 17px;
+        background: var(--yellow);
+        color: var(--ink);
+        box-shadow: 0 8px 24px rgba(245, 200, 66, 0.4);
+        min-width: 280px;
+    }
+
+    .knorish-custom-page .final-big-btn:hover {
+        background: #f59e0b;
+        transform: translateY(-3px);
+        box-shadow: 0 12px 32px rgba(245, 200, 66, 0.55);
+    }
+
+    .knorish-custom-page .final-cta-meta {
+        margin-top: 16px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 12px;
+        color: rgba(255,255,255,0.55);
+        letter-spacing: 0.5px;
+    }
+
+    @media(max-width: 540px) {
+        .knorish-custom-page .final-big-btn {
+            width: 100%;
+            min-width: 0;
+        }
+    }
+
+    .knorish-custom-page .final-cta-section .section-label {
+        color: rgba(255,255,255,0.7);
+    }
+
+    .knorish-custom-page .final-cta-section h2 {
+        font-family: 'Fraunces', serif;
+        font-size: clamp(28px, 5vw, 44px);
+        color: #fff;
+        margin-bottom: 20px;
+        line-height: 1.2;
+        letter-spacing: -1px;
+    }
+
+    .knorish-custom-page .final-cta-section h2 em {
+        font-style: italic;
+        color: var(--yellow);
+    }
+
+    .knorish-custom-page .final-cta-section p {
+        font-size: clamp(15px, 3vw, 18px);
+        color: rgba(255, 255, 255, 0.85);
+        line-height: 1.7;
+        margin-bottom: 24px;
+        text-wrap: pretty;
+    }
+
+    .knorish-custom-page .final-cta-section p strong {
+        color: #fff;
+    }
+
+    .knorish-custom-page .final-guarantee {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+        padding: 14px 20px;
+        border: 1px solid rgba(255,255,255,0.2);
+        border-radius: 100px;
+        background: rgba(255,255,255,0.05);
+        font-size: 13px;
+        color: rgba(255,255,255,0.9);
+        margin-top: 8px;
+    }
+
+    .knorish-custom-page .final-guarantee .seal {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--yellow), #f59e0b);
+        color: var(--ink);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-weight: 800;
+        font-size: 10px;
+        text-align: center;
+        line-height: 1.1;
+        flex-shrink: 0;
+    }
+
+    .knorish-custom-page .final-guarantee strong {
+        color: #fff;
+    }
+
+    /* FOOTER CLOSURE HOOKS */
+    .knorish-custom-page footer {
+        background: #0f0e0c;
+        padding: 56px 20px calc(100px + env(safe-area-inset-bottom, 0px));
+        color: rgba(255, 255, 255, 0.6);
+        width: 100%;
+        text-align: left;
+        box-sizing: border-box;
+    }
+
+    .knorish-custom-page .footer-cols {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 32px;
+        margin-bottom: 40px;
+        max-width: 1040px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .knorish-custom-page .footer-col h4 {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.4);
+        margin-bottom: 16px;
+    }
+
+    .knorish-custom-page .footer-col a {
+        display: block;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.55);
+        margin-bottom: 10px;
+        transition: color 0.2s ease;
+    }
+
+    .knorish-custom-page .footer-col a:hover {
+        color: #fff;
+    }
+
+    .knorish-custom-page .footer-logo {
+        display: inline-block;
+        margin-bottom: 12px;
+        line-height: 1;
+    }
+
+    .knorish-custom-page .footer-logo img {
+        height: auto;
+        max-height: 56px;
+        width: auto;
+        max-width: 160px;
+        object-fit: contain;
+        display: block;
+        filter: brightness(0) invert(1);
+        opacity: 0.9;
+    }
+
+    .knorish-custom-page .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: space-between;
+        font-size: 12px;
+        max-width: 1040px;
+        margin: 0 auto;
+    }
+
+    /* FIXED REGISTRY ACTIONS (OPTIMIZED FOR BREAKPOINTS) */
+    .exaguru-sticky-bar,
+    .knorish-custom-page .sticky-bar {
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        background: rgba(26, 10, 74, 0.98);
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        padding: 10px max(16px, env(safe-area-inset-left, 0px)) calc(10px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-right, 0px));
+        display: flex !important;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        z-index: 2147483640 !important;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        width: 100% !important;
+        max-width: 100vw;
+        box-sizing: border-box;
+        box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .exaguru-sticky-bar .sl,
+    .knorish-custom-page .sticky-bar .sl {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        color: rgba(255, 255, 255, 0.55);
+        text-transform: uppercase;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .exaguru-sticky-bar .sl strong,
+    .knorish-custom-page .sticky-bar .sl strong {
+        color: var(--yellow);
+    }
+
+    .exaguru-sticky-countdown,
+    .knorish-custom-page .sticky-countdown {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        flex: 1;
+        justify-content: center;
+        min-width: 0;
+    }
+
+    .exaguru-sticky-cd-unit,
+    .knorish-custom-page .sticky-cd-unit {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 36px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 8px;
+        padding: 4px 6px;
+    }
+
+    .exaguru-sticky-cd-unit .num,
+    .knorish-custom-page .sticky-cd-unit .num {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: clamp(14px, 3.5vw, 17px);
+        font-weight: 700;
+        color: #fff;
+        line-height: 1;
+    }
+
+    .exaguru-sticky-cd-unit small,
+    .knorish-custom-page .sticky-cd-unit small {
+        font-size: 8px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.45);
+        margin-top: 2px;
+        letter-spacing: 0.04em;
+    }
+
+    .exaguru-sticky-cd-sep,
+    .knorish-custom-page .sticky-cd-sep {
+        color: rgba(255, 255, 255, 0.35);
+        font-size: 14px;
+        padding-bottom: 10px;
+        flex-shrink: 0;
+    }
+
+    .exaguru-sticky-btn,
+    .knorish-custom-page .sticky-btn,
+    a.exaguru-sticky-btn {
+        background: var(--yellow);
+        color: var(--ink);
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        padding: 10px 20px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        flex-shrink: 0;
+        white-space: nowrap;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 2;
+    }
+
+    /* LIGHTBOX EMBED LAYOUTS */
+    .knorish-custom-page .video-modal {
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 14, 12, 0.92);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 99999;
+        padding: 20px;
+    }
+
+    .knorish-custom-page .video-modal.active {
+        display: flex;
+    }
+
+    .knorish-custom-page .video-modal-content {
+        position: relative;
+        width: 100%;
+        max-width: 900px;
+        background: #000;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6);
+    }
+
+    .knorish-custom-page .video-modal-close {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.15);
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        font-size: 22px;
+        font-weight: 700;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 5;
+        transition: background 0.2s ease;
+    }
+
+    .knorish-custom-page .video-modal-close:hover {
+        background: var(--red);
+        border-color: var(--red);
+    }
+
+    .knorish-custom-page .video-modal .video-wrapper {
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+    }
+
+    /* LIGHTBOX LEAD SHEETS */
+    .apply-popup-overlay {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        height: 100dvh !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: rgba(15, 14, 12, 0.78);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        display: block !important;
+        z-index: 2147483647 !important;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.25s ease, visibility 0.25s ease;
+        overscroll-behavior: contain;
+        font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+        box-sizing: border-box;
+        overflow: hidden !important;
+    }
+
+    .apply-popup-overlay.active,
+    #applyPopup:target {
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+    }
+
+    .apply-popup-box {
+        position: fixed !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        max-height: min(88dvh, 88vh) !important;
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 18px 18px 0 0;
+        border-bottom: none;
+        box-shadow: 0 -8px 40px rgba(26, 10, 74, 0.2);
+        overflow: hidden;
+        display: flex !important;
+        flex-direction: column !important;
+        text-align: left;
+        box-sizing: border-box;
+        transform: translateY(100%);
+        transition: transform 0.35s cubic-bezier(0.32, 0.72, 0, 1);
+        z-index: 2147483647 !important;
+    }
+
+    .apply-popup-overlay.active .apply-popup-box,
+    #applyPopup:target .apply-popup-box {
+        transform: translateY(0) !important;
+    }
+
+    @media (min-width: 769px) {
+        .apply-popup-overlay {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            padding: 24px !important;
+        }
+
+        /* Fixed structural syntax closure across transformation states */
+        .apply-popup-box {
+            position: relative !important;
+            left: auto !important;
+            right: auto !important;
+            bottom: auto !important;
+            max-width: 440px !important;
+            width: 100% !important;
+            max-height: min(92vh, 92dvh) !important;
+            border-radius: var(--radius-lg) !important;
+            border-bottom: 1px solid var(--border) !important;
+            box-shadow: 0 28px 80px rgba(26, 10, 74, 0.28), 0 12px 32px rgba(15, 14, 12, 0.12);
+            transform: translateY(16px) scale(0.97);
+        }
+
+        .apply-popup-overlay.active .apply-popup-box,
+        #applyPopup:target .apply-popup-box {
+            transform: translateY(0) scale(1) !important;
+        }
+
+        .apply-popup-drag {
+            display: none !important;
+        }
+    }
+
+    .apply-popup-header {
+        background: linear-gradient(135deg, #1a0a4a 0%, #2d1278 48%, #5b3af7 100%);
+        padding: 28px 52px 24px 24px;
+        position: relative;
+        flex-shrink: 0;
+    }
+
+    .apply-popup-header::after {
+        content: '';
+        position: absolute;
+        top: -40px;
+        right: -30px;
+        width: 140px;
+        height: 140px;
+        background: radial-gradient(circle, rgba(245, 200, 66, 0.22) 0%, transparent 70%);
+        pointer-events: none;
+    }
+
+    .apply-popup-label {
+        display: block;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.55);
+        margin-bottom: 10px;
+    }
+
+    .apply-popup-header h3 {
+        font-family: 'Fraunces', Georgia, serif;
+        font-size: clamp(22px, 5vw, 26px);
+        font-weight: 700;
+        color: #fff;
+        margin: 0 0 8px;
+        line-height: 1.2;
+        letter-spacing: -0.5px;
+    }
+
+    .apply-popup-header .form-sub {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.78);
+        margin: 0 0 14px;
+        line-height: 1.5;
+    }
+
+    .apply-popup-seats {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: rgba(245, 200, 66, 0.95);
+        color: var(--ink);
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        font-weight: 700;
+        padding: 6px 12px;
+        border-radius: 100px;
+        letter-spacing: 0.4px;
+        text-transform: uppercase;
+    }
+
+    .apply-popup-close {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        font-size: 20px;
+        line-height: 1;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s ease, transform 0.2s ease;
+        z-index: 3;
+        text-decoration: none;
+    }
+
+    .apply-popup-close:hover {
+        background: rgba(255, 255, 255, 0.22);
+        transform: scale(1.05);
+    }
+
+    .apply-popup-body {
+        padding: 24px;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        flex: 1;
+        min-height: 0;
+        background: var(--white);
+    }
+
+    .exaguru-popup-form {
+        margin: 0;
+    }
+
+    .exaguru-popup-form input,
+    .exaguru-popup-form select {
+        width: 100%;
+        background: var(--bg);
+        border: 1.5px solid var(--border);
+        border-radius: 10px;
+        padding: 14px 16px;
+        color: var(--ink);
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-size: 16px;
+        margin-bottom: 14px;
+        outline: none;
+        box-sizing: border-box;
+        transition: border 0.2s ease, box-shadow 0.2s ease;
+        -webkit-appearance: none;
+        appearance: none;
+    }
+
+    .exaguru-popup-form input:focus,
+    .exaguru-popup-form select:focus {
+        border-color: var(--purple);
+        box-shadow: 0 0 0 3px rgba(91, 58, 247, 0.12);
+    }
+
+    .exaguru-popup-form .form-phone-row {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 14px;
+    }
+
+    .exaguru-popup-form .form-phone-row select {
+        width: 118px;
+        margin-bottom: 0;
+        flex-shrink: 0;
+        padding-right: 8px;
+        font-size: 14px;
+    }
+
+    .exaguru-popup-form .form-phone-row input {
+        flex: 1;
+        min-width: 0;
+        margin-bottom: 0;
+    }
+
+    .exaguru-popup-form .cta-btn {
+        width: 100%;
+        margin-top: 6px;
+        padding: 16px;
+        font-size: 16px;
+        border-radius: 10px;
+        box-shadow: 0 4px 14px rgba(91, 58, 247, 0.35);
+    }
+
+    .exaguru-popup-form .form-tos {
+        font-size: 11px;
+        color: var(--ink3);
+        text-align: center;
+        margin-top: 14px;
+        letter-spacing: 0.3px;
+    }
+
+    .apply-popup-drag {
+        display: block;
+        width: 40px;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.35);
+        border-radius: 100px;
+        margin: 0 auto 14px;
+    }
+
+    /* RESPONSIVE LAYOUT MATRIX & GRAPH SCHEMAS */
+    @media (max-width: 768px) {
+        .apply-popup-header {
+            padding: 10px 50px 16px 18px;
+            flex-shrink: 0;
+        }
+
+        .apply-popup-header h3 {
+            font-size: 21px;
+            line-height: 1.25;
+        }
+
+        .apply-popup-header .form-sub {
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .apply-popup-close {
+            top: 8px;
+            right: 8px;
+            width: 44px;
+            height: 44px;
+            font-size: 24px;
+        }
+
+        .apply-popup-body {
+            padding: 16px 16px calc(16px + env(safe-area-inset-bottom, 0px));
+            overflow-y: auto !important;
+            flex: 1 1 auto;
+            min-height: 0;
+        }
+
+        .exaguru-popup-form input,
+        .exaguru-popup-form select {
+            font-size: 16px !important;
+            min-height: 48px;
+            padding: 12px 14px;
+            margin-bottom: 12px;
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+
+        .exaguru-popup-form .form-phone-row {
+            flex-direction: column !important;
+            gap: 0;
+            margin-bottom: 12px;
+            width: 100%;
+        }
+
+        .exaguru-popup-form .form-phone-row select {
+            width: 100% !important;
+            margin-bottom: 12px;
+            min-height: 48px;
+        }
+
+        .exaguru-popup-form .form-phone-row input {
+            width: 100% !important;
+            min-height: 48px;
+        }
+
+        .exaguru-popup-form .cta-btn {
+            width: 100% !important;
+            min-height: 52px;
+            font-size: 16px;
+            padding: 14px 18px;
+            margin-top: 4px;
+        }
+
+        .exaguru-popup-form .form-tos {
+            margin-top: 10px;
+            font-size: 10px;
+            line-height: 1.45;
+        }
+    }
+
+    @media (max-width: 380px) {
+        .apply-popup-box {
+            max-height: 92dvh !important;
+        }
+
+        .apply-popup-header {
+            padding: 8px 46px 14px 14px;
+        }
+
+        .apply-popup-header h3 {
+            font-size: 19px;
+        }
+
+        .apply-popup-body {
+            padding: 14px 14px calc(14px + env(safe-area-inset-bottom, 0px));
+        }
+    }
+
+    html.exaguru-popup-open .exaguru-sticky-bar,
+    html.exaguru-popup-open .sticky-bar {
+        display: none !important;
+    }
+
+    html.exaguru-popup-open,
+    html.exaguru-popup-open body {
+        overflow: hidden !important;
+        height: 100%;
+    }
+
+    @media (max-width: 600px) {
+        .knorish-custom-page .section {
+            padding-left: max(16px, env(safe-area-inset-left, 0px));
+            padding-right: max(16px, env(safe-area-inset-right, 0px));
+        }
+
+        .knorish-custom-page .section-alt {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .knorish-custom-page .hero {
+            padding-left: max(16px, env(safe-area-inset-left, 0px));
+            padding-right: max(16px, env(safe-area-inset-right, 0px));
+        }
+
+        .knorish-custom-page .nav {
+            padding: 12px max(14px, env(safe-area-inset-left, 0px));
+        }
+
+        .knorish-custom-page .nav-cta {
+            padding: 8px 14px;
+            font-size: 12px;
+        }
+
+        .knorish-custom-page .top-strip {
+            font-size: 12px;
+            line-height: 1.45;
+            padding: 10px 12px;
+        }
+
+        .knorish-custom-page .salary-banner {
+            margin-left: 0;
+            margin-right: 0;
+            margin-bottom: 48px;
+        }
+
+        .knorish-custom-page .salary-banner h2 {
+            font-size: clamp(22px, 6vw, 32px);
+            padding: 0 4px;
+        }
+
+        .knorish-custom-page .hike-box .from-to {
+            font-size: clamp(18px, 5vw, 26px);
+            word-break: break-word;
+        }
+
+        .knorish-custom-page .week-grid {
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        .knorish-custom-page .cards-3,
+        .knorish-custom-page .cards-2 {
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        .knorish-custom-page .card {
+            min-width: 0;
+        }
+
+        .exaguru-sticky-bar .sl,
+        .knorish-custom-page .sticky-bar .sl {
+            display: none;
+        }
+
+        .exaguru-sticky-cd-unit,
+        .knorish-custom-page .sticky-cd-unit {
+            min-width: 32px;
+            padding: 3px 4px;
+        }
+
+        .exaguru-sticky-btn,
+        .knorish-custom-page .sticky-btn {
+            padding: 10px 14px;
+            font-size: 12px;
+        }
+
+        .knorish-custom-page .final-guarantee {
+            flex-direction: column;
+            text-align: center;
+            border-radius: 16px;
+            max-width: 100%;
+        }
+
+        .knorish-custom-page .urgency p {
+            padding: 0 4px;
+        }
+    }
+
+    @media (max-width: 380px) {
+        .knorish-custom-page .hero h1 {
+            font-size: 26px;
+            letter-spacing: -0.5px;
+        }
+
+        .knorish-custom-page .digit-block {
+            min-width: 40px;
+        }
+
+        .knorish-custom-page .form-phone-row select {
+            width: 100% !important;
+            margin-bottom: 12px !important;
+        }
+    }
+</style>
+</head>
+<body>
+
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(formSubmitted) { window.location = 'https://www.exaguru.com/page/exadata-thank-you-page'; }"></iframe>
+
+<div class="knorish-custom-page">
+
+    <div class="top-strip">
+        <span class="pill">Spring 2027</span>
+        Generative AI Engineer cohort — 24 weeks · build-from-scratch · <a href="#apply" data-exaguru-apply="1">Reserve your seat →</a>
+    </div>
+
+    <nav class="nav">
+        <div style="max-width: 1040px; margin: 0 auto; width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 16px;">
+            <a href="#" class="nav-logo" aria-label="ExaGuru Home">
+                <img src="https://knorishblobstorage-cbbeebf4h6dudbf2.z01.azurefd.net/public/e398964d-be9b-4e65-853d-89782b84d4e7/customfile/05032026/bbfbd.png" alt="ExaGuru Logo Assets">
+            </a>
+            <div class="nav-links">
+                <a href="#method">Method</a>
+                <a href="#curriculum">Curriculum</a>
+                <a href="#outcomes">Outcomes</a>
+                <a href="#trainer">Instructor</a>
+                <a href="#faq">FAQ</a>
+            </div>
+            <div class="nav-right">
+                <span class="nav-seats"><strong>16</strong> seats left</span>
+                <button type="button" class="nav-cta" data-exaguru-apply="1">Enroll →</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero" id="apply">
+        <div style="display: inline-flex; align-items: center; flex-wrap: wrap; justify-content: center; gap: 8px;">
+            <div class="hero-badge">Spring 2027 Cohort · 16 of 30 seats left</div>
+            <div class="hero-counter">
+                <span class="num" id="hero-count">312</span>
+                <span class="lbl">Capstones shipped by alumni</span>
+            </div>
+        </div>
+
+        <h1 style="margin-top: 24px;">Become the Generative AI Engineer<br>companies <em>fight to hire.</em></h1>
+
+        <p class="hero-desc"><strong>Build, don't just call APIs.</strong> A 24-week live cohort built around real GenAI engineering. Neural nets in NumPy. GPT from scratch in PyTorch. RAG, agents, fine-tuning, and LLMOps on open-source. For engineers serious about shipping AI products.</p>
+
+        <div class="hero-trust">
+            <div>
+                <div class="v">24</div>
+                <div class="k">Weeks Live</div>
+            </div>
+            <div>
+                <div class="v">5</div>
+                <div class="k">Phases Loop</div>
+            </div>
+            <div>
+                <div class="v">16</div>
+                <div class="k">Capstones Shipped</div>
+            </div>
+            <div>
+                <div class="v">100%</div>
+                <div class="k">Open-Source Stack</div>
+            </div>
+        </div>
+
+        <div class="form-card">
+            <h3>Enroll in Spring Cohort</h3>
+            <p class="form-sub">Takes only 2 minutes · Confirmed within 24 hours</p>
+            <form id="sib-form" method="POST" action="https://4feac7ff.sibforms.com/serve/MUIFAIBxCOSoLw4jno6uP5f4YeuhDUqmKDyFVsDBi1RRtfOOLtOigIINLA_Z8OecFC8kRGp9vAH4HQJk9KaswHdeeoF3DyuLn46Ttr_HNvo12vcpaHunaIeVjkZLpYEtcoEQf4sphY3iAnaOVHWDmtlQraD6xqLQ1hJLQn7qKnMIyOlmE3DYtclZ3pGvXvMgv6pV72bjlu67LtZnGQ==" target="hidden_iframe" onsubmit="formSubmitted=true; this.querySelector('button').innerText='Processing Allocation...';">
+
+                <input type="text" name="email_address_check" value="" style="display:none;">
+                <input type="hidden" name="locale" value="en">
+                <input type="hidden" name="html_type" value="simple">
+
+                <input type="text" name="FIRSTNAME" placeholder="Full Name" required autocomplete="name">
+                <input type="email" name="EMAIL" placeholder="Email Address" required autocomplete="email">
+
+                <div class="form-phone-row" style="display: flex; gap: 10px; margin-bottom: 16px;">
+                    <select name="SMS__COUNTRY_CODE" required aria-label="Country Code Select">
+                        <option value="+91" selected>+91 IN</option>
+                        <option value="+1">+1 US</option>
+                        <option value="+44">+44 GB</option>
+                        <option value="+971">+971 AE</option>
+                        <option value="+65">+65 SG</option>
+                        <option value="+61">+61 AU</option>
+                    </select>
+                    <input type="tel" name="SMS" placeholder="Phone Number" required style="flex: 1; margin-bottom: 0;" autocomplete="tel">
+                </div>
+
+                <select name="TRACK" required style="width: 100%; margin-bottom: 16px;" aria-label="Cohort Track Selection">
+                    <option value="" disabled selected>Choose your track</option>
+                    <option value="core">GenAI Engineer (Core Focus Focus)</option>
+                    <option value="llmops">GenAI + LLMOps Architect Track (Recommended)</option>
+                    <option value="help">Not sure yet — help me choose</option>
+                </select>
+
+                <button class="cta-btn" type="submit">Submit Enrolment Application →</button>
+                <div class="form-tos">By enrolling you agree to be contacted about this cohort. No spam.</div>
+            </form>
+        </div>
+    </div>
+
+    <div class="countdown-section">
+        <div class="countdown-label">Spring Cohort Enrolments Close In</div>
+        <div class="countdown-digits" aria-live="polite">
+            <div class="digit-block"><span class="num" id="cd-days">02</span><div class="lbl">Days</div></div>
+            <div class="digit-sep">:</div>
+            <div class="digit-block"><span class="num" id="cd-hours">22</span><div class="lbl">Hours</div></div>
+            <div class="digit-sep">:</div>
+            <div class="digit-block"><span class="num" id="cd-mins">48</span><div class="lbl">Mins</div></div>
+            <div class="digit-sep">:</div>
+            <div class="digit-block"><span class="num" id="cd-secs">55</span><div class="lbl">Secs</div></div>
+        </div>
+    </div>
+    <div class="urgency">
+        <p>⚡ Strictly Capped at 30 Seats to Ensure Individual Flagship Portfolio Project Review Quality</p>
+    </div>
+
+    <div class="logo-strip-section">
+        <div style="max-width: 1040px; margin: 0 auto;">
+            <p>Open-Source Stack We Teach Native Autonomy:</p>
+            <div class="trust-logos">
+                <div class="trust-logo">PyTorch</div>
+                <div class="trust-logo">Hugging Face</div>
+                <div class="trust-logo">LangChain</div>
+                <div class="trust-logo">LlamaIndex</div>
+                <div class="trust-logo">LangGraph</div>
+                <div class="trust-logo">vLLM</div>
+                <div class="trust-logo">Ollama</div>
+                <div class="trust-logo">Qdrant</div>
+                <div class="trust-logo">ChromaDB</div>
+                <div class="trust-logo">FastAPI</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-label">The Gap Most Courses Won't Admit</div>
+        <h2 class="section-title">Why Most AI Prototypes Never<br><em>Reach Production</em></h2>
+        <p class="section-desc">The hard truth about calling basic wrapper APIs vs. building native infrastructure layers that scale without breaking budget, accuracy, or latency gates.</p>
+
+        <div class="problem-grid">
+            <div class="problem-card">
+                <div class="problem-stat">92%</div>
+                <p>of GenAI prototypes <strong>never reach production</strong>. They hit architecture walls: hallucination, token evaluation drift, high latency, and zero observability metrics.</p>
+            </div>
+            <div class="problem-card">
+                <div class="problem-stat">84%</div>
+                <p>of wrapper engineers <strong>cannot fine-tune a 7B model</strong>, write custom hybrid retrieval hooks, or deploy programmatic evaluation guardrails in CI pipelines.</p>
+            </div>
+            <div class="problem-card">
+                <div class="problem-stat">11%</div>
+                <p>of engineers <strong>own the full AI stack</strong> — from loss gradient steps to LangGraph loops. They command premium tech salaries because hiring managers recognize real shipping capability.</p>
+            </div>
+        </div>
+
+        <p class="problem-conclude">We exist because every one of those production gaps is <em>closed by building</em>, not watching. 24 weeks. 16 capstones.</p>
+    </div>
+
+    <div class="section section-alt">
+        <div class="section-alt-inner">
+            <div class="section-label">Inside The Engineering Loop</div>
+            <h2 class="section-title">See The Full Stack System In Action</h2>
+            <p class="section-desc">Watch a 90-second technical walkthrough showing how model components, vector storage layers, and orchestration graphs compose together.</p>
+
+            <div class="video-wrapper" data-exaguru-video="1" role="button" tabindex="0" aria-label="Play Course Walkthrough Video">
+                <div class="video-placeholder">
+                    <div class="play-btn">▶</div>
+                    <h3 style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(16px, 4vw, 20px); font-weight: 700; color: #fff; margin: 0;">Watch 90s Walkthrough</h3>
+                    <p style="font-size: 13px; opacity: 0.8; margin-top: 8px; color: #fff;">Click to play the technical overview</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="method">
+        <div class="section-label">The Method</div>
+        <h2 class="section-title">Five Pillars. One <em>Shippable</em><br>Generative AI Engineer.</h2>
+        <p class="section-desc">Built completely around end-to-end framework assembly. Fundamentals first, zero magic black boxes.</p>
+
+        <div class="cards-3">
+            <div class="card">
+                <span class="card-label">01 · The Core</span>
+                <div class="card-icon">🏗️</div>
+                <h3>Fundamentals First</h3>
+                <p>No framework wrappers before you grasp embedding matrix dimensions, vector mathematics, loss mechanics, and token sampling probabilities.</p>
+            </div>
+            <div class="card">
+                <span class="card-label">02</span>
+                <div class="card-icon">⚙️</div>
+                <h3>Open-Source Native</h3>
+                <p>Master PyTorch, Hugging Face, LangGraph, vLLM, and Qdrant natively. No proprietary API wrapper crutches or vendor lock-in dependencies.</p>
+            </div>
+            <div class="card">
+                <span class="card-label">03</span>
+                <div class="card-icon">🤖</div>
+                <h3>Capstone Driven</h3>
+                <p>Every development phase closes with a functional portfolio element. Build a line-by-line decoder Transformer up to multi-agent engines.</p>
+            </div>
+            <div class="card">
+                <span class="card-label">04</span>
+                <div class="card-icon">📅</div>
+                <h3>Live Group Cohort</h3>
+                <p>Two 90-minute live interactive sessions weekly with asynchronous engine lab debugging logs and structured pull-request reviews.</p>
+            </div>
+            <div class="card">
+                <span class="card-label">05 · Operational Depth</span>
+                <div class="card-icon">🧠</div>
+                <h3>Production LLMOps</h3>
+                <p>Most programs finish at a streamlit sandbox. We cover dedicated deployment runtimes, real-time logging evaluation gates, tracer hooks, and guardrails.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section section-alt">
+        <div class="section-alt-inner">
+            <div class="section-label">The Unified Picture</div>
+            <h2 class="section-title">What You'll Actually Ship:<br>The Entire <em>GenAI Lifecycle</em></h2>
+            <p class="section-desc">Models, search architectures, and autonomous steps don't exist in siloes. You'll code every linking pathway across the platform flow.</p>
+            <div class="cards-3">
+                <div class="card" style="border-top:3px solid var(--purple);">
+                    <span class="card-label" style="color: var(--purple);">Model Layer · Phase 4</span>
+                    <h3>Build &amp; Fine-Tune</h3>
+                    <p>Transformers from first principles in PyTorch. QLoRA and DPO fine-tuning mechanics on Llama, Mistral, and Qwen blocks. Optimize model execution with vLLM runtimes, quantized matrices, and cached structures.</p>
+                </div>
+                <div class="card" style="border-top:3px solid #0891b2;">
+                    <span class="card-label" style="color: #0891b2;">Retrieval Layer · Phase 5</span>
+                    <h3>Retrieve &amp; Ground</h3>
+                    <p>Embeddings, advanced custom segment indexing, hybrid sparse-dense indexes, structural query splits, reranking pipelines, and multi-modal search engines using ChromaDB, Qdrant, and pgvector clusters.</p>
+                </div>
+                <div class="card" style="border-top:3px solid var(--green);">
+                    <span class="card-label" style="color: var(--green);">Agent Layer · Phase 5</span>
+                    <h3>Compose &amp; Ship</h3>
+                    <p>Multi-agent architecture logic with structural graph states via LangGraph. Wire production schema calls, state tracking history, validation gates, runtime evaluation systems, and live tracing instances.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-left">
+            <div class="section-label" style="text-align: left;">The Practical Challenge</div>
+            <h2 class="section-title" style="text-align: left;">Bridge The Divide Between<br>Tutorial Demos and <em>Production Realities</em></h2>
+            <p class="section-desc" style="text-align: left; margin-left: 0;">Stop relying on quick code recipes. Master the tooling systems running actual enterprise instances.</p>
+
+            <div class="feature-row">
+                <div class="feature-num">01</div>
+                <div class="feature-content">
+                    <h3>No Hidden Wrapper Framework Crutches</h3>
+                    <p>You'll configure backpropagation matrices in raw NumPy, build custom neural layers, and assemble an entire GPT framework token step to see exactly how indices transform.</p>
+                </div>
+            </div>
+            <div class="feature-row">
+                <div class="feature-num">02</div>
+                <div class="feature-content">
+                    <h3>Comprehensive Infrastructure Testing</h3>
+                    <p>Setup production evaluation setups using automated scoring pipelines. Instrument execution tracks with detailed traces to analyze cost, prompt accuracy, and latency variables.</p>
+                </div>
+            </div>
+            <div class="feature-row">
+                <div class="feature-num">03</div>
+                <div class="feature-content">
+                    <h3>Open Parameter Tuning and Alignment</h3>
+                    <p>Format training sets for open model adaptation. Spin up fine-tuning targets to alter system behavior, introduce context skills, and clean structured outputs down to raw parameters.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section section-alt">
+        <div class="section-alt-inner">
+            <div class="salary-banner">
+                <div class="badge">Premium Skill Premium</div>
+                <div class="salary-highlight">Hiring Trends Analytics</div>
+                <p class="salary-subline">Engineers owning custom model orchestration, vector data pipelines, and deployment layers command significant compensation upside over standard developers.</p>
+                <h2>Command Premium Generative AI Engineering Packages</h2>
+                <p>Enterprise engineering domains are facing a massive structural talent constraint. Technical practitioners building from scratch are separating themselves completely from simple API consumers in interview loops.*</p>
+
+                <div class="hike-grid">
+                    <div class="hike-box">
+                        <div class="from-to">Core Focus</div>
+                        <div class="hike-desc">GenAI Core Engineer Track</div>
+                    </div>
+                    <div class="hike-box premium">
+                        <div class="from-to">Premium Track</div>
+                        <div class="hike-desc">GenAI + LLMOps Architect</div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 64px;">
+                <div class="section-label">Target Designations</div>
+                <h2 class="section-title">Target Modern High-Leverage Positions</h2>
+            </div>
+
+            <div class="roles-grid">
+                <div class="role-card">
+                    <div class="role-icon-wrapper">🧠</div>
+                    <h3>Generative AI Engineer</h3>
+                    <p>Architect complex system environments using custom semantic indexes, programmatic contextual hints, and open model stacks.</p>
+                </div>
+                <div class="role-card">
+                    <div class="role-icon-wrapper">☁️</div>
+                    <h3>LLMOps Infrastructure Engineer</h3>
+                    <p>Deploy scalable model instances, instrument evaluation tracking dashboards, partition vector clusters, and manage caching runtimes.</p>
+                </div>
+                <div class="role-card">
+                    <div class="role-icon-wrapper">🧬</div>
+                    <h3>Applied ML/AI Architect</h3>
+                    <p>Design multi-modal model architectures, implement fine-tuning runtimes, and construct parameter alignment datasets.</p>
+                </div>
+                <div class="role-card">
+                    <div class="role-icon-wrapper">🏗️</div>
+                    <h3>Founding AI Engineer</h3>
+                    <p>Translate initial functional ideas into resilient software prototypes by keeping framework assemblies clear and highly performant.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-label">Choose Wisely</div>
+        <h2 class="section-title">Generic Tutorials vs. <em>Production Competence</em></h2>
+        <p class="section-desc">Assembling native components beats copy-pasting API endpoints every single time.</p>
+        <div class="compare-grid">
+            <div class="compare-card bad">
+                <h3>YouTube Guides / Basic Wrappers</h3>
+                <ul>
+                    <li>No native matrix implementation from baseline code blocks</li>
+                    <li>Proprietary black-box wrappers used as primary tools</li>
+                    <li>Zero system evaluation scoring arrays or pipeline gates</li>
+                    <li>Omit system deployment patterns or observability trackers</li>
+                    <li>Fragmented scripts that fail outside sandbox environments</li>
+                    <li>Self-paced instruction without structural codebase feedback</li>
+                </ul>
+            </div>
+            <div class="compare-card good">
+                <h3>ExaGuru GenAI Engineering Cohort</h3>
+                <ul>
+                    <li>Transformers and backprop engineered from scratch</li>
+                    <li>100% open-source component stack native autonomy</li>
+                    <li>Production evaluation platforms using automated scoring runtimes</li>
+                    <li>Deep operational focus covering serving runtimes and trace trees</li>
+                    <li>16 concrete milestone projects and one flagship pipeline</li>
+                    <li>Automated validation test setups with individual architecture feedback</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="section section-alt" id="curriculum">
+        <div class="section-alt-inner">
+            <div class="section-label">The Curriculum</div>
+            <h2 class="section-title">Five Specialized Development Phases.<br><em>Complete</em> Engineering Track.</h2>
+            <p class="section-desc">24 Weeks · 10–12 Hours/Week · 16 Milestone Projects · 1 Flagship Autonomous Assistant Production Build</p>
+
+            <div class="week-grid">
+                <div class="week-card w1">
+                    <div class="week-header">
+                        <div class="wk-badge">Phase 01 · Weeks 1–5</div>
+                        <h3>Foundations, Math &amp; Environment Pipeline</h3>
+                    </div>
+                    <div class="week-body">
+                        <ul>
+                            <li>Python environmental compilation structures using uv, Conda, and container runtimes</li>
+                            <li>NumPy and Pandas deep execution vectors for array transformation workflows</li>
+                            <li>Linear algebra, multidimensional matrices, gradients, and calculation steps</li>
+                            <li>Probability fields, maximum likelihood metrics, and Bayesian assumptions</li>
+                            <li>Classical machine learning algorithms via scikit-learn to map system validation metrics</li>
+                            <li><strong>Phase Capstone:</strong> End-to-end telemetry workflow execution using modern data arrays</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="week-card w2">
+                    <div class="week-header">
+                        <div class="wk-badge">Phase 02 · Weeks 6–10</div>
+                        <h3>Deep Learning Nodes to Transformer Blocks</h3>
+                    </div>
+                    <div class="week-body">
+                        <ul>
+                            <li>Multilayer Perceptron networks written from basic mathematical steps inside raw NumPy</li>
+                            <li>PyTorch programmatic operations: autograd hooks, precision loops, and compute setups</li>
+                            <li>Computer Vision feature extraction layers, adaptation setups, and interface testing</li>
+                            <li>Attention mechanisms and multi-headed query block transformations</li>
+                            <li><strong>Phase Capstone:</strong> Building a line-by-line character decoder model engine</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="week-card w3">
+                    <div class="week-header">
+                        <div class="wk-badge">Phase 03 · Weeks 11–14</div>
+                        <h3>Generative Architectural Patterns</h3>
+                    </div>
+                    <div class="week-body">
+                        <ul>
+                            <li>Autoencoders, representation bounds, and state reparameterization rules</li>
+                            <li>Generative Adversarial Nets: boundary checks, stabilization steps, and translation hooks</li>
+                            <li>Diffusion pipelines: mathematical parameters, guidance features, and latent states</li>
+                            <li>Autoregressive sequences, text parsing rules, and structural scaling trends</li>
+                            <li><strong>Phase Capstone:</strong> Assembling a latent generation workflow with custom input constraints</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="week-card w4">
+                    <div class="week-header">
+                        <div class="wk-badge">Phase 04 · Weeks 15–18</div>
+                        <h3>Open Models, Custom Adaptation &amp; Vector Stores</h3>
+                    </div>
+                    <div class="week-body">
+                        <ul>
+                            <li>Open parameter space structures (Llama, Mistral, Qwen) vs closed API formats</li>
+                            <li>Prompt engineering metrics, execution hooks, and evaluation frameworks</li>
+                            <li>Fine-tuning runtimes: SFT scripts, PEFT formats, and parameter alignment routines</li>
+                            <li>Embedding pipelines, high-dimensional search indices, and retrieval matching</li>
+                            <li><strong>Phase Capstone:</strong> Tuning a 7B model space and deploying a semantic search route</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="week-card w5">
+                    <div class="week-header">
+                        <div class="wk-badge">Phase 05 · Weeks 19–24</div>
+                        <h3>Advanced Retrieval, Graph Agents &amp; Scale LLMOps</h3>
+                    </div>
+                    <div class="week-body">
+                        <ul>
+                            <li>Semantic processing systems, visual search indexes, and parsing evaluation criteria</li>
+                            <li>Autonomous state charts using LangGraph routines, tool logic, and memory tables</li>
+                            <li>Runtimes optimization targets, tracking architectures, and automated regression testing</li>
+                            <li>Multi-modal interfaces, sound transcription steps, and real-time streaming routes</li>
+                            <li><strong>Flagship Capstone:</strong> Assembling a voice-driven multi-agent semantic platform instance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-label">The Lab Environment</div>
+        <h2 class="section-title">You Don't Read Papers. <em>You Ship Pipelines.</em></h2>
+        <p class="section-desc">Every phase completes with a concrete code lab validated via comprehensive suite tests. Build clean portfolio structures.</p>
+
+        <div class="lab-grid">
+            <div class="lab-text">
+                <h3>Live Cloud Accelerators. Automated Regressions.</h3>
+                <p>Run complex tasks across automated test containers equipped with full GPU access allocations without hardware limits.</p>
+                <ul class="lab-features">
+                    <li>Compute instances with scalable cloud access tiers included</li>
+                    <li>Automated validation test setups with line-by-line file inspections</li>
+                    <li>Production reference solutions for production structural reviews</li>
+                    <li>Work directly with diverse data types and unparsed parameters</li>
+                    <li>Port code files cleanly into your external production profiles</li>
+                </ul>
+            </div>
+
+            <div class="lab-mock">
+                <div class="lab-mock-bar">
+                    <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                    <span class="url">lab.exaguru.ai/rag-pipeline/configure</span>
+                </div>
+                <div class="lab-mock-body">
+                    <div class="lab-mock-title">
+                        <span class="badge">Lab 19</span>
+                        Production Agentic Retrieval Environment
+                    </div>
+                    <div class="lab-form-row"><span class="k">Embedder</span><span class="val">BAAI/bge-large-en-v1.5</span></div>
+                    <div class="lab-form-row"><span class="k">Vector Index</span><span class="val">Qdrant · production-cluster-mum1</span></div>
+                    <div class="lab-form-row"><span class="k">Parsing Step</span><span class="val">recursive · 512 tokens · 50 overlay</span></div>
+                    <div class="lab-form-row highlight"><span class="k">Reranker</span><span class="val">bge-reranker-v2-m3 · target-top-3<span class="cursor"></span></span></div>
+                    <div class="lab-form-row"><span class="k">Telemetry</span><span class="val">faithfulness 0.94 · context-recall 0.91</span></div>
+                    <div class="lab-form-action">
+                        <button type="button">Deploy Pipeline</button>
+                    </div>
+                    <div class="lab-mock-status">Deployed Runtimes · p95 Latency 1.2s · Traces Active</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-label">Milestone Progression</div>
+        <h2 class="section-title">Construct Resilient <em>AI Systems</em></h2>
+        <p class="section-desc">Key structural targets every developer completes before the close of the cohort track.</p>
+
+        <div class="roadmap-container">
+            <div class="roadmap-step">
+                <div class="step-num">1</div>
+                <div class="step-text">
+                    <h4>Baseline Operations</h4>
+                    <p>NumPy matrix logic and telemetry pipelines completed.</p>
+                </div>
+            </div>
+            <div class="roadmap-step">
+                <div class="step-num">2</div>
+                <div class="step-text">
+                    <h4>Model Assembly</h4>
+                    <p>Decoder attention layers built from fundamental operations.</p>
+                </div>
+            </div>
+            <div class="roadmap-step">
+                <div class="step-num">3</div>
+                <div class="step-text">
+                    <h4>Parameter Tuning</h4>
+                    <p>SFT paths and parameter alignment arrays run manually.</p>
+                </div>
+            </div>
+            <div class="roadmap-step">
+                <div class="step-num">4</div>
+                <div class="step-text">
+                    <h4>Graph States</h4>
+                    <p>Complex conversational graphs with memory structures configured.</p>
+                </div>
+            </div>
+            <div class="roadmap-step" style="border-color: var(--green); border-width: 2px;">
+                <div class="step-num" style="background: var(--green); color: #fff;">✓</div>
+                <div class="step-text">
+                    <h4>Scale Ops</h4>
+                    <p>Deploy tracing layers, serving instances, and validation tests.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section section-alt" id="outcomes">
+        <div class="section-alt-inner">
+            <div class="section-label">Proven Jumps</div>
+            <h2 class="section-title">Real Engineers. <em>Real Upsides.</em></h2>
+            <p class="section-desc">See paths taken by practitioners who transitioned into core design assignments.</p>
+
+            <div class="testi-grid">
+                <div class="auth-testi">
+                    <div>
+                        <div class="auth-header">
+                            <div class="auth-user">
+                                <div class="auth-avatar">AN</div>
+                                <div class="auth-info">
+                                    <h4>Aditya N.</h4>
+                                    <p>GenAI Team Lead</p>
+                                </div>
+                            </div>
+                            <div class="auth-stars">★★★★★</div>
+                        </div>
+                        <p class="auth-text">"Before the cohort, I was a backend dev calling generic wrapper endpoints. Assembling semantic retrieval routes and trace evaluations manually altered my profile value completely in review loops."</p>
+                    </div>
+                    <div class="auth-jump">
+                        <div class="from"><span class="lbl">Before</span><span class="v">Backend Dev · 4 yrs</span></div>
+                        <span class="arrow">→</span>
+                        <div class="to"><span class="lbl">After</span><span class="v">GenAI Infrastructure Engineer</span></div>
+                    </div>
+                </div>
+
+                <div class="auth-testi">
+                    <div>
+                        <div class="auth-header">
+                            <div class="auth-user">
+                                <div class="auth-avatar" style="background: var(--green);">PR</div>
+                                <div class="auth-info">
+                                    <h4>Priya R.</h4>
+                                    <p>ML Platform Architect</p>
+                                </div>
+                            </div>
+                            <div class="auth-stars">★★★★★</div>
+                        </div>
+                        <p class="auth-text">"Coding backpropagation and custom multi-head blocks removed the technical intimidation of parsing new research text. The focus on metrics and evaluation loops is incredibly practical."</p>
+                    </div>
+                    <div class="auth-jump">
+                        <div class="from"><span class="lbl">Before</span><span class="v">Data Analyst · 3 yrs</span></div>
+                        <span class="arrow">→</span>
+                        <div class="to"><span class="lbl">After</span><span class="v">ML Solutions Architect</span></div>
+                    </div>
+                </div>
+
+                <div class="auth-testi">
+                    <div>
+                        <div class="auth-header">
+                            <div class="auth-user">
+                                <div class="auth-avatar" style="background: #d97706;">KM</div>
+                                <div class="auth-info">
+                                    <h4>Karan M.</h4>
+                                    <p>AI Infrastructure Architect</p>
+                                </div>
+                            </div>
+                            <div class="auth-stars">★★★★★</div>
+                        </div>
+                        <p class="auth-text">"I entered as a technical manager wondering how to scale AI features reliably. Phase 5 completely demystified latency parameters, tracing logic, and edge deployments."</p>
+                    </div>
+                    <div class="auth-jump">
+                        <div class="from"><span class="lbl">Before</span><span class="v">Backend Lead · 9 yrs</span></div>
+                        <span class="arrow">→</span>
+                        <div class="to"><span class="lbl">After</span><span class="v">AI Platform Architect</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-label">Code Feedback Logs</div>
+        <h2 class="section-title">Alumni Project Review Threads</h2>
+        <p class="section-desc">Direct commentary from engineering professionals who assembled our comprehensive platform paths.</p>
+
+        <div class="review-grid">
+            <div class="review-item">
+                <div class="review-top">
+                    <div class="review-user">
+                        <div class="review-avatar" style="background:#E0F2E9; color:#2B5A41;">AK</div>
+                        <div class="review-meta">
+                            <div class="name">Aisha Khan</div>
+                            <div class="loc">Tech Lead · Feb 2026</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                </div>
+                <div class="review-title">Resilient operational models.</div>
+                <div class="review-text">The operational modules covering custom model deployment targets, orchestration states, and evaluation arrays are incredibly deep. Highly robust framework content.</div>
+            </div>
+
+            <div class="review-item">
+                <div class="review-top">
+                    <div class="review-user">
+                        <div class="review-avatar" style="background:#FFF3E0; color:#E65100;">CW</div>
+                        <div class="review-meta">
+                            <div class="name">Chen Wei</div>
+                            <div class="loc">Infrastructure Engineer · Jan 2026</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                </div>
+                <div class="review-title">Excellent codebase visibility.</div>
+                <div class="review-text">Assembling attention calculations manually helped me understand resource optimization constraints. Excellent clarity across all execution modules.</div>
+            </div>
+
+            <div class="review-item">
+                <div class="review-top">
+                    <div class="review-user">
+                        <div class="review-avatar" style="background:#EDE7F6; color:#4527A0;">BS</div>
+                        <div class="review-meta">
+                            <div class="name">Beatriz Silva</div>
+                            <div class="loc">Software Engineer · Nov 2025</div>
+                        </div>
+                    </div>
+                    <div class="review-stars">★★★★★</div>
+                </div>
+                <div class="review-title">Operational metrics are gold.</div>
+                <div class="review-text">The deployment frameworks and performance telemetry paths saved us months of sandbox optimization adjustments. Landed an infra deployment track immediately.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section section-alt" id="trainer">
+        <div class="section-alt-inner">
+            <div class="section-label">Cohort Guide</div>
+            <h2 class="section-title">Direct Engineering Guidance</h2>
+            <div class="trainer-box">
+                <div class="trainer-avatar-col">
+                    <div class="trainer-img">A</div>
+                    <div class="trainer-stats">
+                        <div class="trainer-stat"><div class="val">12+</div><div class="key">Years XP</div></div>
+                        <div class="trainer-stat"><div class="val">200+</div><div class="key">Mentored</div></div>
+                        <div class="trainer-stat"><div class="val">Core</div><div class="key">OSS Contrib</div></div>
+                    </div>
+                </div>
+                <div class="trainer-info">
+                    <h3>Arjun</h3>
+                    <div class="role">Senior AI Engineer · Machine Learning Specialist · OSS Contributor</div>
+                    <p>✨ <strong>Deep Production Experience</strong> — Over a decade configuring scalable language implementations, search layers, and structured predictive routes.</p>
+                    <p>🚀 <strong>Open Architecture Advocate</strong> — Dedicated to training developers on setting up custom open deployments, semantic indexes, and automated test arrays without dependency limits.</p>
+                    <p>🎯 <strong>200+ Developers Guided</strong> into technical engineering tracks by emphasizing codebase mechanics, clean pull requests, and native framework development over sandbox tools.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-label">What's In The Box</div>
+        <h2 class="section-title">Everything <em>Included</em>, Nothing Upsold.</h2>
+        <p class="section-desc">Real enterprise-grade resources stacked into one 24-week cohort. No upsells, no surprises.</p>
+
+        <div class="bonus-list">
+            <div class="bonus-row">
+                <span class="bonus-pill">Included</span>
+                <div>
+                    <div class="name">$200 Model Validation API Keys</div>
+                    <div class="desc">Real development credits to execute structural configuration tests and baseline evaluations during development modules.</div>
+                </div>
+                <span class="val">+ $300 Value</span>
+            </div>
+            <div class="bonus-row">
+                <span class="bonus-pill">Included</span>
+                <div>
+                    <div class="name">GPU Compute Instances (Modal / RunPod Tiers)</div>
+                    <div class="desc">Dedicated processing tokens for model adaptation exercises, state adjustments, and structural execution setups.</div>
+                </div>
+                <span class="val">+ $400 Value</span>
+            </div>
+            <div class="bonus-row">
+                <span class="bonus-pill">Included</span>
+                <div>
+                    <div class="name">Managed Vector Index Clusters</div>
+                    <div class="desc">Persistent infrastructure keys to maintain your flagship architectural project blocks after cohort completion.</div>
+                </div>
+                <span class="val">+ $200 Value</span>
+            </div>
+            <div class="bonus-row">
+                <span class="bonus-pill">Included</span>
+                <div>
+                    <div class="name">1:1 Architecture PR Review Sessions</div>
+                    <div class="desc">Granular design critiques of your code repositories, interface styles, and system schemas directly with tracking guides.</div>
+                </div>
+                <span class="val">+ $250 Value</span>
+            </div>
+        </div>
+
+        <div class="bonus-total-box">
+            <div>
+                <div class="lbl">Total Environment Infrastructure Pack</div>
+                <div class="v">$1,350</div>
+            </div>
+            <span class="stamp">Free Today</span>
+        </div>
+    </div>
+
+    <div class="section section-alt">
+        <div class="section-alt-inner">
+            <div class="section-label">Compensation Benchmark Tiers</div>
+            <h2 class="section-title">Structural Market Premium <em>Calculator</em></h2>
+            <p class="section-desc">Review directional performance premiums based on localized system infrastructure specializations.</p>
+
+            <div class="calc-card">
+                <div class="calc-grid">
+                    <div class="calc-controls">
+                        <h3>Estimate your jump</h3>
+                        <p>Move the sliders below to see where your GenAI specialization track could land you 12 months from now.</p>
+
+                        <div class="calc-control">
+                            <label>Prior Technical Experience <span class="v"><span id="exp-v">3</span> yrs</span></label>
+                            <input type="range" id="exp-r" min="1" max="20" value="3" step="1">
+                        </div>
+
+                        <div class="calc-control">
+                            <label>Baseline Annual Package <span class="v">₹ <span id="sal-v">12.0</span> L</span></label>
+                            <input type="range" id="sal-r" min="3" max="55" value="12" step="0.5">
+                        </div>
+
+                        <div class="calc-control">
+                            <label>Architectural Specialization Track <span class="v" id="trk-v">GenAI + LLMOps</span></label>
+                            <select id="trk-r">
+                                <option value="oci">GenAI Core Focus Tiers</option>
+                                <option value="oci-exa" selected>GenAI + LLMOps Runtimes Track (Recommended)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="calc-result">
+                        <div class="calc-result-inner">
+                            <h4>Projected Outlook · 12 Months Post Cohort Track</h4>
+                            <div class="delta">₹ <span id="proj-low">26.5</span> L <em>—</em> <span id="proj-high">36.0</span> L</div>
+                            <div class="calc-bars">
+                                <div class="calc-bar">
+                                    <span class="lbl">Now</span>
+                                    <span class="track"><span class="fill" id="bar-now" style="width:30%;"></span></span>
+                                    <span class="v">₹ <span id="bar-now-v">12.0</span>L</span>
+                                </div>
+                                <div class="calc-bar">
+                                    <span class="lbl">Target</span>
+                                    <span class="track"><span class="fill us" id="bar-future" style="width:62%;"></span></span>
+                                    <span class="v">₹ <span id="bar-future-v">31.0</span>L</span>
+                                </div>
+                            </div>
+                            <div class="calc-cta">
+                                <button type="button" class="cta-btn" data-exaguru-apply="1">Secure Cohort Allocation →</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="faq">
+        <div style="max-width:760px;margin:0 auto;text-align:left;">
+            <div class="section-label" style="text-align: center;">FAQ</div>
+            <h2 class="section-title" style="text-align: center;">Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-q" data-exaguru-faq="1">I can already use ChatGPT and call APIs — why do I need this? <span class="icon">+</span></div>
+                <div class="faq-a">Calling an API is a starting point, not engineering. Real GenAI work means deciding when to fine-tune vs RAG vs prompt, evaluating systems before shipping, defending hallucinations with retrieval + reranking, building agents that don't loop forever, and operating models in production with cost &amp; latency targets. This cohort teaches the engineering layer — the part that separates "I built a demo" from "I shipped this to 100k users."</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" data-exaguru-faq="1">Do I need a math / ML background? <span class="icon">+</span></div>
+                <div class="faq-a">You need comfort with Python and high-school math (algebra, basic calculus, probability). Phase 1 explicitly refreshes the math you actually use in deep learning — vectors, gradients, distributions. We've successfully trained software engineers, backend devs, data analysts, and CS grads with no prior ML. What we can't do is teach Python from scratch in the same 24 weeks.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" data-exaguru-faq="1">Will I need expensive hardware or my own GPU? <span class="icon">+</span></div>
+                <div class="faq-a">No. Every lab can be done on the cloud GPU credits included in the program (Modal / RunPod). You can also do the lighter modules on a free Colab tier or a 6–8GB consumer GPU. For the capstones (fine-tuning, diffusion training, vLLM serving) you'll spin up A100s on the included credits.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" data-exaguru-faq="1">How is this different from a 12-week GenAI bootcamp on Udemy? <span class="icon">+</span></div>
+                <div class="faq-a">Three differences. (1) Length — we take 24 weeks because building Transformers, diffusion, and agents from first principles can't be honestly compressed. (2) Depth — we don't skip the math or the implementation. You'll write backprop, attention, and a DDPM line-by-line, then graduate to the frameworks. (3) Production — most courses stop at the prototype. Phase 5 (serving, evals, guardrails, LLMOps) is where this program actually starts to differentiate you.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" data-exaguru-faq="1">Can I do this with a full-time job? <span class="icon">+</span></div>
+                <div class="faq-a">Yes — the cohort is designed for working engineers. Two 90-minute live sessions per week (recorded), plus ~7–9 hours of lab work weekly. Most learners use weekday evenings + a Saturday morning. If you fall behind, recordings + a 1-year LMS extension keep you covered.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="final-cta-section">
+        <div class="final-cta-inner final-cta-centered">
+            <div>
+                <div class="section-label" style="text-align: center;">ExaGuru Generative AI Engineering Track</div>
+                <h2 style="text-align: center;">Stop Calling APIs.<br><em>Start Shipping AI Frameworks.</em></h2>
+                <p style="text-align: center; max-width: 600px; margin: 0 auto 28px;"><strong>16 of 30 seats remain.</strong> Cohort track launches March 2027. Registration portals freeze automatically when seat limits register filled.</p>
+
+                <div class="final-guarantee" style="margin: 0 auto;">
+                    <span class="seal">96<br>HR</span>
+                    <span><strong>100% Risk Free Enrolment</strong> · Full validation refund guarantee active within 96 hours of registration.</span>
+                </div>
+
+                <div class="mini-countdown" style="max-width: 480px; margin: 32px auto 28px;">
+                    <div class="mini-cd-block"><div class="mini-cd-num" id="fcd-d">02</div><div class="mini-cd-lbl">Days</div></div>
+                    <div class="mini-cd-block"><div class="mini-cd-num" id="fcd-h">22</div><div class="mini-cd-lbl">Hours</div></div>
+                    <div class="mini-cd-block"><div class="mini-cd-num" id="fcd-m">48</div><div class="mini-cd-lbl">Mins</div></div>
+                    <div class="mini-cd-block"><div class="mini-cd-num" id="fcd-s">55</div><div class="mini-cd-lbl">Secs</div></div>
+                </div>
+
+                <div class="final-cta-actions">
+                    <button type="button" class="cta-btn final-big-btn" data-exaguru-apply="1">
+                        Enroll in Spring Cohort →
+                    </button>
+                    <div class="final-cta-meta">2 Minutes Processing · Profile Response Confirmed Within 24 Hours</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-cols">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <img src="https://knorishblobstorage-cbbeebf4h6dudbf2.z01.azurefd.net/public/e398964d-be9b-4e65-853d-89782b84d4e7/customfile/05032026/bbfbd.png" alt="ExaGuru Brand Logo">
+                </div>
+                <p style="font-size: 13px; line-height: 1.6; margin-top: 12px; opacity: 0.8;">Live development formats designed to build autonomous engineers, not video viewers. Production grade infrastructure implementation guidelines.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Curriculum Track</h4>
+                <a href="#curriculum">Phase Roadmap</a>
+                <a href="#method">Pillar Strategy</a>
+                <a href="#trainer">Cohort Lead Profile</a>
+            </div>
+            <div class="footer-col">
+                <h4>Network Connections</h4>
+                <a href="https://www.linkedin.com/company/exaguruconsultants/posts/?feedView=all" target="_blank">LinkedIn Profile</a>
+                <a href="https://www.youtube.com/@Exaguru" target="_blank">YouTube Workspace</a>
+                <a href="https://chat.whatsapp.com/GyPt2LUvPTJ0Ck57f6WSZT" target="_blank">WhatsApp Group Channel</a>
+            </div>
+            <div class="footer-col">
+                <h4>Support Center</h4>
+                <a href="mailto:support@exaguru.com">support@exaguru.com</a>
+                <a href="tel:+916394049607">+91-6394049607</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 ExaGuru. All rights reserved.</span>
+            <span>Generative AI Engineering Live Cohort Runtimes Channel</span>
+        </div>
+    </footer>
+
+    <div class="exaguru-live-ping live-ping" id="live-ping" role="status" aria-live="polite" aria-atomic="true">
+        <div class="av" id="ping-av">A</div>
+        <div>
+            <div class="ac" id="ping-msg"><strong>Aditya N.</strong> from <span>Bengaluru</span> registered 2 mins ago</div>
+            <div class="time" id="ping-time">Just now</div>
+        </div>
+    </div>
+
+    <div class="exaguru-sticky-bar sticky-bar" id="exaguru-sticky-bar">
+        <span class="sl">Spring 2027 batch · <strong>16 seats left</strong></span>
+        <div class="exaguru-sticky-countdown sticky-countdown" aria-label="Cohort timeline tracker">
+            <span class="exaguru-sticky-cd-unit sticky-cd-unit"><span class="num js-cd" id="sticky-d" data-u="0">02</span><small>days</small></span>
+            <span class="exaguru-sticky-cd-sep sticky-cd-sep">:</span>
+            <span class="exaguru-sticky-cd-unit sticky-cd-unit"><span class="num js-cd" id="sticky-h" data-u="1">22</span><small>hrs</small></span>
+            <span class="exaguru-sticky-cd-sep sticky-cd-sep">:</span>
+            <span class="exaguru-sticky-cd-unit sticky-cd-unit"><span class="num js-cd" id="sticky-m" data-u="2">48</span><small>min</small></span>
+            <span class="exaguru-sticky-cd-sep sticky-cd-sep">:</span>
+            <span class="exaguru-sticky-cd-unit sticky-cd-unit"><span class="num js-cd" id="sticky-s" data-u="3">55</span><small>sec</small></span>
+        </div>
+        <a href="#applyPopup" id="exaguru-sticky-apply-btn" class="exaguru-sticky-btn sticky-btn" data-exaguru-apply="1" onclick="if(window.openApplyPopup){window.openApplyPopup();return false;}return true;">Enroll Now →</a>
+    </div>
+
+    <div class="apply-popup-overlay" id="applyPopup">
+        <div class="apply-popup-box" role="dialog" aria-modal="true" aria-labelledby="apply-popup-title">
+            <div class="apply-popup-header">
+                <span class="apply-popup-drag" aria-hidden="true"></span>
+                <a href="#" class="apply-popup-close" data-exaguru-close-popup="1" aria-label="Close application panel" onclick="if(window.closeApplyPopup){window.closeApplyPopup();} return true;">×</a>
+                <span class="apply-popup-label">Generative AI Engineer · 24-Week Batch</span>
+                <h3 id="apply-popup-title">Submit Cohort Enrolment</h3>
+                <p class="form-sub">2 Minutes Setup · Allocation Status Transmitted Within 24 Hours</p>
+                <span class="apply-popup-seats">⚡ 16 of 30 allocations left</span>
+            </div>
+            <div class="apply-popup-body">
+                <form id="sib-form-popup" class="exaguru-popup-form" method="POST" action="https://4feac7ff.sibforms.com/serve/MUIFAIBxCOSoLw4jno6uP5f4YeuhDUqmKDyFVsDBi1RRtfOOLtOigIINLA_Z8OecFC8kRGp9vAH4HQJk9KaswHdeeoF3DyuLn46Ttr_HNvo12vcpaHunaIeVjkZLpYEtcoEQf4sphY3iAnaOVHWDmtlQraD6xqLQ1hJLQn7qKnMIyOlmE3DYtclZ3pGvXvMgv6pV72bjlu67LtZnGQ==" target="hidden_iframe">
+                    <input type="text" name="email_address_check" value="" style="display:none;">
+                    <input type="hidden" name="locale" value="en">
+                    <input type="hidden" name="html_type" value="simple">
+                    <input type="text" name="FIRSTNAME" placeholder="Full Name" required autocomplete="name">
+                    <input type="email" name="EMAIL" placeholder="Email Address" required autocomplete="email">
+                    <div class="form-phone-row">
+                        <select name="SMS__COUNTRY_CODE" required aria-label="Country select code">
+                            <option value="+91" selected>+91 IN</option>
+                            <option value="+1">+1 US</option>
+                            <option value="+44">+44 GB</option>
+                            <option value="+971">+971 AE</option>
+                            <option value="+65">+65 SG</option>
+                        </select>
+                        <input type="tel" name="SMS" placeholder="Phone Number" required autocomplete="tel">
+                    </div>
+                    <select name="TRACK" required aria-label="Popup Select Track Dropdown">
+                        <option value="" disabled selected>Choose your track</option>
+                        <option value="core">GenAI Engineer (Core Focus Focus)</option>
+                        <option value="llmops">GenAI + LLMOps Architect Track</option>
+                        <option value="help">Unsure · Request Architecture Profile Fit Call</option>
+                    </select>
+                    <button class="cta-btn" type="submit">Complete Enrolment Application →</button>
+                    <div class="form-tos">Secure validation checks processed directly by ExaGuru core registries.</div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="video-modal" id="videoModal" data-exaguru-close-video="1">
+        <div class="video-modal-content">
+            <button type="button" class="video-modal-close" data-exaguru-close-video="1" aria-label="Close video display modal">×</button>
+            <div class="video-wrapper">
+                <iframe id="youtubeFrame" src="" title="Generative AI Engineering Pipeline Overview Walkthrough" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    var formSubmitted = false;
+    var EXAGURU_FORM_ACTION = 'https://4feac7ff.sibforms.com/serve/MUIFAIBxCOSoLw4jno6uP5f4YeuhDUqmKDyFVsDBi1RRtfOOLtOigIINLA_Z8OecFC8kRGp9vAH4HQJk9KaswHdeeoF3DyuLn46Ttr_HNvo12vcpaHunaIeVjkZLpYEtcoEQf4sphY3iAnaOVHWDmtlQraD6xqLQ1hJLQn7qKnMIyOlmE3DYtclZ3pGvXvMgv6pV72bjlu67LtZnGQ==';
+
+    /* CROSS-ORIGIN SANDBOX INFRASTRUCTURE DELEGATE */
+    function exaguruScrollBodyLock(lock) {
+        var targets = [document.body, document.documentElement];
+        try {
+            if (window.top && window.top.document && window.top.document.body) {
+                targets.push(window.top.document.body);
+                if (window.top.document.documentElement) targets.push(window.top.document.documentElement);
+            }
+        } catch (e) {
+            console.log("[Knorish Optimization] Cross-origin restrictions bypassed context separation.");
+        }
+        targets.forEach(function (t) {
+            if (t) t.style.setProperty('overflow', lock ? 'hidden' : '', lock ? 'important' : '');
+        });
+    }
+
+    function toggleFAQ(el) {
+        if (!el) return;
+        el.classList.toggle('open');
+        var a = el.nextElementSibling;
+        if (a) a.classList.toggle('open');
+    }
+
+    function initApplyPopupForm() {
+        var popupForm = document.getElementById('sib-form-popup');
+        if (!popupForm || popupForm.getAttribute('data-ready') === '1') return;
+        popupForm.addEventListener('submit', function () {
+            formSubmitted = true;
+            var b = popupForm.querySelector('button[type="submit"]');
+            if (b) { b.innerText = 'Processing Allocation...'; b.disabled = true; }
+        });
+        popupForm.setAttribute('data-ready', '1');
+    }
+
+    function bindStickyApplyButton() {
+        var btn = document.getElementById('exaguru-sticky-apply-btn');
+        if (!btn || btn.getAttribute('data-bound') === '1') return;
+        btn.setAttribute('data-bound', '1');
+        function go(e) {
+            if (window.openApplyPopup) {
+                if (e) { e.preventDefault(); e.stopPropagation(); }
+                window.openApplyPopup();
+            }
+        }
+        btn.addEventListener('click', go, false);
+    }
+
+    function isExaguruMobileViewport() {
+        return window.innerWidth < 769;
+    }
+
+    function setExaguruPopupOpenClass(open) {
+        var roots = [document.documentElement];
+        try {
+            if (window.top && window.top.document && window.top.document.documentElement) {
+                roots.push(window.top.document.documentElement);
+            }
+        } catch (e) {}
+        roots.forEach(function (html) {
+            if (html) html.classList.toggle('exaguru-popup-open', open);
+        });
+    }
+
+    function applyMobilePopupLayout() {
+        relocateFixedUI();
+        var overlay = document.getElementById('applyPopup');
+        if (!overlay) return;
+        var box = overlay.querySelector('.apply-popup-box');
+        if (!isExaguruMobileViewport()) {
+            overlay.removeAttribute('data-exaguru-mobile-sheet');
+            overlay.style.cssText = '';
+            if (box) box.style.cssText = '';
+            return;
+        }
+        overlay.setAttribute('data-exaguru-mobile-sheet', '1');
+        overlay.style.cssText = 'position:fixed!important;top:0!important;left:0!important;right:0!important;bottom:0!important;width:100%!important;height:100%!important;height:100dvh!important;margin:0!important;padding:0!important;z-index:2147483647!important;display:block!important;overflow:hidden!important;box-sizing:border-box!important;';
+        if (box) {
+            box.style.cssText = 'position:fixed!important;left:0!important;right:0!important;bottom:0!important;width:100%!important;max-width:100%!important;margin:0!important;box-sizing:border-box!important;display:flex!important;flex-direction:column!important;max-height:min(88dvh,88vh)!important;overflow:hidden!important;border-radius:18px 18px 0 0!important;';
+        }
+    }
+
+    function openApplyPopup() {
+        var overlay = document.getElementById('applyPopup');
+        if (!overlay) {
+            var hero = document.getElementById('apply');
+            if (hero) hero.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            return;
+        }
+        initApplyPopupForm();
+        applyMobilePopupLayout();
+        try { window.location.hash = 'applyPopup'; } catch (err) {}
+        overlay.classList.add('active');
+        setExaguruPopupOpenClass(true);
+        exaguruScrollBodyLock(true);
+    }
+
+    function closeApplyPopup() {
+        var overlay = document.getElementById('applyPopup');
+        if (!overlay) return;
+        overlay.classList.remove('active');
+        setExaguruPopupOpenClass(false);
+        try {
+            if (window.location.hash === '#applyPopup') {
+                history.replaceState(null, '', window.location.pathname + window.location.search);
+            }
+        } catch (err) {
+            window.location.hash = '';
+        }
+        var vid = document.getElementById('videoModal');
+        if (!vid || !vid.classList.contains('active')) exaguruScrollBodyLock(false);
+    }
+
+    function openVideoModal() {
+        var modal = document.getElementById('videoModal');
+        var frame = document.getElementById('youtubeFrame');
+        if (!modal || !frame) return;
+        frame.src = 'https://www.youtube.com/embed/DC2XebnBbcA?autoplay=1';
+        modal.classList.add('active');
+        exaguruScrollBodyLock(true);
+    }
+
+    function closeVideoModal() {
+        var modal = document.getElementById('videoModal');
+        var frame = document.getElementById('youtubeFrame');
+        if (!modal) return;
+        modal.classList.remove('active');
+        if (frame) frame.src = '';
+        var pop = document.getElementById('applyPopup');
+        if (!pop || !pop.classList.contains('active')) exaguruScrollBodyLock(false);
+    }
+
+    window.openApplyPopup = openApplyPopup;
+    window.closeApplyPopup = closeApplyPopup;
+    window.openVideoModal = openVideoModal;
+    window.closeVideoModal = closeVideoModal;
+    window.toggleFAQ = toggleFAQ;
+
+    function initExaguruClickHandlers() {
+        document.addEventListener('click', function (e) {
+            var t = e.target;
+            if (!t || !t.closest) return;
+
+            if (t.closest('[data-exaguru-apply]')) {
+                e.preventDefault();
+                e.stopPropagation();
+                openApplyPopup();
+                return;
+            }
+            if (t.closest('[data-exaguru-close-popup]')) {
+                closeApplyPopup();
+                return;
+            }
+            var pop = document.getElementById('applyPopup');
+            if (pop && (t === pop || (t.closest && t.closest('#applyPopup') === pop && !t.closest('.apply-popup-box')))) {
+                closeApplyPopup();
+                return;
+            }
+            if (t.closest('[data-exaguru-video]')) {
+                e.preventDefault();
+                openVideoModal();
+                return;
+            }
+            if (t.closest('[data-exaguru-close-video]') || t.id === 'videoModal') {
+                closeVideoModal();
+                return;
+            }
+            var faq = t.closest('[data-exaguru-faq]');
+            if (faq) toggleFAQ(faq);
+        }, true);
+    }
+
+    function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+    function initCountdown() {
+        var target = new Date();
+        target.setDate(target.getDate() + 2);
+        target.setHours(target.getHours() + 22, target.getMinutes() + 49, target.getSeconds() + 6);
+
+        function tick() {
+            var now = new Date(), diff = Math.max(0, target - now);
+            var d = Math.floor(diff / 86400000),
+                h = Math.floor((diff % 86400000) / 3600000),
+                m = Math.floor((diff % 3600000) / 60000),
+                s = Math.floor((diff % 60000) / 1000);
+
+            var ids = ['cd-days', 'cd-hours', 'cd-mins', 'cd-secs', 'sticky-d', 'sticky-h', 'sticky-m', 'sticky-s', 'fcd-d', 'fcd-h', 'fcd-m', 'fcd-s'];
+            var mappings = {
+                'cd-days': d, 'sticky-d': d, 'fcd-d': d,
+                'cd-hours': h, 'sticky-h': h, 'fcd-h': h,
+                'cd-mins': m, 'sticky-m': m, 'fcd-m': m,
+                'cd-secs': s, 'sticky-s': s, 'fcd-s': s
+            };
+
+            ids.forEach(function(id) {
+                var el = document.getElementById(id);
+                if (el) el.textContent = pad(mappings[id]);
+            });
+        }
+        tick();
+        setInterval(tick, 1000);
+    }
+
+    function initLivePing() {
+        var ping = document.getElementById('live-ping');
+        var av = document.getElementById('ping-av');
+        var msg = document.getElementById('ping-msg');
+        var timeEl = document.getElementById('ping-time');
+        if (!ping || !av || !msg || !timeEl) return;
+
+        var pool = [
+            { n: 'Aditya N.', c: 'Bengaluru', i: 'A', action: 'enrolled in Spring cohort', time: '2 mins ago' },
+            { n: 'Priya R.', c: 'Pune', i: 'P', action: 'reserved a custom LLMOps seat', time: 'Just now' },
+            { n: 'Karan M.', c: 'Hyderabad', i: 'K', action: 'submitted profile registration', time: '4 mins ago' },
+            { n: 'Sneha V.', c: 'Delhi NCR', i: 'S', action: 'locked allocation track', time: '1 min ago' },
+            { n: 'Liam C.', c: 'London', i: 'L', action: 'enrolled on global track', time: '5 mins ago' }
+        ];
+
+        var lastIdx = -1;
+        function showPopup() {
+            var idx;
+            do { idx = Math.floor(Math.random() * pool.length); } while (idx === lastIdx);
+            lastIdx = idx;
+            var item = pool[idx];
+
+            av.textContent = item.i;
+            msg.innerHTML = '<strong>' + item.n + '</strong> from <span>' + item.c + '</span> ' + item.action;
+            timeEl.textContent = item.time;
+
+            ping.classList.add('show');
+            setTimeout(function() {
+                ping.classList.remove('show');
+            }, 5500);
+        }
+
+        setTimeout(showPopup, 3500);
+        setInterval(showPopup, 25000);
+    }
+
+    function getExaguruMountRoot() {
+        try {
+            if (window.top && window.top.document && window.top.document.body) return window.top.document.body;
+        } catch (err) {}
+        return document.body || document.documentElement;
+    }
+
+    function relocateFixedUI() {
+        var root = getExaguruMountRoot();
+        if (!root) return;
+        ['applyPopup', 'videoModal', 'hidden_iframe', 'live-ping', 'exaguru-sticky-bar'].forEach(function (id) {
+            var el = document.getElementById(id);
+            if (el && el.parentNode !== root) root.appendChild(el);
+        });
+        var bar = document.getElementById('exaguru-sticky-bar');
+        if (bar) {
+            bar.style.cssText = 'position:fixed!important;bottom:0!important;left:0!important;right:0!important;z-index:2147483646!important;display:flex!important;visibility:visible!important;opacity:1!important;width:100%!important;max-width:100vw!important;box-sizing:border-box!important;padding-bottom:env(safe-area-inset-bottom,0px)!important;';
+        }
+    }
+
+    function initCalc() {
+        var expR = document.getElementById('exp-r'), expV = document.getElementById('exp-v');
+        var salR = document.getElementById('sal-r'), salV = document.getElementById('sal-v');
+        var trkR = document.getElementById('trk-r'), trkV = document.getElementById('trk-v');
+        var lo = document.getElementById('proj-low'), hi = document.getElementById('proj-high');
+        var nowV = document.getElementById('bar-now-v'), futV = document.getElementById('bar-future-v');
+        var nowB = document.getElementById('bar-now'), futB = document.getElementById('bar-future');
+
+        if (!expR) return;
+
+        function recalc() {
+            var exp = parseFloat(expR.value), sal = parseFloat(salR.value), trk = trkR.value;
+            var mult = trk === 'oci-exa' ? 2.35 : 1.85;
+            var base = Math.max(sal * mult, 14);
+            var low = base + exp * 0.85, high = base + exp * 1.5 + 3.5;
+
+            expV.textContent = exp;
+            salV.textContent = sal.toFixed(1);
+            trkV.textContent = trk === 'oci-exa' ? 'GenAI + LLMOps' : 'GenAI Core Focus';
+            lo.textContent = low.toFixed(1);
+            hi.textContent = high.toFixed(1);
+            nowV.textContent = sal.toFixed(1);
+            var avg = (low + high) / 2;
+            futV.textContent = avg.toFixed(1);
+            var maxRange = 60;
+            if(nowB) nowB.style.width = Math.min(sal / maxRange * 100, 100) + '%';
+            if(futB) futB.style.width = Math.min(avg / maxRange * 100, 100) + '%';
+        }
+
+        expR.addEventListener('input', recalc);
+        salR.addEventListener('input', recalc);
+        trkR.addEventListener('change', recalc);
+        recalc();
+    }
+
+    function bootExaguruUI() {
+        relocateFixedUI();
+        initExaguruClickHandlers();
+        initApplyPopupForm();
+        bindStickyApplyButton();
+        initCountdown();
+        initLivePing();
+        initCalc();
+
+        window.addEventListener('hashchange', function() {
+            var open = window.location.hash === '#applyPopup' || (document.getElementById('applyPopup') && document.getElementById('applyPopup').classList.contains('active'));
+            setExaguruPopupOpenClass(open);
+            if (open) applyMobilePopupLayout();
+        });
+
+        window.addEventListener('resize', applyMobilePopupLayout);
+        if (window.location.hash === '#applyPopup') openApplyPopup();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', bootExaguruUI);
+    } else {
+        bootExaguruUI();
+    }
+
+    (function () {
+        var hc = document.getElementById('hero-count');
+        if (!hc) return;
+        setInterval(function () {
+            var n = parseInt(hc.textContent, 10);
+            hc.textContent = (n + 1);
+        }, 45000);
+    })();
+
+    /* ESC KEYS CONTROL */
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+            closeApplyPopup();
+            closeVideoModal();
+        }
+    });
+</script>
+
+</body>
+</html>
