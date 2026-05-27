@@ -702,6 +702,21 @@
         opacity: 0 !important;
         pointer-events: none !important;
         overflow: hidden !important;
+        clip: rect(0, 0, 0, 0) !important;
+        border: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .exaguru-honeypot label,
+    .exaguru-honeypot input {
+        display: block !important;
+        width: 1px !important;
+        height: 1px !important;
+        opacity: 0 !important;
+        border: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
     }
 
     @media (max-width: 540px) {
@@ -3636,8 +3651,7 @@
             <p class="form-sub">Takes only 2 minutes · Confirmed within 24 hours</p>
             <form id="sib-form" class="exaguru-lead-form" data-exaguru-lead-form novalidate>
                 <div class="exaguru-honeypot" aria-hidden="true">
-                    <label for="hero-hp">Leave blank</label>
-                    <input type="text" id="hero-hp" name="email_address_check" value="" tabindex="-1" autocomplete="off">
+                    <input type="text" id="hero-hp" name="email_address_check" value="" tabindex="-1" autocomplete="nope" autocorrect="off" autocapitalize="off" spellcheck="false" readonly>
                 </div>
                 <input type="hidden" name="locale" value="en">
                 <input type="hidden" name="html_type" value="simple">
@@ -4433,8 +4447,7 @@
         <div class="apply-popup-body">
             <form id="sib-form-popup" class="exaguru-lead-form exaguru-popup-form" data-exaguru-lead-form novalidate>
                 <div class="exaguru-honeypot" aria-hidden="true">
-                    <label for="popup-hp">Leave blank</label>
-                    <input type="text" id="popup-hp" name="email_address_check" value="" tabindex="-1" autocomplete="off">
+                    <input type="text" id="popup-hp" name="email_address_check" value="" tabindex="-1" autocomplete="nope" autocorrect="off" autocapitalize="off" spellcheck="false" readonly>
                 </div>
                 <input type="hidden" name="locale" value="en">
                 <input type="hidden" name="html_type" value="simple">
@@ -4489,7 +4502,7 @@
 <script>
     var EXAGURU_BREVO_ACTION = 'https://4feac7ff.sibforms.com/serve/MUIFAKt_Q_hvoUqZ89HU3rkkS5-cuNnqgsbKQ4EKPfLXhekTxUkLcIXHCjnPeMFZ1-6cvgSi65gcWlirwXgFTlM1FG0ezgh-h7uJPNz13Vw8uPMzqRyAvS3jyIZkumUpMppLdWOqehK6tIeV--IVhjTyZEhEwgmFbRGxnzZNpmvtZfbgMyJUfluNiklVqVCaHXWUNMsYAnLLkVX-zw==';
     var EXAGURU_THANK_YOU_URL = 'https://www.exaguru.com/page/genai-thank-you-page';
-    var EXAGURU_FORM_MIN_MS = 800;
+    var EXAGURU_FORM_MIN_MS = 300;
     var exaguruLeadFormMountedAt = Date.now();
     var exaguruSubmitInFlight = false;
 
@@ -4547,13 +4560,47 @@
         return (str || '').replace(/\D/g, '');
     }
 
+    function exaguruNormalizePhone(raw, cc) {
+        var phone = exaguruDigitsOnly(raw);
+        var ccDigits = exaguruDigitsOnly(cc || '+91');
+
+        if (ccDigits && phone.indexOf(ccDigits) === 0 && phone.length > ccDigits.length + 5) {
+            phone = phone.slice(ccDigits.length);
+        }
+
+        if ((cc || '+91') === '+91') {
+            if (phone.length === 11 && phone.charAt(0) === '0') phone = phone.slice(1);
+            if (phone.length === 12 && phone.indexOf('91') === 0) phone = phone.slice(2);
+        }
+
+        return phone;
+    }
+
+    function exaguruIsHoneypotTripped(form) {
+        var hp = form.querySelector('[name="email_address_check"]');
+        if (!hp) return false;
+
+        var trap = (hp.value || '').trim();
+        if (!trap) return false;
+
+        var emailEl = form.querySelector('[name="EMAIL"]');
+        var email = emailEl ? (emailEl.value || '').trim() : '';
+        if (email && trap === email) {
+            hp.value = '';
+            return false;
+        }
+
+        return trap.length > 0;
+    }
+
     function exaguruValidateLeadForm(form) {
         var ok = true;
+        var firstMessage = '';
         var nameEl = form.querySelector('[name="FIRSTNAME"]');
         var emailEl = form.querySelector('[name="EMAIL"]');
         var phoneEl = form.querySelector('[name="SMS"]');
         var countryEl = form.querySelector('[name="SMS__COUNTRY_CODE"]');
-        var hp = form.querySelector('[name="email_address_check"]');
+        var cc = countryEl ? countryEl.value : '+91';
 
         function setErr(fieldKey, message) {
             var wrap = form.querySelector('[data-field="' + fieldKey + '"]');
@@ -4561,38 +4608,50 @@
             var err = wrap.querySelector('[data-field-error]');
             wrap.classList.toggle('is-invalid', !!message);
             if (err) err.textContent = message || '';
-            if (message) ok = false;
+            if (message) {
+                ok = false;
+                if (!firstMessage) firstMessage = message;
+            }
         }
 
         setErr('FIRSTNAME', '');
         setErr('EMAIL', '');
         setErr('SMS', '');
 
-        if (hp && hp.value.trim() !== '') {
-            return false;
+        if (exaguruIsHoneypotTripped(form)) {
+            return { ok: false, message: 'Unable to submit right now. Please refresh and try again.' };
         }
 
         var name = (nameEl && nameEl.value || '').trim();
         if (name.length < 2) {
             setErr('FIRSTNAME', 'Please enter your full name (at least 2 characters).');
-        } else if (/[<>@]/.test(name) || /^\d+$/.test(name)) {
+        } else if (/[<>]/.test(name) || /^\d+$/.test(name)) {
             setErr('FIRSTNAME', 'Please enter a valid name.');
         }
 
         var email = (emailEl && emailEl.value || '').trim();
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(email)) {
+        if (!email) {
+            setErr('EMAIL', 'Please enter your email address.');
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(email)) {
             setErr('EMAIL', 'Please enter a valid email address.');
         }
 
-        var phone = exaguruDigitsOnly(phoneEl && phoneEl.value);
-        var cc = countryEl ? countryEl.value : '+91';
-        if (phone.length < 6 || phone.length > 15) {
+        var phone = exaguruNormalizePhone(phoneEl && phoneEl.value, cc);
+        if (phoneEl) phoneEl.value = phone;
+
+        if (!phone) {
+            setErr('SMS', 'Please enter your phone number.');
+        } else if (cc === '+91') {
+            if (phone.length !== 10) {
+                setErr('SMS', 'Enter a valid 10-digit mobile number for India.');
+            } else if (!/^[6-9]\d{9}$/.test(phone)) {
+                setErr('SMS', 'Indian mobile numbers should start with 6, 7, 8, or 9.');
+            }
+        } else if (phone.length < 6 || phone.length > 15) {
             setErr('SMS', 'Enter a valid phone number (6–15 digits).');
-        } else if (cc === '+91' && phone.length !== 10) {
-            setErr('SMS', 'Indian numbers must be 10 digits (without country code).');
         }
 
-        return ok;
+        return { ok: ok, message: firstMessage };
     }
 
     function exaguruSetFormAlert(form, type, message) {
@@ -4615,8 +4674,12 @@
     function exaguruSubmitLeadForm(form) {
         if (exaguruSubmitInFlight || form.getAttribute('data-submitting') === '1') return;
 
-        if (!exaguruValidateLeadForm(form)) {
-            exaguruSetFormAlert(form, 'error', 'Please fix the highlighted fields and try again.');
+        var hp = form.querySelector('[name="email_address_check"]');
+        if (hp) hp.removeAttribute('readonly');
+
+        var validation = exaguruValidateLeadForm(form);
+        if (!validation.ok) {
+            exaguruSetFormAlert(form, 'error', validation.message || 'Please fix the highlighted fields and try again.');
             var firstInvalid = form.querySelector('.exaguru-field.is-invalid input, .exaguru-field.is-invalid select');
             if (firstInvalid) firstInvalid.focus();
             return;
@@ -4633,9 +4696,9 @@
         exaguruSetSubmitLoading(form, true);
 
         var phoneEl = form.querySelector('[name="SMS"]');
-        if (phoneEl) phoneEl.value = exaguruDigitsOnly(phoneEl.value);
+        var countryEl = form.querySelector('[name="SMS__COUNTRY_CODE"]');
+        if (phoneEl) phoneEl.value = exaguruNormalizePhone(phoneEl.value, countryEl ? countryEl.value : '+91');
 
-        var hp = form.querySelector('[name="email_address_check"]');
         if (hp) hp.value = '';
 
         var iframe = exaguruEnsureSubmitIframe();
@@ -4685,26 +4748,24 @@
             form.addEventListener('submit', function (e) {
                 e.preventDefault();
                 e.stopPropagation();
-                exaguruSubmitLeadForm(form);
+                var active = document.activeElement;
+                if (active && form.contains(active) && typeof active.blur === 'function') {
+                    active.blur();
+                }
+                window.setTimeout(function () {
+                    exaguruSubmitLeadForm(form);
+                }, 80);
             });
 
-            var submitBtn = form.querySelector('button[type="submit"]');
-            if (submitBtn) {
-                submitBtn.addEventListener('touchend', function (e) {
-                    if (form.getAttribute('data-submitting') === '1') return;
-                    e.preventDefault();
-                    exaguruSubmitLeadForm(form);
-                }, { passive: false });
-            }
-
-            form.querySelectorAll('input, select').forEach(function (el) {
+            form.querySelectorAll('input:not([name="email_address_check"]), select').forEach(function (el) {
                 el.addEventListener('input', function () {
                     var wrap = el.closest('.exaguru-field');
                     if (wrap) wrap.classList.remove('is-invalid');
                     exaguruSetFormAlert(form, '', '');
                 });
-                el.addEventListener('blur', function () {
-                    exaguruValidateLeadForm(form);
+                el.addEventListener('change', function () {
+                    var wrap = el.closest('.exaguru-field');
+                    if (wrap) wrap.classList.remove('is-invalid');
                 });
             });
         });
